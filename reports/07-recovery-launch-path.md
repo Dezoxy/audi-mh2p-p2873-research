@@ -43,10 +43,20 @@ without the marker, marker kept when a file was changed after install, marker
 left for the operator when nothing is installed, and install refusal when the
 persistence chain is missing or incomplete. Installer tests: 24; workspace: 47.
 
-## On-unit checks still open
+## On-unit checks: collected by SD card
 
-Two tool output formats are assumed and guarded rather than confirmed. With
-shell access on the unit, these commands settle both before any install:
+Shell access to the unit is not available, so the two remaining tool-format
+assumptions are collected by the preflight addon instead. `port/sd/probe.sh`
+runs inside ModKit's update stage, sources the real `common.sh`, and records
+the outputs and pass/fail of `file_crc32`, `verify_file`, `free_kb`,
+`dir_is_empty` and `is_elf` on the unit, together with raw `hd`, `df`, `ls`,
+`mount`, tool presence and the ksh version. `tools/verify_probe.py` judges
+the result on the host and applies the same `hd` parsing rule as the
+installer. Three host tests cover the probe: a conforming fixture is accepted,
+a wrong `hd` format and a missing tool are rejected, and an existing output
+directory is never overwritten. Card preparation is in `port/sd/README.md`.
+
+With shell access, the equivalent manual commands would be:
 
 ```sh
 gzip -1 -c /mnt/app/img_ver.txt | dd bs=1 skip=$(( $(gzip -1 -c /mnt/app/img_ver.txt | wc -c) - 8 )) count=4 2>/dev/null | hd

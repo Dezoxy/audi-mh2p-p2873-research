@@ -1,5 +1,40 @@
 # Audi P2873 SD preflight addon
 
+This addon runs a tool probe and captures selected files for offline
+comparison. The probe settles the installer's remaining on-unit assumptions
+without shell access: it runs the real installer library functions on the
+unit (`hd` output format, `df -kP` layout, the gzip-trailer CRC-32 pipeline,
+the pure-shell directory test, ELF detection), records which utilities exist,
+the ksh version, mounts, and whether ModKit's persistence chain is installed.
+Results go to `AudiP2873-probe/` on the card; judge them on the host with:
+
+```sh
+python3 tools/verify_probe.py /Volumes/YOUR_CARD/AudiP2873-probe
+```
+
+`assumptions_hold: true` means the installer's tool assumptions are confirmed
+for this unit. It is not an installation approval.
+
+## Preparing the card (no SSH needed)
+
+1. Format an SD card as FAT32 and copy the contents of the
+   [MH2p SD ModKit](https://github.com/LawPaul/MH2p_SD_ModKit) repository at
+   revision `82f9452` to the card root (`Meta/`, `Data/`, `Mods/`, `Logs/`).
+   ModKit is not bundled here; its license is CC BY-NC-SA 4.0.
+2. Unzip `dist/Audi-P2873-preflight-addon.zip` onto the card so that
+   `Mods/AudiP2873Preflight/Update/` exists next to ModKit's own folders.
+3. Insert the card and start the software update from the MMI menu as for a
+   normal SD update. ModKit runs, executes this addon, and writes
+   `Logs/AudiP2873Preflight.log`, `AudiP2873-probe/` and `AudiP2873-capture/`.
+4. Take the card back to the host and run `verify_probe.py` and
+   `verify_capture.py`.
+
+Running ModKit is itself a modification: its loader replaces
+`/mnt/app/eso/bin/servicemgrmibhigh` with a wrapper script and keeps the
+factory binary as `servicemgrmibhigh0`. That is the persistence chain the
+cluster installer later requires and the early-boot fail-safe depends on. This
+addon adds nothing persistent of its own.
+
 This addon captures selected files for offline comparison. It does not enable
 cluster integration. It has no native payload, JAR, Post/Persist scripts,
 firmware update, activation, or rollback writes. Removing the addon folder

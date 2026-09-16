@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Package the diagnostic addon only; no loader or proprietary payloads."""
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import zipfile
+import zlib
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGETS = ['version_info.txt', 'img_ver.txt', 'target.properties',
@@ -27,9 +29,19 @@ def build():
     output = folder / 'Audi-P2873-preflight-addon.zip'
     entries = {'README.md': (ROOT / 'port/sd/README.md').read_bytes()}
     prefix = 'Mods/AudiP2873Preflight/Update/'
-    for name in ['collect.sh', 'install.sh', 'uninstall.sh']:
+    for name in ['collect.sh', 'install.sh', 'uninstall.sh', 'probe.sh']:
         entries[prefix + name] = (ROOT / 'port/sd' / name).read_bytes()
     entries[prefix + 'targets.txt'] = ('\n'.join(files) + '\n').encode()
+    # The probe exercises the real installer library on the unit.
+    entries[prefix + 'common.sh'] = (ROOT / 'port/installer/Update/common.sh').read_bytes()
+    spec = importlib.util.spec_from_file_location('bci', ROOT / 'tools/build_cluster_installer.py')
+    bci = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(bci)
+    selftest = bci.selftest_bytes()
+    entries[prefix + 'selftest.bin'] = selftest
+    img_ver = (ROOT / 'analysis/app/files/img_ver.txt').read_bytes()
+    entries[prefix + 'probe-expected.txt'] = (f'selftest {len(selftest)} {zlib.crc32(selftest) & 0xffffffff:08x}\n'
+                                              f'img_ver {len(img_ver)} {zlib.crc32(img_ver) & 0xffffffff:08x}\n').encode()
     entries['capture-reference.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
     with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as z:
         for name, data in sorted(entries.items()):

@@ -26,7 +26,7 @@ Current continuation: [recovery launch path](reports/07-recovery-launch-path.md)
 - `vendor/`: upstream source checkouts, with revisions in `evidence/provenance.json`.
 - `port/`: adapted Java sources, attribution, SD collector sources, and the journaled installer module (`port/installer/`).
 - `build/java/`: experimental JAR; do not install on the vehicle.
-- `dist/Audi-P2873-preflight-addon.zip`: diagnostic addon only, without the ModKit loader or port payload.
+- `dist/Audi-P2873-preflight-addon.zip`: diagnostic addon only (tool probe and file capture), without the ModKit loader or port payload.
 - `evidence/build/`: build inputs, API retention checks, capture reference, and reproducibility results.
 
 ## Reproduce
