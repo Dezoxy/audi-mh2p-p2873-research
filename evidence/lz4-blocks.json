@@ -1,0 +1,518 @@
+[
+  {
+    "index": 0,
+    "offset": 8192,
+    "compressed": 558374,
+    "decompressed": 946180
+  },
+  {
+    "index": 1,
+    "offset": 566784,
+    "compressed": 1284077,
+    "decompressed": 1901692
+  },
+  {
+    "index": 2,
+    "offset": 1850880,
+    "compressed": 967748,
+    "decompressed": 1942980
+  },
+  {
+    "index": 3,
+    "offset": 2819072,
+    "compressed": 1025747,
+    "decompressed": 2097152
+  },
+  {
+    "index": 4,
+    "offset": 3845120,
+    "compressed": 1295851,
+    "decompressed": 2097152
+  },
+  {
+    "index": 5,
+    "offset": 5140992,
+    "compressed": 1228970,
+    "decompressed": 2097152
+  },
+  {
+    "index": 6,
+    "offset": 6370304,
+    "compressed": 1063549,
+    "decompressed": 2097152
+  },
+  {
+    "index": 7,
+    "offset": 7434240,
+    "compressed": 621762,
+    "decompressed": 2097152
+  },
+  {
+    "index": 8,
+    "offset": 8056320,
+    "compressed": 1042860,
+    "decompressed": 2097152
+  },
+  {
+    "index": 9,
+    "offset": 9099264,
+    "compressed": 1216780,
+    "decompressed": 2097152
+  },
+  {
+    "index": 10,
+    "offset": 10316288,
+    "compressed": 1248661,
+    "decompressed": 2097152
+  },
+  {
+    "index": 11,
+    "offset": 11565056,
+    "compressed": 1244367,
+    "decompressed": 2097152
+  },
+  {
+    "index": 12,
+    "offset": 12809728,
+    "compressed": 1052901,
+    "decompressed": 2097152
+  },
+  {
+    "index": 13,
+    "offset": 13862912,
+    "compressed": 894189,
+    "decompressed": 2097152
+  },
+  {
+    "index": 14,
+    "offset": 14757376,
+    "compressed": 67491,
+    "decompressed": 334056
+  },
+  {
+    "index": 15,
+    "offset": 14824960,
+    "compressed": 1128852,
+    "decompressed": 2097152
+  },
+  {
+    "index": 16,
+    "offset": 15953920,
+    "compressed": 1041711,
+    "decompressed": 2097152
+  },
+  {
+    "index": 17,
+    "offset": 16995840,
+    "compressed": 784738,
+    "decompressed": 1726052
+  },
+  {
+    "index": 18,
+    "offset": 17780736,
+    "compressed": 910980,
+    "decompressed": 2097152
+  },
+  {
+    "index": 19,
+    "offset": 18692096,
+    "compressed": 323271,
+    "decompressed": 2097152
+  },
+  {
+    "index": 20,
+    "offset": 19015680,
+    "compressed": 1096808,
+    "decompressed": 2097152
+  },
+  {
+    "index": 21,
+    "offset": 20112896,
+    "compressed": 1207249,
+    "decompressed": 2097152
+  },
+  {
+    "index": 22,
+    "offset": 21320192,
+    "compressed": 781301,
+    "decompressed": 2097152
+  },
+  {
+    "index": 23,
+    "offset": 22101504,
+    "compressed": 916535,
+    "decompressed": 2097152
+  },
+  {
+    "index": 24,
+    "offset": 23018496,
+    "compressed": 922729,
+    "decompressed": 2097152
+  },
+  {
+    "index": 25,
+    "offset": 23941632,
+    "compressed": 777525,
+    "decompressed": 2097152
+  },
+  {
+    "index": 26,
+    "offset": 24719360,
+    "compressed": 875902,
+    "decompressed": 2097152
+  },
+  {
+    "index": 27,
+    "offset": 25595392,
+    "compressed": 873547,
+    "decompressed": 2097152
+  },
+  {
+    "index": 28,
+    "offset": 26469376,
+    "compressed": 919944,
+    "decompressed": 2097152
+  },
+  {
+    "index": 29,
+    "offset": 27389440,
+    "compressed": 882506,
+    "decompressed": 2097152
+  },
+  {
+    "index": 30,
+    "offset": 28272128,
+    "compressed": 982556,
+    "decompressed": 2097152
+  },
+  {
+    "index": 31,
+    "offset": 29255168,
+    "compressed": 961262,
+    "decompressed": 2097152
+  },
+  {
+    "index": 32,
+    "offset": 30216704,
+    "compressed": 829845,
+    "decompressed": 2097152
+  },
+  {
+    "index": 33,
+    "offset": 31046656,
+    "compressed": 907384,
+    "decompressed": 2097152
+  },
+  {
+    "index": 34,
+    "offset": 31954432,
+    "compressed": 919838,
+    "decompressed": 2097152
+  },
+  {
+    "index": 35,
+    "offset": 32874496,
+    "compressed": 909251,
+    "decompressed": 2097152
+  },
+  {
+    "index": 36,
+    "offset": 33783808,
+    "compressed": 852029,
+    "decompressed": 2097152
+  },
+  {
+    "index": 37,
+    "offset": 34636288,
+    "compressed": 888143,
+    "decompressed": 2097152
+  },
+  {
+    "index": 38,
+    "offset": 35524608,
+    "compressed": 848130,
+    "decompressed": 2097152
+  },
+  {
+    "index": 39,
+    "offset": 36372992,
+    "compressed": 880907,
+    "decompressed": 2097152
+  },
+  {
+    "index": 40,
+    "offset": 37254144,
+    "compressed": 867632,
+    "decompressed": 2097152
+  },
+  {
+    "index": 41,
+    "offset": 38121984,
+    "compressed": 842621,
+    "decompressed": 2097152
+  },
+  {
+    "index": 42,
+    "offset": 38964736,
+    "compressed": 910887,
+    "decompressed": 2097152
+  },
+  {
+    "index": 43,
+    "offset": 39876096,
+    "compressed": 867602,
+    "decompressed": 2097152
+  },
+  {
+    "index": 44,
+    "offset": 40743936,
+    "compressed": 981937,
+    "decompressed": 2097152
+  },
+  {
+    "index": 45,
+    "offset": 41725952,
+    "compressed": 928775,
+    "decompressed": 2097152
+  },
+  {
+    "index": 46,
+    "offset": 42655232,
+    "compressed": 851740,
+    "decompressed": 2097152
+  },
+  {
+    "index": 47,
+    "offset": 43507200,
+    "compressed": 945421,
+    "decompressed": 2097152
+  },
+  {
+    "index": 48,
+    "offset": 44452864,
+    "compressed": 795033,
+    "decompressed": 2097152
+  },
+  {
+    "index": 49,
+    "offset": 45248000,
+    "compressed": 580782,
+    "decompressed": 2097152
+  },
+  {
+    "index": 50,
+    "offset": 45829120,
+    "compressed": 615558,
+    "decompressed": 2097152
+  },
+  {
+    "index": 51,
+    "offset": 46445056,
+    "compressed": 756842,
+    "decompressed": 2097152
+  },
+  {
+    "index": 52,
+    "offset": 47202304,
+    "compressed": 753290,
+    "decompressed": 2097152
+  },
+  {
+    "index": 53,
+    "offset": 47955968,
+    "compressed": 921543,
+    "decompressed": 2097152
+  },
+  {
+    "index": 54,
+    "offset": 48877568,
+    "compressed": 993350,
+    "decompressed": 2097152
+  },
+  {
+    "index": 55,
+    "offset": 49871360,
+    "compressed": 745564,
+    "decompressed": 2097152
+  },
+  {
+    "index": 56,
+    "offset": 50617344,
+    "compressed": 721078,
+    "decompressed": 2097152
+  },
+  {
+    "index": 57,
+    "offset": 51338752,
+    "compressed": 760699,
+    "decompressed": 2097152
+  },
+  {
+    "index": 58,
+    "offset": 52099584,
+    "compressed": 945049,
+    "decompressed": 2097152
+  },
+  {
+    "index": 59,
+    "offset": 53044736,
+    "compressed": 994694,
+    "decompressed": 2097152
+  },
+  {
+    "index": 60,
+    "offset": 54039552,
+    "compressed": 1054796,
+    "decompressed": 2097152
+  },
+  {
+    "index": 61,
+    "offset": 55094784,
+    "compressed": 1101235,
+    "decompressed": 2097152
+  },
+  {
+    "index": 62,
+    "offset": 56196096,
+    "compressed": 1123266,
+    "decompressed": 2097152
+  },
+  {
+    "index": 63,
+    "offset": 57319424,
+    "compressed": 947140,
+    "decompressed": 2097152
+  },
+  {
+    "index": 64,
+    "offset": 58266624,
+    "compressed": 825397,
+    "decompressed": 2097152
+  },
+  {
+    "index": 65,
+    "offset": 59092480,
+    "compressed": 812626,
+    "decompressed": 2097152
+  },
+  {
+    "index": 66,
+    "offset": 59905536,
+    "compressed": 765581,
+    "decompressed": 2097152
+  },
+  {
+    "index": 67,
+    "offset": 60671488,
+    "compressed": 712894,
+    "decompressed": 2097152
+  },
+  {
+    "index": 68,
+    "offset": 61384704,
+    "compressed": 789645,
+    "decompressed": 2097152
+  },
+  {
+    "index": 69,
+    "offset": 62174720,
+    "compressed": 784228,
+    "decompressed": 2097152
+  },
+  {
+    "index": 70,
+    "offset": 62959104,
+    "compressed": 694580,
+    "decompressed": 2097152
+  },
+  {
+    "index": 71,
+    "offset": 63653888,
+    "compressed": 908033,
+    "decompressed": 2097152
+  },
+  {
+    "index": 72,
+    "offset": 64562176,
+    "compressed": 836341,
+    "decompressed": 2097152
+  },
+  {
+    "index": 73,
+    "offset": 65398784,
+    "compressed": 679594,
+    "decompressed": 2097152
+  },
+  {
+    "index": 74,
+    "offset": 66078720,
+    "compressed": 667744,
+    "decompressed": 2097152
+  },
+  {
+    "index": 75,
+    "offset": 66746880,
+    "compressed": 860197,
+    "decompressed": 2097152
+  },
+  {
+    "index": 76,
+    "offset": 67607552,
+    "compressed": 773374,
+    "decompressed": 2097152
+  },
+  {
+    "index": 77,
+    "offset": 68381184,
+    "compressed": 240956,
+    "decompressed": 2097152
+  },
+  {
+    "index": 78,
+    "offset": 68622336,
+    "compressed": 155561,
+    "decompressed": 2097152
+  },
+  {
+    "index": 79,
+    "offset": 68777984,
+    "compressed": 178185,
+    "decompressed": 2097152
+  },
+  {
+    "index": 80,
+    "offset": 68956672,
+    "compressed": 212371,
+    "decompressed": 2097152
+  },
+  {
+    "index": 81,
+    "offset": 69169152,
+    "compressed": 215477,
+    "decompressed": 2097152
+  },
+  {
+    "index": 82,
+    "offset": 69384704,
+    "compressed": 35682,
+    "decompressed": 2097152
+  },
+  {
+    "index": 83,
+    "offset": 69420544,
+    "compressed": 244605,
+    "decompressed": 2097152
+  },
+  {
+    "index": 84,
+    "offset": 69665280,
+    "compressed": 896425,
+    "decompressed": 2097152
+  },
+  {
+    "index": 85,
+    "offset": 70561792,
+    "compressed": 809024,
+    "decompressed": 1685152
+  }
+]

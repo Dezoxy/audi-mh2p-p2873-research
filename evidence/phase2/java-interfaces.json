@@ -1,0 +1,1625 @@
+[
+  {
+    "jar": "app/files/eso/hmi/lsd/lsd.jar",
+    "major": 48,
+    "minor": 0,
+    "class": "de/audi/atip/interapp/combi/bap/navi/CombiBAPServiceNavi",
+    "access": 1537,
+    "fields": [
+      {
+        "name": "MAPSCALE_MAXIMUM",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_MAP_TYPE_NONE",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_MAP_TYPE_DESTINATION_MAP",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_MAP_TYPE_POSITION2D_MAP",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_MAP_TYPE_POSITION3D_MAP",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_MAP_TYPE_OVERVIEW_MAP",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_MAP_VIEW_NONE",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_MAP_VIEW_STANDARD_MAP",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_MAP_VIEW_GOOGLE_EARTH_MAP",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_MAP_VIEW_TRAFFIC_MAP",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_SUPPLEMENTARY_MAP_VIEW_NONE",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_SUPPLEMENTARY_MAP_VIEW_INTERSECTION_ZOOM",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_SUPPLEMENTARY_MAP_VIEW_COMPASS",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "SUPPORTED_SUPPLEMENTARY_MAP_VIEW_3_1_BOX",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "VOICE_GUIDANCE_ON_FULL_AVAILABLE",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "VOICE_GUIDANCE_ON_REDUCED_AVAILABLE",
+        "descriptor": "I",
+        "access": 25
+      },
+      {
+        "name": "VOICE_GUIDANCE_ON_TRAFFIC_AVAILABLE",
+        "descriptor": "I",
+        "access": 25
+      }
+    ],
+    "methods": [
+      {
+        "name": "showInitializingScreen",
+        "descriptor": "()V",
+        "access": 1025
+      },
+      {
+        "name": "hideInitializingScreen",
+        "descriptor": "()V",
+        "access": 1025
+      },
+      {
+        "name": "functionOnDemandNaviAvailable",
+        "descriptor": "(Z)V",
+        "access": 1025
+      },
+      {
+        "name": "updateCompassInfo",
+        "descriptor": "(II)V",
+        "access": 1025
+      },
+      {
+        "name": "updateRGStatus",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "updateActiveRGType",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "updateDistanceToNextManeuver",
+        "descriptor": "(IIZI)V",
+        "access": 1025
+      },
+      {
+        "name": "updateCurrentPositionInfo",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/data/CurrentPositionInfo;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateTurnToInfo",
+        "descriptor": "(Ljava/lang/String;Ljava/lang/String;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateDistanceToDestination",
+        "descriptor": "(ILde/audi/atip/interapp/combi/bap/navi/data/DistanceUnit;Z)V",
+        "access": 1025
+      },
+      {
+        "name": "updateTimeToDestination",
+        "descriptor": "(IIJ)V",
+        "access": 1025
+      },
+      {
+        "name": "updateManeuverDescriptor",
+        "descriptor": "([Lde/audi/atip/interapp/combi/bap/navi/data/CombiBAPNaviManeuverDescriptor;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateLaneGuidance",
+        "descriptor": "(Z[Lde/audi/atip/interapp/combi/bap/navi/data/CombiBAPNaviLaneGuidanceData;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateTMCInfoMessages",
+        "descriptor": "([Lde/audi/atip/interapp/combi/bap/audio/data/CombiBAPTMCInfoMessage;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateLastDestinationsList",
+        "descriptor": "([Lde/audi/atip/interapp/combi/bap/navi/data/CombiBAPDestinationListEntry;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateFavoriteDestinationsList",
+        "descriptor": "([Lde/audi/atip/interapp/combi/bap/navi/data/CombiBAPDestinationListEntry;)V",
+        "access": 1025
+      },
+      {
+        "name": "routeGuidanceActDeactResult",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "repeatLastNavAnnouncementResult",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "updateVoiceGuidanceState",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "updateInfoStates",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "updateTrafficBlockIndication",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "updateMapColor",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "updateMapType",
+        "descriptor": "(II)V",
+        "access": 1025
+      },
+      {
+        "name": "updateSupportedMapTypes",
+        "descriptor": "(ZI)V",
+        "access": 1025
+      },
+      {
+        "name": "updateMapView",
+        "descriptor": "(II)V",
+        "access": 1025
+      },
+      {
+        "name": "updateSupportedMapViews",
+        "descriptor": "(II)V",
+        "access": 1025
+      },
+      {
+        "name": "updateMapVisibility",
+        "descriptor": "(ZZ)V",
+        "access": 1025
+      },
+      {
+        "name": "updateMapOrientation",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "updateMapScale",
+        "descriptor": "(IZIIZ)V",
+        "access": 1025
+      },
+      {
+        "name": "updateDestinationInfo",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/data/CombiBAPDestinationInfo;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateAltitude",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/data/Altitude;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateOnlineNavigationState",
+        "descriptor": "(III)V",
+        "access": 1025
+      },
+      {
+        "name": "updateExitView",
+        "descriptor": "(II)V",
+        "access": 1025
+      },
+      {
+        "name": "updateSemidynamicRouteGuidance",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/data/CombiBAPSemiDynamicRouteInfo;)V",
+        "access": 1025
+      },
+      {
+        "name": "poiSearchResult",
+        "descriptor": "(II)V",
+        "access": 1025
+      },
+      {
+        "name": "updatePOIListSize",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "updateFSGSetup",
+        "descriptor": "(IZLde/audi/atip/interapp/combi/bap/navi/data/FsgSetupSupportedFunctions;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateMapPresentation",
+        "descriptor": "(ZZZ)V",
+        "access": 1025
+      },
+      {
+        "name": "updateManeuverState",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "updateEtcStatus",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/data/EtcStatus;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateMapContentSettings",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/data/MapContentSettings;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateDistanceToDestinationExtended",
+        "descriptor": "(ILde/audi/atip/interapp/combi/bap/navi/data/DistanceUnit;ILde/audi/atip/interapp/combi/bap/navi/data/ERangeWarning;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateHomeAddress",
+        "descriptor": "(Lde/audi/atip/utils/collections/Optional;)V",
+        "access": 1025
+      },
+      {
+        "name": "updateBusinessAddress",
+        "descriptor": "(Lde/audi/atip/utils/collections/Optional;)V",
+        "access": 1025
+      }
+    ]
+  },
+  {
+    "jar": "app/files/eso/hmi/lsd/lsd.jar",
+    "major": 48,
+    "minor": 0,
+    "class": "de/audi/atip/interapp/combi/bap/navi/CombiBAPServiceNaviListener",
+    "access": 1537,
+    "fields": [],
+    "methods": [
+      {
+        "name": "startRouteGuidanceToHomeAddress",
+        "descriptor": "()V",
+        "access": 1025
+      },
+      {
+        "name": "startRouteGuidanceToBusinessAddress",
+        "descriptor": "()V",
+        "access": 1025
+      },
+      {
+        "name": "startRouteGuidance",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/data/CombiBAPNaviDestination;)V",
+        "access": 1025
+      },
+      {
+        "name": "stopRouteGuidance",
+        "descriptor": "()V",
+        "access": 1025
+      },
+      {
+        "name": "repeatLastNavAnnouncement",
+        "descriptor": "()V",
+        "access": 1025
+      },
+      {
+        "name": "setVoiceGuidanceState",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "setActiveRGType",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "setMapColor",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "setMapType",
+        "descriptor": "(II)V",
+        "access": 1025
+      },
+      {
+        "name": "setMapView",
+        "descriptor": "(II)V",
+        "access": 1025
+      },
+      {
+        "name": "setMapVisibility",
+        "descriptor": "(ZZ)V",
+        "access": 1025
+      },
+      {
+        "name": "setMapOrientation",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "setMapScale",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "setMapScaleSetting",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "startPOISearch",
+        "descriptor": "(II)V",
+        "access": 1025
+      },
+      {
+        "name": "setMapPresentation",
+        "descriptor": "(ZZZ)V",
+        "access": 1025
+      },
+      {
+        "name": "resetSupportedMapViews",
+        "descriptor": "()V",
+        "access": 1025
+      },
+      {
+        "name": "setMapContentSettings",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/data/MapContentSettings;)V",
+        "access": 1025
+      }
+    ]
+  },
+  {
+    "jar": "app/files/eso/hmi/lsd/lsd.jar",
+    "major": 48,
+    "minor": 0,
+    "class": "de/audi/tghu/navi/app/cluster/IMapClusterService",
+    "access": 1537,
+    "fields": [],
+    "methods": [
+      {
+        "name": "setKombiMapSetupOption",
+        "descriptor": "(Lde/audi/tghu/navi/app/map/enums/ESetupOption;I)V",
+        "access": 1025
+      },
+      {
+        "name": "switchKombiMapToAShownContext",
+        "descriptor": "()V",
+        "access": 1025
+      },
+      {
+        "name": "switchKombiMapToHiddenContext",
+        "descriptor": "()V",
+        "access": 1025
+      },
+      {
+        "name": "changeMapContentListItemSelection",
+        "descriptor": "(Lde/audi/tghu/navi/app/map/mapcontent/MapContentList;)V",
+        "access": 1025
+      },
+      {
+        "name": "selectAllMapContents",
+        "descriptor": "(Z)V",
+        "access": 1025
+      },
+      {
+        "name": "changeMapContentStaticItemSelection",
+        "descriptor": "(Lde/audi/tghu/navi/app/map/enums/ESetupOption;)V",
+        "access": 1025
+      },
+      {
+        "name": "changeZoomLevel",
+        "descriptor": "(I)V",
+        "access": 1025
+      },
+      {
+        "name": "selectAllMapContents",
+        "descriptor": "(Lde/audi/tghu/navi/app/map/mapcontent/MapContentList;Z)V",
+        "access": 1025
+      },
+      {
+        "name": "notifyViewSizeChanged",
+        "descriptor": "(Z)V",
+        "access": 1025
+      },
+      {
+        "name": "suspendSetup",
+        "descriptor": "()V",
+        "access": 1025
+      },
+      {
+        "name": "resumeSetupAndStore",
+        "descriptor": "()V",
+        "access": 1025
+      }
+    ]
+  },
+  {
+    "jar": "app/files/eso/hmi/lsd/lsd.jar",
+    "major": 48,
+    "minor": 0,
+    "class": "de/audi/tghu/navi/app/map/osgi/wrapper/IMapClusterServiceWrapper",
+    "access": 33,
+    "fields": [],
+    "methods": [
+      {
+        "name": "<init>",
+        "descriptor": "(Lde/audi/tghu/navi/app/cluster/IMapClusterService;)V",
+        "access": 1
+      },
+      {
+        "name": "setKombiMapSetupOption",
+        "descriptor": "(Lde/audi/tghu/navi/app/map/enums/ESetupOption;I)V",
+        "access": 1
+      },
+      {
+        "name": "switchKombiMapToAShownContext",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "switchKombiMapToHiddenContext",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "changeMapContentListItemSelection",
+        "descriptor": "(Lde/audi/tghu/navi/app/map/mapcontent/MapContentList;)V",
+        "access": 1
+      },
+      {
+        "name": "selectAllMapContents",
+        "descriptor": "(Z)V",
+        "access": 1
+      },
+      {
+        "name": "changeMapContentStaticItemSelection",
+        "descriptor": "(Lde/audi/tghu/navi/app/map/enums/ESetupOption;)V",
+        "access": 1
+      },
+      {
+        "name": "changeZoomLevel",
+        "descriptor": "(I)V",
+        "access": 1
+      },
+      {
+        "name": "selectAllMapContents",
+        "descriptor": "(Lde/audi/tghu/navi/app/map/mapcontent/MapContentList;Z)V",
+        "access": 1
+      },
+      {
+        "name": "notifyViewSizeChanged",
+        "descriptor": "(Z)V",
+        "access": 1
+      },
+      {
+        "name": "suspendSetup",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "resumeSetupAndStore",
+        "descriptor": "()V",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "jar": "app/files/eso/hmi/lsd/lsd.jar",
+    "major": 48,
+    "minor": 0,
+    "class": "de/audi/tghu/navi/app/osgi/wrapper/CombiBAPServiceNaviListenerWrapper",
+    "access": 33,
+    "fields": [],
+    "methods": [
+      {
+        "name": "<init>",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/CombiBAPServiceNaviListener;)V",
+        "access": 1
+      },
+      {
+        "name": "startRouteGuidanceToHomeAddress",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "startRouteGuidanceToBusinessAddress",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "startRouteGuidance",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/data/CombiBAPNaviDestination;)V",
+        "access": 1
+      },
+      {
+        "name": "stopRouteGuidance",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "repeatLastNavAnnouncement",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "setVoiceGuidanceState",
+        "descriptor": "(I)V",
+        "access": 1
+      },
+      {
+        "name": "setActiveRGType",
+        "descriptor": "(I)V",
+        "access": 1
+      },
+      {
+        "name": "setMapColor",
+        "descriptor": "(I)V",
+        "access": 1
+      },
+      {
+        "name": "setMapType",
+        "descriptor": "(II)V",
+        "access": 1
+      },
+      {
+        "name": "setMapView",
+        "descriptor": "(II)V",
+        "access": 1
+      },
+      {
+        "name": "setMapVisibility",
+        "descriptor": "(ZZ)V",
+        "access": 1
+      },
+      {
+        "name": "setMapOrientation",
+        "descriptor": "(I)V",
+        "access": 1
+      },
+      {
+        "name": "setMapScale",
+        "descriptor": "(I)V",
+        "access": 1
+      },
+      {
+        "name": "setMapScaleSetting",
+        "descriptor": "(I)V",
+        "access": 1
+      },
+      {
+        "name": "startPOISearch",
+        "descriptor": "(II)V",
+        "access": 1
+      },
+      {
+        "name": "setMapPresentation",
+        "descriptor": "(ZZZ)V",
+        "access": 1
+      },
+      {
+        "name": "resetSupportedMapViews",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "setMapContentSettings",
+        "descriptor": "(Lde/audi/atip/interapp/combi/bap/navi/data/MapContentSettings;)V",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "jar": "app/files/eso/hmi/lsd/lsd.jar",
+    "major": 48,
+    "minor": 0,
+    "class": "de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2DSIManager",
+    "access": 33,
+    "fields": [
+      {
+        "name": "LOGCLASS",
+        "descriptor": "Ljava/lang/String;",
+        "access": 26
+      },
+      {
+        "name": "dsi",
+        "descriptor": "Lde/audi/app/terminalmode/dsi/androidauto2/DSIAndroidAuto2Safe;",
+        "access": 18
+      },
+      {
+        "name": "speechRequestHandler",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/ISpeechRequestHandler;",
+        "access": 18
+      },
+      {
+        "name": "transferObjectFactory",
+        "descriptor": "Lde/audi/app/terminalmode/dsi/androidauto2/IDSIAndroidAuto2TransferObjectFactory;",
+        "access": 18
+      },
+      {
+        "name": "configuration",
+        "descriptor": "Lde/audi/app/terminalmode/config/ITerminalModeConfiguration;",
+        "access": 18
+      },
+      {
+        "name": "phoneCallController",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/IPhoneCallController;",
+        "access": 18
+      },
+      {
+        "name": "requestHandler",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/androidauto2/IAndroidAuto2RequestHandler;",
+        "access": 18
+      },
+      {
+        "name": "lc",
+        "descriptor": "Lde/audi/atip/log/LogChannel;",
+        "access": 18
+      },
+      {
+        "name": "mediaState",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/AbstractDSISmartphoneManager$MediaChannelState;",
+        "access": 68
+      },
+      {
+        "name": "audioMananger",
+        "descriptor": "Lde/audi/app/terminalmode/audio/IAudioManager;",
+        "access": 18
+      },
+      {
+        "name": "stateHandler",
+        "descriptor": "Lde/audi/app/terminalmode/statemachine/IStateHandler;",
+        "access": 18
+      },
+      {
+        "name": "eventBus",
+        "descriptor": "Lde/audi/app/terminalmode/events/IEventBus;",
+        "access": 18
+      },
+      {
+        "name": "eventListener",
+        "descriptor": "Lde/audi/app/terminalmode/events/IEventListener;",
+        "access": 18
+      },
+      {
+        "name": "deviceManager",
+        "descriptor": "Lde/audi/app/terminalmode/device/IDeviceManager;",
+        "access": 18
+      },
+      {
+        "name": "smartphoneProperties",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/ISmartphoneProperties;",
+        "access": 18
+      },
+      {
+        "name": "subscriptionList",
+        "descriptor": "Lde/audi/app/terminalmode/util/SubscriptionList;",
+        "access": 18
+      },
+      {
+        "name": "androidAuto2AudioHandler",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/androidauto2/audio/IAndroidAuto2AudioHandler;",
+        "access": 18
+      },
+      {
+        "name": "currentState",
+        "descriptor": "Lde/audi/app/terminalmode/statemachine/ITMState;",
+        "access": 66
+      },
+      {
+        "name": "lastmodehandler",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/ILastmodehandler;",
+        "access": 2
+      },
+      {
+        "name": "class$de$audi$app$terminalmode$statemachine$IStateHandler",
+        "descriptor": "Ljava/lang/Class;",
+        "access": 8
+      }
+    ],
+    "methods": [
+      {
+        "name": "<init>",
+        "descriptor": "(Lde/audi/app/terminalmode/dsi/androidauto2/DSIAndroidAuto2Safe;Lde/audi/app/terminalmode/dsi/androidauto2/IDSIAndroidAuto2TransferObjectFactory;Lde/audi/app/terminalmode/config/ITerminalModeConfiguration;Lde/audi/app/terminalmode/smartphone/androidauto2/IAndroidAuto2RequestHandler;Lde/audi/app/terminalmode/SmartphoneType;Lde/audi/app/terminalmode/audio/IAudioManager;Lde/audi/atip/log/LogChannel;Lde/audi/app/terminalmode/IContext;Lde/audi/app/terminalmode/events/IEventBus;Lde/audi/app/terminalmode/device/IDeviceManager;Lde/audi/app/terminalmode/smartphone/ISmartphoneProperties;Lde/audi/app/terminalmode/smartphone/ILastmodehandler;Lde/audi/app/terminalmode/smartphone/androidauto2/audio/IAndroidAuto2AudioHandler;)V",
+        "access": 1
+      },
+      {
+        "name": "activate",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "deactivate",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "startService",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;)V",
+        "access": 1
+      },
+      {
+        "name": "updateActiveDeviceState",
+        "descriptor": "(Lde/audi/app/terminalmode/device/TMDevice;)V",
+        "access": 1
+      },
+      {
+        "name": "skip",
+        "descriptor": "(Z)V",
+        "access": 1
+      },
+      {
+        "name": "seek",
+        "descriptor": "(ZZ)V",
+        "access": 1
+      },
+      {
+        "name": "resume",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "pause",
+        "descriptor": "(Z)V",
+        "access": 1
+      },
+      {
+        "name": "skipButton",
+        "descriptor": "(ZZ)V",
+        "access": 1
+      },
+      {
+        "name": "responseUpdateMode",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;J)V",
+        "access": 1
+      },
+      {
+        "name": "requestModeChange",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;Ljava/lang/String;Lde/audi/app/terminalmode/smartphone/IDSISmartphoneManager$RequestModeChangeCallback;)V",
+        "access": 1
+      },
+      {
+        "name": "getSpeechRequestHandler",
+        "descriptor": "()Lde/audi/app/terminalmode/smartphone/ISpeechRequestHandler;",
+        "access": 1
+      },
+      {
+        "name": "getPhoneCallController",
+        "descriptor": "()Lde/audi/app/terminalmode/smartphone/IPhoneCallController;",
+        "access": 1
+      },
+      {
+        "name": "toggleButton",
+        "descriptor": "(I)V",
+        "access": 2
+      },
+      {
+        "name": "requestConstraintsChange",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;Lde/audi/app/terminalmode/statemachine/Resource;Z)V",
+        "access": 1
+      },
+      {
+        "name": "createAppState",
+        "descriptor": "(III)Lde/audi/app/terminalmode/dsi/IDSIAppState;",
+        "access": 4
+      },
+      {
+        "name": "getLastmodeHandler",
+        "descriptor": "()Lde/audi/app/terminalmode/smartphone/ILastmodehandler;",
+        "access": 1
+      },
+      {
+        "name": "setScreenHiddenByPopup",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "setScreenVisibleAfterPopup",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "class$",
+        "descriptor": "(Ljava/lang/String;)Ljava/lang/Class;",
+        "access": 8
+      },
+      {
+        "name": "access$100",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2DSIManager;)Lde/audi/app/terminalmode/statemachine/IStateHandler;",
+        "access": 8
+      },
+      {
+        "name": "access$200",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2DSIManager;)Lde/audi/app/terminalmode/dsi/androidauto2/DSIAndroidAuto2Safe;",
+        "access": 8
+      },
+      {
+        "name": "access$300",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2DSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$400",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2DSIManager;)Lde/audi/app/terminalmode/smartphone/AbstractDSISmartphoneManager$MediaChannelState;",
+        "access": 8
+      },
+      {
+        "name": "access$500",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2DSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$600",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2DSIManager;)Lde/audi/app/terminalmode/smartphone/androidauto2/IAndroidAuto2RequestHandler;",
+        "access": 8
+      },
+      {
+        "name": "access$700",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2DSIManager;)Lde/audi/app/terminalmode/audio/IAudioManager;",
+        "access": 8
+      },
+      {
+        "name": "access$800",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2DSIManager;)Lde/audi/app/terminalmode/events/IEventBus;",
+        "access": 8
+      }
+    ]
+  },
+  {
+    "jar": "app/files/eso/hmi/lsd/lsd.jar",
+    "major": 48,
+    "minor": 0,
+    "class": "de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager",
+    "access": 33,
+    "fields": [
+      {
+        "name": "LOGCLASS",
+        "descriptor": "Ljava/lang/String;",
+        "access": 26
+      },
+      {
+        "name": "carPlayDSILifecycleController",
+        "descriptor": "Lde/audi/app/terminalmode/dsi/carplay/CarplayDSILifecycleController;",
+        "access": 18
+      },
+      {
+        "name": "messageMap",
+        "descriptor": "Ljava/util/Map;",
+        "access": 18
+      },
+      {
+        "name": "currentActiveResource",
+        "descriptor": "Lde/audi/app/terminalmode/dsi/carplay/CarPlayResource;",
+        "access": 66
+      },
+      {
+        "name": "activeApplications",
+        "descriptor": "I",
+        "access": 66
+      },
+      {
+        "name": "currentState",
+        "descriptor": "Lde/audi/app/terminalmode/statemachine/ITMState;",
+        "access": 18
+      },
+      {
+        "name": "speechRequestHandler",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/ISpeechRequestHandler;",
+        "access": 18
+      },
+      {
+        "name": "phoneCallController",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/IPhoneCallController;",
+        "access": 18
+      },
+      {
+        "name": "carPlayDSIController",
+        "descriptor": "Lde/audi/app/terminalmode/dsi/carplay/ICarplayDSIController;",
+        "access": 18
+      },
+      {
+        "name": "stateHandler",
+        "descriptor": "Lde/audi/app/terminalmode/statemachine/IStateHandler;",
+        "access": 18
+      },
+      {
+        "name": "carplaySmartphoneProperties",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/carplay/CarplaySmartphoneProperties;",
+        "access": 18
+      },
+      {
+        "name": "waitForAudioType",
+        "descriptor": "Z",
+        "access": 66
+      },
+      {
+        "name": "audiomanager",
+        "descriptor": "Lde/audi/app/terminalmode/audio/IAudioManager;",
+        "access": 18
+      },
+      {
+        "name": "smartphoneProperties",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/ISmartphoneProperties;",
+        "access": 18
+      },
+      {
+        "name": "rvcSubscription",
+        "descriptor": "Lde/audi/atip/utils/reactive/observables/Subscription;",
+        "access": 66
+      },
+      {
+        "name": "lastmodehandler",
+        "descriptor": "Lde/audi/app/terminalmode/smartphone/ILastmodehandler;",
+        "access": 18
+      },
+      {
+        "name": "screenConnectedProvider",
+        "descriptor": "Lde/audi/app/terminalmode/ISPIScreenConnectedProvider;",
+        "access": 18
+      },
+      {
+        "name": "configuration",
+        "descriptor": "Lde/audi/app/terminalmode/config/ITerminalModeConfiguration;",
+        "access": 18
+      },
+      {
+        "name": "screenHiddenByPopup",
+        "descriptor": "Z",
+        "access": 66
+      },
+      {
+        "name": "MUScreenBorrowRequestSend",
+        "descriptor": "Z",
+        "access": 66
+      },
+      {
+        "name": "screenVisibleAfterPoup",
+        "descriptor": "Z",
+        "access": 66
+      },
+      {
+        "name": "screenLastModeSentWithStartService",
+        "descriptor": "Z",
+        "access": 66
+      },
+      {
+        "name": "sdsActive",
+        "descriptor": "Lde/audi/atip/utils/reactive/bindings/SPIBoolean;",
+        "access": 66
+      },
+      {
+        "name": "ttsHandler",
+        "descriptor": "Lde/audi/app/terminalmode/TMTTSHandler;",
+        "access": 18
+      },
+      {
+        "name": "DIAG_UPDATE_TEXTINPUT",
+        "descriptor": "Ljava/lang/String;",
+        "access": 18
+      }
+    ],
+    "methods": [
+      {
+        "name": "<init>",
+        "descriptor": "(Lde/audi/app/terminalmode/IContext;Lde/audi/app/terminalmode/dsi/carplay/CarplayDSILifecycleController;Lde/audi/app/terminalmode/statemachine/IStateHandler;Lde/audi/app/terminalmode/smartphone/carplay/CarplaySmartphoneProperties;Lde/audi/app/terminalmode/audio/IAudioManager;Lde/audi/app/terminalmode/smartphone/ISmartphoneProperties;Lde/audi/app/terminalmode/smartphone/ILastmodehandler;Lde/audi/app/terminalmode/ISPIScreenConnectedProvider;Lde/audi/app/terminalmode/config/ITerminalModeConfiguration;Lde/audi/app/terminalmode/TMTTSHandler;)V",
+        "access": 1
+      },
+      {
+        "name": "init",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "deinit",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "updateTMStateWithAudioMediaState",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ResourceState;)V",
+        "access": 2
+      },
+      {
+        "name": "activate",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "addRequestModeChanges",
+        "descriptor": "(Lde/audi/atip/utils/generics/GMap;)V",
+        "access": 2
+      },
+      {
+        "name": "deactivate",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "startService",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;)V",
+        "access": 1
+      },
+      {
+        "name": "responseUpdateMode",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;J)V",
+        "access": 1
+      },
+      {
+        "name": "requestModeChange",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;Ljava/lang/String;Lde/audi/app/terminalmode/smartphone/IDSISmartphoneManager$RequestModeChangeCallback;)V",
+        "access": 1
+      },
+      {
+        "name": "requestConstraintsChange",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;Lde/audi/app/terminalmode/statemachine/Resource;Z)V",
+        "access": 1
+      },
+      {
+        "name": "getResourcesForContraintsChange",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/Resource;Z)[Lde/audi/app/terminalmode/dsi/IDSIResource;",
+        "access": 2
+      },
+      {
+        "name": "filterAudioResources",
+        "descriptor": "([Lde/audi/app/terminalmode/dsi/IDSIResource;)[Lde/audi/app/terminalmode/dsi/IDSIResource;",
+        "access": 2
+      },
+      {
+        "name": "filterAudioResources",
+        "descriptor": "([Lde/audi/app/terminalmode/dsi/IDSIResource;Z)[Lde/audi/app/terminalmode/dsi/IDSIResource;",
+        "access": 2
+      },
+      {
+        "name": "getResources",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;Z)[Lde/audi/app/terminalmode/dsi/IDSIResource;",
+        "access": 2
+      },
+      {
+        "name": "requestUI",
+        "descriptor": "(Lde/audi/app/terminalmode/dsi/carplay/ScreenId;)V",
+        "access": 2
+      },
+      {
+        "name": "createAppState",
+        "descriptor": "(III)Lde/audi/app/terminalmode/dsi/IDSIAppState;",
+        "access": 4
+      },
+      {
+        "name": "createResource",
+        "descriptor": "(IIZ)Lde/audi/app/terminalmode/dsi/IDSIResource;",
+        "access": 2
+      },
+      {
+        "name": "getActiveApplications",
+        "descriptor": "()I",
+        "access": 2
+      },
+      {
+        "name": "updateActiveApplications",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;)V",
+        "access": 2
+      },
+      {
+        "name": "updateMode",
+        "descriptor": "([Lde/audi/app/terminalmode/dsi/IAppState;[Lde/audi/app/terminalmode/dsi/IResource;)V",
+        "access": 1
+      },
+      {
+        "name": "updateTextInputState",
+        "descriptor": "(Z)V",
+        "access": 1
+      },
+      {
+        "name": "duckAudio",
+        "descriptor": "(ID)V",
+        "access": 1
+      },
+      {
+        "name": "unduckAudio",
+        "descriptor": "(I)V",
+        "access": 1
+      },
+      {
+        "name": "updateMainAudioType",
+        "descriptor": "(Lde/audi/app/terminalmode/dsi/carplay/MainAudioTypeUpdate;)V",
+        "access": 1
+      },
+      {
+        "name": "updateMode",
+        "descriptor": "(J[Lde/audi/app/terminalmode/dsi/IAppState;[Lde/audi/app/terminalmode/dsi/IResource;)V",
+        "access": 1
+      },
+      {
+        "name": "getCurrentCommand",
+        "descriptor": "()Lde/audi/app/terminalmode/statemachine/commands/AbstractCommand;",
+        "access": 2
+      },
+      {
+        "name": "seek",
+        "descriptor": "(ZZ)V",
+        "access": 1
+      },
+      {
+        "name": "skip",
+        "descriptor": "(Z)V",
+        "access": 1
+      },
+      {
+        "name": "skipButton",
+        "descriptor": "(ZZ)V",
+        "access": 1
+      },
+      {
+        "name": "resume",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "pause",
+        "descriptor": "(Z)V",
+        "access": 1
+      },
+      {
+        "name": "oemAppSelected",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "updateState",
+        "descriptor": "(Lde/audi/app/terminalmode/statemachine/ITMState;)V",
+        "access": 1
+      },
+      {
+        "name": "getDiagKey",
+        "descriptor": "()Ljava/lang/String;",
+        "access": 1
+      },
+      {
+        "name": "getDiagValue",
+        "descriptor": "()Ljava/lang/String;",
+        "access": 1
+      },
+      {
+        "name": "getDiagKeys",
+        "descriptor": "()[Ljava/lang/String;",
+        "access": 1
+      },
+      {
+        "name": "executeDiagCommand",
+        "descriptor": "(Ljava/lang/String;[Ljava/lang/String;)V",
+        "access": 1
+      },
+      {
+        "name": "requestNightMode",
+        "descriptor": "(Z)V",
+        "access": 1
+      },
+      {
+        "name": "getSpeechRequestHandler",
+        "descriptor": "()Lde/audi/app/terminalmode/smartphone/ISpeechRequestHandler;",
+        "access": 1
+      },
+      {
+        "name": "getPhoneCallController",
+        "descriptor": "()Lde/audi/app/terminalmode/smartphone/IPhoneCallController;",
+        "access": 1
+      },
+      {
+        "name": "getLastmodeHandler",
+        "descriptor": "()Lde/audi/app/terminalmode/smartphone/ILastmodehandler;",
+        "access": 1
+      },
+      {
+        "name": "screenChangeAction",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "setScreenHiddenByPopup",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "setScreenVisibleAfterPopup",
+        "descriptor": "()V",
+        "access": 1
+      },
+      {
+        "name": "access$000",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/dsi/carplay/ICarplayDSIController;",
+        "access": 8
+      },
+      {
+        "name": "access$100",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$276",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;I)I",
+        "access": 8
+      },
+      {
+        "name": "access$300",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Z",
+        "access": 8
+      },
+      {
+        "name": "access$400",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$502",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;Z)Z",
+        "access": 8
+      },
+      {
+        "name": "access$302",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;Z)Z",
+        "access": 8
+      },
+      {
+        "name": "access$272",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;I)I",
+        "access": 8
+      },
+      {
+        "name": "access$600",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$702",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;Lde/audi/atip/utils/reactive/bindings/SPIBoolean;)Lde/audi/atip/utils/reactive/bindings/SPIBoolean;",
+        "access": 8
+      },
+      {
+        "name": "access$800",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/smartphone/carplay/CarplaySmartphoneProperties;",
+        "access": 8
+      },
+      {
+        "name": "access$700",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/utils/reactive/bindings/SPIBoolean;",
+        "access": 8
+      },
+      {
+        "name": "access$900",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$1000",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$1100",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$1200",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/statemachine/IStateHandler;",
+        "access": 8
+      },
+      {
+        "name": "access$1400",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;Lde/audi/app/terminalmode/statemachine/ResourceState;)V",
+        "access": 8
+      },
+      {
+        "name": "access$1500",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$1600",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$1700",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$1800",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$1900",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$2100",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$2200",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$2300",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$2500",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$2600",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$2700",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$2800",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$2900",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$3100",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$3200",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$3300",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$3500",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$500",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Z",
+        "access": 8
+      },
+      {
+        "name": "access$3600",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/ISPIScreenConnectedProvider;",
+        "access": 8
+      },
+      {
+        "name": "access$3700",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Z",
+        "access": 8
+      },
+      {
+        "name": "access$3800",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$3900",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$4000",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$4100",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$4200",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$3702",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;Z)Z",
+        "access": 8
+      },
+      {
+        "name": "access$4300",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$4400",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$4500",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/statemachine/ITMState;",
+        "access": 8
+      },
+      {
+        "name": "access$4600",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$4700",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$4800",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$4900",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$5000",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$5100",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$5200",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$5300",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$5400",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$5600",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/smartphone/ISmartphoneProperties;",
+        "access": 8
+      },
+      {
+        "name": "access$5700",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$5800",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$5900",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$6000",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$6100",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/atip/log/LogChannel;",
+        "access": 8
+      },
+      {
+        "name": "access$6200",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Lde/audi/app/terminalmode/IContext;",
+        "access": 8
+      },
+      {
+        "name": "access$6300",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;Lde/audi/app/terminalmode/statemachine/ITMState;)V",
+        "access": 8
+      },
+      {
+        "name": "access$6400",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;Lde/audi/app/terminalmode/statemachine/ITMState;Z)[Lde/audi/app/terminalmode/dsi/IDSIResource;",
+        "access": 8
+      },
+      {
+        "name": "access$6500",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;[Lde/audi/app/terminalmode/dsi/IDSIResource;Z)[Lde/audi/app/terminalmode/dsi/IDSIResource;",
+        "access": 8
+      },
+      {
+        "name": "access$6600",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;Lde/audi/app/terminalmode/dsi/carplay/ScreenId;)V",
+        "access": 8
+      },
+      {
+        "name": "access$6702",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;Z)Z",
+        "access": 8
+      },
+      {
+        "name": "access$6800",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;[Lde/audi/app/terminalmode/dsi/IDSIResource;)[Lde/audi/app/terminalmode/dsi/IDSIResource;",
+        "access": 8
+      },
+      {
+        "name": "access$6900",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;)Z",
+        "access": 8
+      },
+      {
+        "name": "access$6902",
+        "descriptor": "(Lde/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager;Z)Z",
+        "access": 8
+      }
+    ]
+  }
+]

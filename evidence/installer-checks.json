@@ -1,0 +1,200 @@
+[
+  {
+    "installer": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/1/installer.txt",
+    "source": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/1/alas6a-w_rev01.002_arev01.000.61.usf",
+    "blocks": 109,
+    "expected_blocks": 109,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/2/installer.txt",
+    "source": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/2/alas6a-e_rev01.002_arev01.000.68.usf",
+    "blocks": 109,
+    "expected_blocks": 109,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/3/installer.txt",
+    "source": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/3/alas6a-us_rev01.003_arev01.000.67.usf",
+    "blocks": 108,
+    "expected_blocks": 108,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/4/installer.txt",
+    "source": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/4/alas6a-cn_rev01.002_arev01.000.68.usf",
+    "blocks": 109,
+    "expected_blocks": 109,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/5/installer.txt",
+    "source": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/5/alas6a-j_rev01.002_arev01.000.16.usf",
+    "blocks": 108,
+    "expected_blocks": 108,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/6/installer.txt",
+    "source": "Data/ALAS6A.application_CLU28_MMX2P_AU_ER_G35_011PROD/6/alas6a-k_rev01.002_arev01.000.26.usf",
+    "blocks": 108,
+    "expected_blocks": 108,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/1/installer.txt",
+    "source": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/1/alas6a-w_provider_config_2018062801.usf",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/2/installer.txt",
+    "source": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/2/alas6a-e_provider_config_2018101201.usf",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/3/installer.txt",
+    "source": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/3/alas6a-us_provider_config_2018101101.usf",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/4/installer.txt",
+    "source": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/4/alas6a-cn_provider_config_2018101201.usf",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/5/installer.txt",
+    "source": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/5/alas6a-j_provider_config_2017031001.usf",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/6/installer.txt",
+    "source": "Data/ALAS6A.provider_config_CLU28_MMX2P_AU_ER_G35_011PROD/6/alas6a-k_provider_config_2017060901.usf",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/Bose6416A.BTLDR_20181113-1135/0/installer.txt",
+    "source": "Data/Bose6416A.BTLDR_20181113-1135/0/6416A_106700_MIB2_BTLDR.bin",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/Bose6416A.DSP_20181113-1135/0/installer.txt",
+    "source": "Data/Bose6416A.DSP_20181113-1135/0/6416A_106700_MIB2_DSP.bin",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/Bose6416A.FDB_20181113-1135/0/installer.txt",
+    "source": "Data/Bose6416A.FDB_20181113-1135/0/6416A_106700_MIB2_FDB.bin",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/Bose6416A.INIC-FW_20181113-1135/0/installer.txt",
+    "source": "Data/Bose6416A.INIC-FW_20181113-1135/0/6416A_106700_MIB2_INIC_FW.bin",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/Bose6416A.MAIN_20181113-1135/0/installer.txt",
+    "source": "Data/Bose6416A.MAIN_20181113-1135/0/6416A_106700_MIB2_MAIN.bin",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/Bose6416A.VDB_20181113-1135/0/installer.txt",
+    "source": "Data/Bose6416A.VDB_20181113-1135/0/6416A_106700_MIB2_VDB.bin",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/MMX2P.app_CLU28_MMX2P_AU_ER_G35_011PROD/20/installer.txt",
+    "source": "Data/MMX2P.app_CLU28_MMX2P_AU_ER_G35_011PROD/20/app.img",
+    "blocks": 4096,
+    "expected_blocks": 4096,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/MMX2P.efs-persist_CLU28_MMX2P_AU_ER_G35_011PROD/20/installer.txt",
+    "source": "Data/MMX2P.efs-persist_CLU28_MMX2P_AU_ER_G35_011PROD/20/efs-persist.img",
+    "blocks": 16,
+    "expected_blocks": 16,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/MMX2P.efs-system_CLU28_MMX2P_AU_ER_G35_011PROD/20/installer.txt",
+    "source": "Data/MMX2P.efs-system_CLU28_MMX2P_AU_ER_G35_011PROD/20/efs-system.img",
+    "blocks": 4,
+    "expected_blocks": 4,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  },
+  {
+    "installer": "Data/MediaConnector_Audi.application_2018122-0114/8/installer.txt",
+    "source": "Data/MediaConnector_Audi.application_2018122-0114/8/firmware-1_3_3.dfu",
+    "blocks": 1,
+    "expected_blocks": 1,
+    "size_matches": true,
+    "status": "pass",
+    "mismatched_blocks": []
+  }
+]

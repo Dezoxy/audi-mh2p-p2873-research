@@ -1,0 +1,8 @@
+{
+  "application_image_sha256_after_extraction": "b0b08b088be1d3fea2e0f3569d7896e150ceb6f4d446c42e8b3509095521e8fc",
+  "matches_initial_inventory": true,
+  "upstream": {
+    "mh2p-cluster": "a37c917c1b1479e11684e158efc0e1be3c07faa7",
+    "dissect.qnxfs": "b3a0f3e2be75e75418e99453a72cb11c43ca3f00"
+  }
+}

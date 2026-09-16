@@ -1,0 +1,5 @@
+#!/bin/ksh
+# Wrapper installed at /mnt/app/eso/bin/apps/dio_manager; the factory binary is at dio_manager.real.
+preload=/mnt/app/eso/bin/apps/cluster/dio_cluster.so
+[[ -f "$preload" ]] && export LD_PRELOAD=$preload
+exec /mnt/app/eso/bin/apps/dio_manager.real "$@"

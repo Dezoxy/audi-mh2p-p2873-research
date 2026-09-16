@@ -1,0 +1,16 @@
+{
+  "original_package_inventory_unchanged": true,
+  "full_container_size": 71371264,
+  "full_container_sha256": "38632394f33ec8c4788d126671444c1ea350fac03cf0dc30308c6eb5e4af2363",
+  "flash_prefix_size": 32505856,
+  "flash_prefix_matches": true,
+  "checksum_records": 2960,
+  "unique_checked_sources": 2098,
+  "source_revisions": {
+    "qnx_dumpers": "68424a67efbcc0ff0f63e45223a530a0f3bde3fe",
+    "dumpifs": "bb77c71bae3ebb54b8b7469ac810c890530f3213",
+    "dissect.qnxfs": "b3a0f3e2be75e75418e99453a72cb11c43ca3f00",
+    "mh2p-cluster": "a37c917c1b1479e11684e158efc0e1be3c07faa7",
+    "qnxmount": "0379c064975d5bbe3595ac7e3d149ea789406794"
+  }
+}

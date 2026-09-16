@@ -1,0 +1,8735 @@
+[
+  {
+    "path": "app/files/armle/lib/libnvmu.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 73
+  },
+  {
+    "path": "app/files/armle/lib/libnvparser.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm.so",
+      "libnvos.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 8
+  },
+  {
+    "path": "app/files/armle/lib/libnvspislave.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "app/files/armle/lib/libnvtsclk.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvos.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "app/files/armle/lib/libnvtsmux.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvtsclk.so",
+      "libnvos.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 7
+  },
+  {
+    "path": "app/files/armle/lib/libnvvsenc.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvos.so",
+      "libnvmedia.so",
+      "libnvtsclk.so",
+      "libnvtsmux.so",
+      "libnvmu.so",
+      "libEGL.so.1",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 4
+  },
+  {
+    "path": "app/files/armle/sbin/devm-nvavp",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm.so",
+      "libnvrm_graphics.so",
+      "libnvos.so",
+      "libnvclockapi.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 22
+  },
+  {
+    "path": "app/files/armle/sbin/nvaudio_ctrl",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libasound.so.2",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 33
+  },
+  {
+    "path": "app/files/armle/usr/bin/env",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 15
+  },
+  {
+    "path": "app/files/armle/usr/lib/cinemo/libNmeVideoNvMedia.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libNmeBaseClasses.so",
+      "libnvmedia.so",
+      "libm.so.2",
+      "libcrypto.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 22
+  },
+  {
+    "path": "app/files/armle/usr/lib/libOpenVG.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 105
+  },
+  {
+    "path": "app/files/armle/usr/lib/libOpenVGU.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libOpenVG.so.1",
+      "libc.so.3"
+    ],
+    "export_count": 27
+  },
+  {
+    "path": "app/files/armle/usr/lib/libiconv.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 31
+  },
+  {
+    "path": "app/files/eso/bin/apps/dio_manager",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libairplay.so",
+      "libNmeSDK.so",
+      "libpps.so.1",
+      "libusbdi.so.2",
+      "libcomm.so",
+      "libiplcommon.so",
+      "libosal.so",
+      "libutil.so",
+      "libdsicommon.so",
+      "libair.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libesoiap2.so",
+      "libbacktrace.so.1",
+      "libasound.so.2",
+      "libopus.so",
+      "libnvmedia.so",
+      "libnvparser.so",
+      "libdisplayinit.so",
+      "libscreen.so.1",
+      "libdns_sd.so.1",
+      "libnbutil.so.1",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 820
+  },
+  {
+    "path": "app/files/eso/bin/apps/gal",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libiplcommon.so",
+      "libosal.so",
+      "libutil.so",
+      "libdsicommon.so",
+      "libservmngt.so",
+      "libdisplayinit.so",
+      "libprotobuf3full.so",
+      "libssl.so.2",
+      "libcrypto.so.2",
+      "libnvmedia.so",
+      "libnvparser.so",
+      "libscreen.so.1",
+      "libasound.so.2",
+      "libNmeSDK.so",
+      "libusbdi.so.2",
+      "libautoreceiver.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 1274
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasi_dsi_spy_carecoproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasi_dsi_spy_carkombiproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 23
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasi_dsi_spy_cartimeunitslanguageproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasi_dsi_spy_carvehiclestatesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasi_dsi_spy_generalvehiclestatesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasi_dsi_spy_navigationproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasi_dsi_spy_navproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 20
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasi_dsi_spy_networkingproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxContentDetectorproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDVDCMostproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagBluetoothTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagCommonproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagConfigproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagDisplayManagerTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagFecManagerTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagGPSTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagHidControllerTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagMMX2RCCproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagMediaTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagNavigationAWTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagNavigationTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagOlsTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagSpeechTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagSwdlTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagTelephoneTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagTemperatureMonitorproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxDiagWlanTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxFecConfigproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxHDCPproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxLauncherControlproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxLogTransferControllerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxLogTransferTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxLogTransferproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxProtobufMessageEncoderproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxRUDownloadHandlerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxRemKeypanelMMXproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxSRMExchangeproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxSpeechRecInterAppproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxSpeechTranscriptionServiceproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxUpdateManagerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxUserDataTransferproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxVersionInfoproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxVersionManagerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxaddressbookhwrproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxaddressbookproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxaddressbookspeechproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxaddressbookvcardexchangeproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxasissecontrolproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxaudiomgmtproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxaudioproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxbinarydiffpatchproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxbusdataproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxcarsensordata2proxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxcarstatisticsproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxcdpubproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_bluetooth_a2dpproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_bluetooth_leproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_bluetooth_mediaproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_bluetoothproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_contactsproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_esimproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_headsetproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_launcherproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_socksproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_telephone_remotecontrolproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_trafficproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxconnectivity_upnpproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxcoreserviceproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxdsrcipconnectionproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxdsssclusterwarningproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxdtcpkeyexchangeproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxecallnavigationproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxesoposproviderfullproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxesopubproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxexlapgeopositionproviderproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxfecproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxfilebrowserproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxfmvicsproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhidproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhistorysyncproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-boardbookproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-fsencryptproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-installerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-medialauncherproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-mediaproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-navdbproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-organizerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-rdiproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-sdcardproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-speechproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhoncho-tracingproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhonchoproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhstial_messagingproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxhstialproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 20
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxiap2connectionproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 42
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxievresourcelocatorproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmximageserverproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmapmatchedpositionproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmapregiondataproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmediaapplicationproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmediadecodercontrolproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmediaejecthandlerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmediahdcpcontrolproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmediametadatapushproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmediaonlineproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmediaspeechproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmediastreamproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmediaupdatecontrolproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmmxfilestorageproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxmulticlientrouteproviderproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxnaviconproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxnavigationvdeproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxnavstyledbproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxnetworkingproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxoauthproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxonlinenavextproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxonlinenavintproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxphonebookimportproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxphoneproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxpicturestoreproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxpositioncacheproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxpredictivenavproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxpsd2proxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxpsdproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxradiostationlogoserverproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxrdvdataproviderproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxrdvinterfaceproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxrdvmapviewerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxrdvtypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxrudiserviceproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxsdisComponentProtectionproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxsdisConfigProviderproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxsdis_mediaproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxsearchdataproviderproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxsmartphone_bluetoothproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxsmartphoneappproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxsmartphonemediaproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 23
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxsocksproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxspeechttsproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxspeechunittestproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxswarmdataproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxswdl2tdeviceproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxswupfblockproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxswupinitproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxsxmPhoneticsproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxtelephoneproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxtpegviadmbtproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxtrafficinfoproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxtzroutedataproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxversionproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxvoiceencoderproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libasimmxwlanproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiaddressbookproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsialbumbrowserproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsialiboxproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiandroidauto2proxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiasiainputproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiasiatrafficinfomenuproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiaudioproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsibluetoothproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsibrowserproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicalendarproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 22
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarairconditionproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarauxheatercoolerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarcomfortproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicardriverassistanceproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicardrivingcharacteristicsproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 23
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarecoproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 25
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarhybridproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarkombiproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarlifeproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarlightproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarparkingsystemproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarplayproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarseatproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarstopwatchproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicartimeunitslanguageproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsicarvehiclestatesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiconnectedradioproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsidatacollectorproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsidiagnoseproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiexlapproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsifilebrowserproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsigeneralvehiclestatesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsigenericmetadataproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsihasproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiiconhandlingproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiinfotainmentrecorderproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiinputproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsikeypanelproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsikombisync2proxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsikomogfxstreamsinkproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsikomonavinfoproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsikomoviewproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsimapproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsimediaproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsimessagingproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsimirrorlinkproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsimobilityhorizonproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsimodelapiproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsinavfleetservicesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsinavigationproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsinavproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 24
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsinavservicesapiproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsinetworkingproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsionlineproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 28
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiorganizerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsipersistenceproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiphonemanagerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiphoneticproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsipicturehandlingproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsipicturestoreproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsipredictivenavigationproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiradiodataproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiradioproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsisearchproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsismartphoneintegrationproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsisoftwareupdateproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsispeechrecproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsisseproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsistartupproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiswapproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsisystemproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsitelephonengproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsitelephoneproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsitmcproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsitollcollectproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsitpegservicesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 20
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsitrafficregulationproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsittsproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiuotaproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiupnpproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiwaveplayerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsiwordsegproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libdsizfasproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "app/files/eso/lib/factories/libirpclogtransferproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libirpcswdlfblockproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/factories/libservmngtproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/libFor.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libair.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 863
+  },
+  {
+    "path": "app/files/eso/lib/libStrokeMW.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libicuuc.so.58",
+      "libicui18n.so.58",
+      "libicudata.so.58",
+      "libsqlite3_icu.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 866
+  },
+  {
+    "path": "app/files/eso/lib/libTracingAgentProvider.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "app/files/eso/lib/libair.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libimg.so.1",
+      "libexif.so",
+      "libiptcdata.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 116
+  },
+  {
+    "path": "app/files/eso/lib/libairplay.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libbacktrace.so.1",
+      "libasound.so.2",
+      "libopus.so",
+      "libnvmedia.so",
+      "libnvparser.so",
+      "libdisplayinit.so",
+      "libscreen.so.1",
+      "libdns_sd.so.1",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libnbutil.so.1",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 1914
+  },
+  {
+    "path": "app/files/eso/lib/libapr-1.so.4",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libsocket.so.3",
+      "libc.so.3"
+    ],
+    "export_count": 485
+  },
+  {
+    "path": "app/files/eso/lib/libautoreceiver.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 6994
+  },
+  {
+    "path": "app/files/eso/lib/libctracing_be_eso.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "app/files/eso/lib/libdisplayinit.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libm.so.2",
+      "libscreen.so.1",
+      "libGLESv2.so.2",
+      "libEGL.so.1",
+      "libnvwsi.so",
+      "libc.so.3"
+    ],
+    "export_count": 14
+  },
+  {
+    "path": "app/files/eso/lib/libeal.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libFor.so",
+      "libair.so",
+      "libEGL.so.1",
+      "libGLESv2.so.2",
+      "libscreen.so.1",
+      "libnvwsi.so",
+      "libipte.so",
+      "libdisplayinit.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libjnifw.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 5757
+  },
+  {
+    "path": "app/files/eso/lib/libealswig.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libEGL.so.1",
+      "libGLESv2.so.2",
+      "libeal.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libjnifw.so",
+      "libFor.so",
+      "libair.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 1318
+  },
+  {
+    "path": "app/files/eso/lib/libeso_collate.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libicuuc.so.58",
+      "libicui18n.so.58",
+      "libicudata.so.58",
+      "libc.so.3"
+    ],
+    "export_count": 7
+  },
+  {
+    "path": "app/files/eso/lib/libesoiap2.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libcomm.so",
+      "libiplcommon.so",
+      "libosal.so",
+      "libutil.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 1111
+  },
+  {
+    "path": "app/files/eso/lib/libexif.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 144
+  },
+  {
+    "path": "app/files/eso/lib/libgluegen-rt.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 7
+  },
+  {
+    "path": "app/files/eso/lib/libhaptic_bufferlib.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libipte.so",
+      "libcomm.so",
+      "libscreen.so.1",
+      "libGLESv2.so.2",
+      "libEGL.so.1",
+      "libnvwsi.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "app/files/eso/lib/libicudata.so.58",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "app/files/eso/lib/libicui18n.so.58",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libicuuc.so.58",
+      "libicudata.so.58",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9090
+  },
+  {
+    "path": "app/files/eso/lib/libicuio.so.58",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libicuuc.so.58",
+      "libicudata.so.58",
+      "libicui18n.so.58",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 208
+  },
+  {
+    "path": "app/files/eso/lib/libicutest.so.58",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libicutu.so.58",
+      "libicui18n.so.58",
+      "libicuuc.so.58",
+      "libicudata.so.58",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 308
+  },
+  {
+    "path": "app/files/eso/lib/libicutu.so.58",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libicui18n.so.58",
+      "libicuuc.so.58",
+      "libicudata.so.58",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 1209
+  },
+  {
+    "path": "app/files/eso/lib/libicuuc.so.58",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libicudata.so.58",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 4223
+  },
+  {
+    "path": "app/files/eso/lib/libimageserverlib.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libair.so",
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 94
+  },
+  {
+    "path": "app/files/eso/lib/libiptcdata.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 79
+  },
+  {
+    "path": "app/files/eso/lib/libipte.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libscreen.so.1",
+      "libGLESv2.so.2",
+      "libEGL.so.1",
+      "libnvwsi.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/libjmsg.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 66
+  },
+  {
+    "path": "app/files/eso/lib/libjni_fw_util_os.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "app/files/eso/lib/libjnifw.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 6
+  },
+  {
+    "path": "app/files/eso/lib/libjprof.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "app/files/eso/lib/libjresman.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "app/files/eso/lib/libkeydata.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "app/files/eso/lib/libmifinator.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libair.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 223
+  },
+  {
+    "path": "app/files/eso/lib/libopus.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 337
+  },
+  {
+    "path": "app/files/eso/lib/libprobesTraceMessageBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "app/files/eso/lib/libprotobuf3full.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3",
+      "libsocket.so.3",
+      "libcpp-ne.so.5"
+    ],
+    "export_count": 4291
+  },
+  {
+    "path": "app/files/eso/lib/libprotobuflite.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3",
+      "libsocket.so.3",
+      "libcpp-ne.so.5"
+    ],
+    "export_count": 362
+  },
+  {
+    "path": "app/files/eso/lib/libsdiscomp.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 431
+  },
+  {
+    "path": "app/files/eso/lib/libsdisconfigprovider.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 428
+  },
+  {
+    "path": "app/files/eso/lib/libsqlite3_icu.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libicui18n.so.58",
+      "libicuuc.so.58",
+      "libicudata.so.58",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 251
+  },
+  {
+    "path": "app/files/eso/lib/libsse.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 867
+  },
+  {
+    "path": "app/files/eso/lib/libstyledbservice.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libair.so",
+      "libjnifw.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 54
+  },
+  {
+    "path": "app/files/eso/lib/libtransportproxylib.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libutil.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 32
+  },
+  {
+    "path": "app/files/eso/lib/libtrufflesconnector.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libicuuc.so.58",
+      "libicui18n.so.58",
+      "libicudata.so.58",
+      "libcomm.so",
+      "libosal.so",
+      "libutil.so",
+      "libiplcommon.so",
+      "libservmngt.so",
+      "libdsicommon.so",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 651
+  },
+  {
+    "path": "app/files/eso/lib/libvom.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 2994
+  },
+  {
+    "path": "app/files/eso/lib/sqlite3",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libicui18n.so.58",
+      "libicuuc.so.58",
+      "libicudata.so.58",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libBinaryFileBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libTracingProtocol.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libtracing.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 91
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libCPUMeter.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 6
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libCommandShellBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libConsoleReader.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 4
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libEmergencyRecorderBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libTracingProtocol.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libtracing.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 23
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libEmergencyTriggerBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 7
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libFECPlugin.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libTracingAgentProvider.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 42
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libFileUploader.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 10
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libIRCBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libTracingAgentProvider.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libtracing.so",
+      "libdsicommon.so",
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 178
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libMLPFrontend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libPowerStateProvider.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libTracingAgentProvider.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 39
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libPresetActivator.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libTracingAgentProvider.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 42
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libPresetManager.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 45
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libProcessExecutor.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 12
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libRemoteListenBackendManager.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libTracingProtocol.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libtracing.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 72
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libRollingFileBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libTracingProtocol.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libtracing.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 180
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libSDCardHonchoClient.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libTracingAgentProvider.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 39
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libSDCardLogger.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libRollingFileBackend.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libTracingProtocol.so",
+      "libtracing.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 27
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libSlogReader.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 8
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libSocketCallbackBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/libTimeZoneProvider.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libTracingAgentProvider.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 39
+  },
+  {
+    "path": "app/files/eso/lib/tracingPlugins/librstpplugin.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 4
+  },
+  {
+    "path": "app/files/eso/lib/transports/libssl_transport.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libssl.so.2",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 29
+  },
+  {
+    "path": "stage2-extracted/image-00/files/lib/libhuapi.so.5",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsbgse56.so.0",
+      "libc.so.3"
+    ],
+    "export_count": 963
+  },
+  {
+    "path": "stage2-extracted/image-00/files/lib/libsbgse56.so.0.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 423
+  },
+  {
+    "path": "stage2-extracted/image-01/files/bin/getconf",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-01/files/bin/slay",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-01/files/lib/dll/lsm-pf-v6.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 440
+  },
+  {
+    "path": "stage2-extracted/image-01/files/lib/libcpp-ne.so.5",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 1559
+  },
+  {
+    "path": "stage2-extracted/image-01/files/lib/libsocket.so.3",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 317
+  },
+  {
+    "path": "stage2-extracted/image-01/files/sbin/io-pkt-v6-hc",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-01/files/usr/bin/rstp",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libc.so.3"
+    ],
+    "export_count": 1
+  },
+  {
+    "path": "stage2-extracted/image-01/files/usr/bin/runmode-mgr",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 77
+  },
+  {
+    "path": "stage2-extracted/image-01/files/usr/sbin/ifconfig",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/bin/cat",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/bin/chgrp",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/bin/ln",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvclockapi.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 32
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvclockapi_impl.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 38
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvdisp.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvmap.so",
+      "libnvrmos.so",
+      "libnvrm.so",
+      "libnvrm_graphics.so",
+      "libnvos.so",
+      "libnvclockapi.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 36
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvdvfsapi.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 6
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvhost.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvmap.so",
+      "libnvrmos.so",
+      "libnvrm.so",
+      "libnvclockapi.so",
+      "libnvdvfsapi.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 1
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvmap.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrmos.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 34
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvpmuapi.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 4
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvpmuapi_impl.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvsku.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 7
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvpowergateapi.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 2
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvrm.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvos.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 87
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvrm_graphics.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm.so",
+      "libnvos.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 58
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvrmos.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 15
+  },
+  {
+    "path": "stage2-extracted/image-02/files/lib/libnvthermmonapi.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/clock_init",
+    "class": 32,
+    "machine": "EM_ARM",
+    "error": "Cannot parse dynamic dependencies: AssertionError"
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/devg-nvclock",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/devg-nvdvfs",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvsku.so",
+      "libnvclockapi.so",
+      "libnvpmuapi.so",
+      "libnvthermmonapi.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/devg-nvpmu",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/devg-nvpowergate",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/devg-nvrm",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvdisp.so",
+      "libnvhost.so",
+      "libnvmap.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/devg-nvsys",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/devg-nvthermmon",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/devg-nvtmon",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvsku.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/display_init",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/fpdlink_init",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvsku.so",
+      "libsocket.so.3",
+      "libc.so.3"
+    ],
+    "export_count": 22
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/i2c-tegra2",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/mqueue",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/nvmemctrl",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 20
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/power_init",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvsku.so",
+      "libnvpmuapi.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/powergate_init",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvpowergateapi.so",
+      "libnvsku.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-02/files/sbin/pwr-nvtk1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-02/files/usr/bin/readbit",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "stage2-extracted/image-03/files/bin/sleep",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/bin/apps/displaymanager",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libscreen.so.1",
+      "libcapture.so.1",
+      "libGLESv2.so.2",
+      "libEGL.so.1",
+      "libnvwsi.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libimg.so.1",
+      "libtracing.so",
+      "libdsicommon.so",
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 462
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/bin/broker",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 37
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/bin/mapper",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 30
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxDiagArcSourceswitchTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxDiagAudioManagerTypesproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxDiagMMX2Appproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 46
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxGNSSproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxanalogvideoproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxdisplayproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxdmdtproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxhoncho-fileproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxonlineradioproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxonlinespeechcontrolproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxonlinespeechdialogproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxonlinespeechrecproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxonlinettsproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxoocappproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxoocdisplaymanagerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxoocpwrmanproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxoocsmproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxooctimesyncproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxoosdisproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxpapiloproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxparkingproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxpersistenceproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxsearchboardbookproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxvideoencodingproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxvideomanagementproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxvideoovermostmdproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxvideoovermostproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxvpsproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libasimmxwordsegproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libbrokerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libdsidisplaycontrollerproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libdsidisplaymanagementproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libdsipowermanagementproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libpersistenceproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/factories/libservmngtextensionsproxy.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libTracingProtocol.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 340
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libcomm.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libutil.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 679
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libdm_modAnim.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libm.so.2",
+      "libscreen.so.1",
+      "libGLESv2.so.2",
+      "libEGL.so.1",
+      "libnvwsi.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 216
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libdsicommon.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 20
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libiplcommon.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 385
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libosal.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 921
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libprobes.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 116
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libprobesTracingBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libtracing.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libservmngt.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcomm.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 198
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libtracing.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 362
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/libutil.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libosal.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 1610
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/tracingPlugins/libLazyRemoteConnectBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libTracingProtocol.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libtracing.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 4
+  },
+  {
+    "path": "stage2-extracted/image-03/files/eso/lib/tracingPlugins/libRemoteConnectBackend.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libTracingProtocol.so",
+      "libsocket.so.3",
+      "libm.so.2",
+      "libtracing.so",
+      "libutil.so",
+      "libosal.so",
+      "libiplcommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 6
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/dll/img_codec_png.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libpng14.so.0",
+      "libz.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/dll/screen-debug.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 75
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libEGL.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libm.so.2",
+      "libc.so.3",
+      "libnvidia-glsi.so.352.00",
+      "libnvrm.so",
+      "libnvos.so"
+    ],
+    "export_count": 35
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libGLESv2.so.2",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3",
+      "libnvrm.so"
+    ],
+    "export_count": 316
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libWFDnvidia.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libqnx-nvutil.so.1",
+      "libwfdcfg-nvidia-tk1.so",
+      "libnvrm.so",
+      "libnvrm_graphics.so",
+      "libnvdc.so",
+      "libnvrmos.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 59
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libcapture-board-tegra.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvsku.so",
+      "libcapture-decoder-generic.so",
+      "libcapture-soc-t124.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 12
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libcapture-decoder-generic.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvmedia_isc.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libcapture-soc-t124.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvmedia.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libgmem.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 35
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libhiddi.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 107
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libimg.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 90
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvavp.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 18
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvdc.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 42
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvddk_2d_v2.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm_graphics.so",
+      "libnvrm.so",
+      "libnvos.so",
+      "libnvddk_vic.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 26
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvddk_vic.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm.so",
+      "libnvrm_graphics.so",
+      "libnvos.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvidia-eglcore.so.352.00",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3",
+      "libnvidia-glsi.so.352.00",
+      "libnvidia-rmapi-tegra.so.352.00"
+    ],
+    "export_count": 1564
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvidia-glcore-cg.so.352.00",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 1
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvidia-glcore-ocg.so.352.00",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 1
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvidia-glsi.so.352.00",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3",
+      "libnvidia-rmapi-tegra.so.352.00",
+      "libnvwsi.so"
+    ],
+    "export_count": 22
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvidia-rmapi-tegra.so.352.00",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3",
+      "libnvrm_gpu.so"
+    ],
+    "export_count": 64
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvmedia.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm.so",
+      "libnvos.so",
+      "libnvtvmr.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 172
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvmedia_isc.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 30
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvrm_gpu.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm.so",
+      "libnvos.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 45
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvtvmr.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm.so",
+      "libnvrm_graphics.so",
+      "libnvos.so",
+      "libnvavp.so",
+      "libnvdc.so",
+      "libnvclockapi.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 122
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libnvwsi.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm.so",
+      "libnvos.so",
+      "libqnx-nvutil.so.1",
+      "libnvrm_gpu.so",
+      "libscreen.so.1",
+      "libc.so.3"
+    ],
+    "export_count": 12
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libqnx-nvutil.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvrm.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 8
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libslog2.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 13
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/libwfdcfg-nvidia-tk1.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvdc.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 11
+  },
+  {
+    "path": "stage2-extracted/image-03/files/lib/screen-nvidia.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libqnx-nvutil.so.1",
+      "libnvrm.so",
+      "libnvrm_graphics.so",
+      "libnvddk_vic.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 1
+  },
+  {
+    "path": "stage2-extracted/image-03/files/sbin/screen",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/bin/NadStarter",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 2
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/bin/ooc",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libosal.so",
+      "libiplcommon.so",
+      "libutil.so",
+      "libcomm.so",
+      "libdsicommon.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 432
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/bin/rccpersistencebackend",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libosal.so",
+      "libiplcommon.so",
+      "libutil.so",
+      "libcomm.so",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 224
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/bin/rstp",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libc.so.3"
+    ],
+    "export_count": 1
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/bin/sbc",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 1
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/lib/libWFD.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 77
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/lib/libcrypto.so.2",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libc.so.3"
+    ],
+    "export_count": 4342
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/lib/libpng14.so.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libz.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 334
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/lib/libpng16.so.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libz.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 408
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/lib/libscreen.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 224
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/lib/libssl.so.2",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcrypto.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 636
+  },
+  {
+    "path": "stage2-extracted/image-03/files/usr/sbin/enforcer",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/chkqnx6fs",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/chmod",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/chown",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/cp",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/date",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/dd",
+    "class": 32,
+    "machine": "EM_ARM",
+    "error": "Cannot parse dynamic dependencies: AssertionError"
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/df",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/dinit",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/fdisk",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/flashctl",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/head",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/hogs",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/if_up",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/login",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/ls",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/mkdir",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/mkqnx6fs",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/mv",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/out32",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/pidin",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/rm",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/slay",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/sloginfo",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/sync",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/sysctl",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/tail",
+    "class": 32,
+    "machine": "EM_ARM",
+    "error": "Cannot parse dynamic dependencies: AssertionError"
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/touch",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/umount",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/uname",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/usb",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/use",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/bin/vi",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/cam-cdrom.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcam.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 50
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/cam-optical.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcam.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 28
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/devnp-asix.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libusbdi.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 118
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/devnp-ecm.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libusbdi.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 64
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/devnp-ecmplus.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libusbdi.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 67
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/devnp-mib-mmx.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 46
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/devnp-qwdi-2.5_bcm4359-wapi.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libpci.so.1.2",
+      "libc.so.3"
+    ],
+    "export_count": 812
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/devnp-shim.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 71
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/devnp-smsc9500.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libusbdi.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 85
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/devu-ehci-arc.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 133
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/devu-tegra-xhci.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 176
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/fs-dos.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 169
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/fs-ext2.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 173
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/fs-mac.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 138
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/fs-nt.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 148
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/fs-qnx4.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 147
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/fs-udf.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 166
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_bkwd_compat.so.1.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libpci.so.1.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_cap-0x01.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 15
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_cap-0x04.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 15
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_cap-0x05.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_cap-0x07.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 14
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_cap-0x09-ffffffff.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 15
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_cap-0x0d.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 15
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_cap-0x10.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 15
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_cap-0x11.so.1.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_cap-0x12.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 15
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_cap-0x13.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 15
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_debug.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_hw-nv_tk1-vcm30-mib.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_server-buscfg-generic.so.1.2",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 76
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_slog.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pci_strings.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/dll/pci/pcie_xcap-0x0015.so.1.0",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/libnvmnand.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvdma32.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 28
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/libnvxhci.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvclockapi.so",
+      "libnvdma32.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 6
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/libpci.so.1.2",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 102
+  },
+  {
+    "path": "stage2-extracted/image-04/files/lib/libusbdi.so.2",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 167
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/brconfig",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/cartimeprovider",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libiplcommon.so",
+      "libosal.so",
+      "libutil.so",
+      "libcomm.so",
+      "libm.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 160
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/challenge",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libcrypto.so.2",
+      "libssl.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 10
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/collect_sysinfo",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 57
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/corechecker",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 34
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/cpumeter",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 6
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/devb-loopback",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/devb-ram",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/devb-umass",
+    "class": 32,
+    "machine": "EM_ARM",
+    "needed": [],
+    "error": "Cannot parse dynamic symbols: ELFError: Segment does not contain DT_SYMTAB."
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/devc-pty",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/devc-serusb",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/devf-generic-tegra2",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/devg-nvmclatency",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/dumper",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/dvfs_init",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvdvfsapi.so",
+      "libnvsku.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/floater",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/heartbeat",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/i2s_init",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvclockapi.so",
+      "libnvsku.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/io-audio",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/io-usb",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/jobctrl",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libsocket.so.3",
+      "libc.so.3"
+    ],
+    "export_count": 4
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/lanemux_pad_init",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/memusage",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/mmx-pcie-init-rcc2",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/mnand_chkeol",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvmnand.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/mnand_hs",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvmnand.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/mnand_rfsh",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvmnand.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 19
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/mnand_tlog",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/numbers",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 5
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/pci-server",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/pcie_init",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvclockapi.so",
+      "libnvsku.so",
+      "libm.so.2",
+      "libc.so.3",
+      "libpci.so.1.2"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/pfsn",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 4
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/procfsmon",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 4
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/ptm",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/slf",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 3
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/spi-master",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/tinit",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/tracelogger",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/usb_init",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libnvsku.so",
+      "libnvclockapi.so",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 17
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/usb_poll",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-04/files/sbin/usb_wpr",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 16
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/bin/autorunner",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 7
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/bin/cut",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/bin/filerotate",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 9
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/bin/find",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/bin/grep",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/bin/mkfifo",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/bin/printf",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/bin/sort",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/bin/tee",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/bin/thermctrl",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libosal.so",
+      "libiplcommon.so",
+      "libutil.so",
+      "libcomm.so",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 205
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/lib/libasound.so.2",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libpps.so.1",
+      "libm.so.2",
+      "libc.so.3"
+    ],
+    "export_count": 542
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/lib/libbacktrace.so.1",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 38
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/lib/libesocommon.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 97
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/lib/libesocommon_fw.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 51
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/sbin/dhcp.client",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/sbin/doas",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/sbin/mcd",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/sbin/netstat",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/sbin/sentinel",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libcrypto.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 118
+  },
+  {
+    "path": "stage2-extracted/image-04/files/usr/sbin/termdef",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [],
+    "export_count": 0
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/j9",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9vm23.so",
+      "libj9prt23.so",
+      "libm.so.2",
+      "libsocket.so.3",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libiverel23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 162
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9bcv23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 130
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9dbg23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 349
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9dyn23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 142
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9fdm23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 161
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9gc23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libj9hookable23.so",
+      "libc.so.3"
+    ],
+    "export_count": 1379
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9gcchk23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 256
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9hookable23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 21
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9jpi23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 78
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9mjit23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libj9hookable23.so",
+      "libc.so.3"
+    ],
+    "export_count": 409
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9mjitd23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libj9hookable23.so",
+      "libj9mjit23.so",
+      "libc.so.3"
+    ],
+    "export_count": 101
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9prt23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 280
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9thr23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 167
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9vm23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libj9hookable23.so",
+      "libj9prt23.so",
+      "libc.so.3"
+    ],
+    "export_count": 982
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9vrb23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 335
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libj9zlib23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 71
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libjavacrypto.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886594,
+    "needed": [
+      "libssl.so.2",
+      "libcpp-ne.so.5",
+      "libc.so.3"
+    ],
+    "export_count": 559
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libjclfoun11_23.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9zlib23.so",
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 968
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libjnichk.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libc.so.3"
+    ],
+    "export_count": 74
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libmcfobjectreader.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9zlib23.so",
+      "libc.so.3"
+    ],
+    "export_count": 47
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libnio.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 55
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libswap.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libc.so.3"
+    ],
+    "export_count": 26
+  },
+  {
+    "path": "stage2-extracted/image-05/files/ifs/jre/bin/libxip.so",
+    "class": 32,
+    "machine": "EM_ARM",
+    "flags": 83886082,
+    "needed": [
+      "libj9thr23.so",
+      "libiverel23.so",
+      "libc.so.3"
+    ],
+    "export_count": 79
+  }
+]

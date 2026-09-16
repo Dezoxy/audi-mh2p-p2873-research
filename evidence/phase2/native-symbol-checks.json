@@ -1,0 +1,781 @@
+[
+  {
+    "source": "cluster.c",
+    "line": 1417,
+    "symbol": "NvMediaDeviceCreate",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1418,
+    "symbol": "NvMediaDeviceDestroy",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1419,
+    "symbol": "NvMediaVideoDecoderCreateEx",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1420,
+    "symbol": "NvMediaVideoDecoderDestroy",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1421,
+    "symbol": "NvMediaVideoDecoderRender",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1422,
+    "symbol": "NvMediaVideoDecoderSetAttributes",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1423,
+    "symbol": "NvMediaVideoMixerCreate",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1424,
+    "symbol": "NvMediaVideoMixerDestroy",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1425,
+    "symbol": "NvMediaVideoMixerRenderSurface",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1426,
+    "symbol": "NvMediaVideoSurfaceCreate",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1427,
+    "symbol": "NvMediaVideoSurfaceDestroy",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1428,
+    "symbol": "NvMediaVideoSurfaceWaitForCompletion",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1429,
+    "symbol": "NvMediaVideoSurfaceLock",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1430,
+    "symbol": "NvMediaVideoSurfaceUnlock",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1431,
+    "symbol": "NvxScreenCreateNvMediaVideoSurfaceSibling",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1432,
+    "symbol": "NvMedia2DCreate",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1433,
+    "symbol": "NvMedia2DDestroy",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1434,
+    "symbol": "NvMedia2DBlit",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1435,
+    "symbol": "NvMedia2DBlitExt",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1436,
+    "symbol": "video_parser_create",
+    "providers": [
+      "app/files/armle/lib/libnvparser.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1437,
+    "symbol": "video_parser_set_attribute",
+    "providers": [
+      "app/files/armle/lib/libnvparser.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1438,
+    "symbol": "video_parser_parse",
+    "providers": [
+      "app/files/armle/lib/libnvparser.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1439,
+    "symbol": "video_parser_flush",
+    "providers": [
+      "app/files/armle/lib/libnvparser.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1440,
+    "symbol": "video_parser_destroy",
+    "providers": [
+      "app/files/armle/lib/libnvparser.so"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1539,
+    "symbol": "screen_create_window_type",
+    "providers": [
+      "stage2-extracted/image-03/files/usr/lib/libscreen.so.1"
+    ]
+  },
+  {
+    "source": "cluster.c",
+    "line": 1554,
+    "symbol": "screen_create_window_type",
+    "providers": [
+      "stage2-extracted/image-03/files/usr/lib/libscreen.so.1"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 654,
+    "symbol": "screen_read_window",
+    "providers": [
+      "stage2-extracted/image-03/files/usr/lib/libscreen.so.1"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 749,
+    "symbol": "screen_create_context",
+    "providers": [
+      "stage2-extracted/image-03/files/usr/lib/libscreen.so.1"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 773,
+    "symbol": "NvMediaVideoMixerRenderSurface",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 812,
+    "symbol": "screen_create_window_type",
+    "providers": [
+      "stage2-extracted/image-03/files/usr/lib/libscreen.so.1"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 842,
+    "symbol": "screen_set_window_property_cv",
+    "providers": [
+      "stage2-extracted/image-03/files/usr/lib/libscreen.so.1"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 853,
+    "symbol": "screen_manage_window",
+    "providers": [
+      "stage2-extracted/image-03/files/usr/lib/libscreen.so.1"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1228,
+    "symbol": "_ZN24NavigationStatusEndpoint29handleNavigationNextTurnEventERK23NavigationNextTurnEvent",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1231,
+    "symbol": "_ZN24NavigationStatusEndpoint16addDiscoveryInfoEP24ServiceDiscoveryResponse",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1234,
+    "symbol": "_ZN24NavigationStatusEndpoint5startEv",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1237,
+    "symbol": "_ZN24NavigationStatusEndpoint4stopEv",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1240,
+    "symbol": "_ZN24NavigationStatusEndpoint22handleNavigationStatusERK16NavigationStatus",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1243,
+    "symbol": "_ZN24NavigationStatusEndpoint29handleNavigationDistanceEventERK31NavigationNextTurnDistanceEvent",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1246,
+    "symbol": "_ZN13MessageRouter32populateServiceDiscoveryResponseEP24ServiceDiscoveryResponse",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1253,
+    "symbol": "_ZNK6google8protobuf11MessageLite16SerializeToArrayEPvi",
+    "providers": [
+      "app/files/eso/lib/libprotobuf3full.so",
+      "app/files/eso/lib/libprotobuflite.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1256,
+    "symbol": "_ZN6google8protobuf11MessageLite14ParseFromArrayEPKvi",
+    "providers": [
+      "app/files/eso/lib/libprotobuf3full.so",
+      "app/files/eso/lib/libprotobuflite.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1271,
+    "symbol": "_ZN27NavFocusRequestNotification27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1280,
+    "symbol": "_ZN23NavigationNextTurnEvent17kImageFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1283,
+    "symbol": "_ZN23NavigationNextTurnEvent16kRoadFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1286,
+    "symbol": "_ZN23NavigationNextTurnEvent20kTurnSideFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1289,
+    "symbol": "_ZN23NavigationNextTurnEvent17kEventFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1292,
+    "symbol": "_ZN23NavigationNextTurnEvent21kTurnAngleFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1295,
+    "symbol": "_ZN23NavigationNextTurnEvent22kTurnNumberFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1298,
+    "symbol": "_ZN24ServiceDiscoveryResponse20kServicesFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1301,
+    "symbol": "_ZN7Service35kNavigationStatusServiceFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1304,
+    "symbol": "_ZN23NavigationStatusService16kTypeFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1307,
+    "symbol": "_ZN23NavigationStatusService24kImageOptionsFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1310,
+    "symbol": "_ZN23NavigationStatusService29kMinimumIntervalMsFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1313,
+    "symbol": "_ZN36NavigationStatusService_ImageOptions17kWidthFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1316,
+    "symbol": "_ZN36NavigationStatusService_ImageOptions18kHeightFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1319,
+    "symbol": "_ZN36NavigationStatusService_ImageOptions27kColourDepthBitsFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1322,
+    "symbol": "_ZN16NavigationStatus18kStatusFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1325,
+    "symbol": "_ZN27NavFocusRequestNotification21kFocusTypeFieldNumberE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1331,
+    "symbol": "_ZNK24ServiceDiscoveryResponse24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1334,
+    "symbol": "_ZN6google8protobuf2io17CodedOutputStream8WriteRawEPKvi",
+    "providers": [
+      "app/files/eso/lib/libprotobuf3full.so",
+      "app/files/eso/lib/libprotobuflite.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1337,
+    "symbol": "_ZN13MessageRouter20handleChannelOpenReqEhRK18ChannelOpenRequest",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 1340,
+    "symbol": "SSL_write",
+    "providers": [
+      "stage2-extracted/image-03/files/usr/lib/libssl.so.2"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2360,
+    "symbol": "video_parser_create",
+    "providers": [
+      "app/files/armle/lib/libnvparser.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2361,
+    "symbol": "video_parser_set_attribute",
+    "providers": [
+      "app/files/armle/lib/libnvparser.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2362,
+    "symbol": "video_parser_parse",
+    "providers": [
+      "app/files/armle/lib/libnvparser.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2363,
+    "symbol": "video_parser_destroy",
+    "providers": [
+      "app/files/armle/lib/libnvparser.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2364,
+    "symbol": "NvMediaDeviceCreate",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2365,
+    "symbol": "NvMediaVideoDecoderCreateEx",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2366,
+    "symbol": "NvMediaVideoDecoderDestroy",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2367,
+    "symbol": "NvMediaVideoDecoderRender",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2368,
+    "symbol": "NvMediaVideoDecoderSetAttributes",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2369,
+    "symbol": "NvMediaVideoMixerCreate",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2370,
+    "symbol": "NvMediaVideoMixerDestroy",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2371,
+    "symbol": "NvMediaVideoMixerRenderSurface",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2372,
+    "symbol": "NvMediaVideoSurfaceCreate",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2373,
+    "symbol": "NvMediaVideoSurfaceDestroy",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2374,
+    "symbol": "NvMediaVideoSurfaceWaitForCompletion",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2375,
+    "symbol": "NvxScreenCreateNvMediaVideoSurfaceSibling",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2376,
+    "symbol": "NvMediaVideoSurfaceLock",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2377,
+    "symbol": "NvMediaVideoSurfaceUnlock",
+    "providers": [
+      "stage2-extracted/image-03/files/lib/libnvmedia.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 2722,
+    "symbol": "_ZN13MessageRouter13queueOutgoingEhPvj",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 3153,
+    "symbol": "_ZN13MessageRouter12routeMessageEhRK10shared_ptrI8IoBufferE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 3195,
+    "symbol": "_ZN10Controller12routeMessageEhtRK10shared_ptrI8IoBufferE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 3206,
+    "symbol": "_ZN13MediaSinkBase12routeMessageEhtRK10shared_ptrI8IoBufferE",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 3363,
+    "symbol": "_ZN13MessageRouter19sendChannelOpenRespEhi",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 3366,
+    "symbol": "_ZN14ChannelManager15registerChannelEha",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "gal_cluster.c",
+    "line": 3369,
+    "symbol": "_ZN13MessageRouter12setupMappingEhh",
+    "providers": [
+      "app/files/eso/lib/libautoreceiver.so"
+    ]
+  },
+  {
+    "source": "dio_manager_preload.c",
+    "line": 1014,
+    "symbol": "_ZN4iap219CIAP2ControlSession13deployMessageERKNS_30CIAP2ControlSessionMessageViewE",
+    "providers": [
+      "app/files/eso/lib/libesoiap2.so"
+    ]
+  },
+  {
+    "source": "dio_manager_preload.c",
+    "line": 1112,
+    "symbol": "_ZN4iap230CIAP2ControlSessionModuleIdent25identificationInformationERKNS_8messages14identification42CMessageParameterIdentificationInformationE",
+    "providers": [
+      "app/files/eso/lib/libesoiap2.so"
+    ]
+  },
+  {
+    "source": "dio_manager_preload.c",
+    "line": 1144,
+    "symbol": "_ZN4iap29CIAP2Link13sendToSessionERKNS_15CIAP2PacketViewE",
+    "providers": [
+      "app/files/eso/lib/libesoiap2.so"
+    ]
+  },
+  {
+    "source": "dio_manager_preload.c",
+    "line": 1229,
+    "symbol": "_ZN4iap230CIAP2ControlSessionModuleIdent7processERKNS_30CIAP2ControlSessionMessageViewE",
+    "providers": [
+      "app/files/eso/lib/libesoiap2.so"
+    ]
+  },
+  {
+    "source": "dio_manager_preload.c",
+    "line": 1268,
+    "symbol": "_ZN4iap230CIAP2ControlSessionMessageViewC1ESt22_Vector_const_iteratorISt11_Vector_valISt13_Simple_typesIhEEES6_",
+    "providers": [
+      "app/files/eso/lib/libesoiap2.so"
+    ]
+  },
+  {
+    "source": "dio_manager_preload.c",
+    "line": 1273,
+    "symbol": "_ZN4iap29CIAP2Link12deployPacketENS_11CIAP2PacketEh",
+    "providers": [
+      "app/files/eso/lib/libesoiap2.so"
+    ]
+  },
+  {
+    "source": "dio_manager_preload.c",
+    "line": 1275,
+    "symbol": "_ZN4iap211CIAP2PacketC1ERKSt6vectorIhSaIhEE",
+    "providers": [
+      "app/files/eso/lib/libesoiap2.so"
+    ]
+  },
+  {
+    "source": "dio_manager_preload.c",
+    "line": 1277,
+    "symbol": "_ZN4iap211CIAP2Packet12setSessionIdEh",
+    "providers": [
+      "app/files/eso/lib/libesoiap2.so"
+    ]
+  },
+  {
+    "source": "dio_manager_preload.c",
+    "line": 1279,
+    "symbol": "_ZN4iap211CIAP2Packet20updateHeaderChecksumEv",
+    "providers": [
+      "app/files/eso/lib/libesoiap2.so"
+    ]
+  },
+  {
+    "source": "dio_manager_preload.c",
+    "line": 1281,
+    "symbol": "_ZN4iap211CIAP2PacketD1Ev",
+    "providers": [
+      "app/files/eso/lib/libesoiap2.so"
+    ]
+  }
+]

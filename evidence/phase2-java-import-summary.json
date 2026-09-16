@@ -1,0 +1,25 @@
+{
+  "sources": 10,
+  "counts": {
+    "firmware_jar": 224,
+    "source": 2,
+    "not_found": 3
+  },
+  "missing": [
+    {
+      "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+      "import": "de.audi.app.car.adi.legacy.sportchrono.StorageMountHandler",
+      "status": "not_found"
+    },
+    {
+      "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterAAMirror.java",
+      "import": "de.esolutions.hmi.service.IWidgetContext",
+      "status": "not_found"
+    },
+    {
+      "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+      "import": "de.audi.app.car.adi.legacy.sportchrono.StorageMountHandler",
+      "status": "not_found"
+    }
+  ]
+}

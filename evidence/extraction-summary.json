@@ -1,0 +1,10 @@
+{
+  "entries": 12798,
+  "extracted": 402,
+  "superblock_offsets": [
+    8192,
+    2147414016
+  ],
+  "data_offset": 16384,
+  "block_size": 16384
+}

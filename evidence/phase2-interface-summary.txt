@@ -1,0 +1,5 @@
+ELF parse errors: ['stage2-extracted/image-02/files/sbin/clock_init', 'stage2-extracted/image-04/files/bin/dd', 'stage2-extracted/image-04/files/bin/tail', 'stage2-extracted/image-04/files/sbin/devb-umass']
+ELF files: 616 Validated JARs: 72 Java classes: 7
+cluster.c literal lookups found: 26 / 26
+dio_manager_preload.c literal lookups found: 10 / 10
+gal_cluster.c literal lookups found: 61 / 61

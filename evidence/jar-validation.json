@@ -1,0 +1,312 @@
+[
+  {
+    "path": "eso/bundles/OnlineCoreServiceAdapter.jar",
+    "entries": 112,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.carcoding_1.1.16.E20211206-0858.jar",
+    "entries": 16,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.certificateswapper_1.1.14.E20211206-0858.jar",
+    "entries": 21,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.crypto_1.1.5.E20211206-0858.jar",
+    "entries": 56,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.disclaimer_1.0.4.E20211206-0858.jar",
+    "entries": 8,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.event_1.1.2.E20211206-0858.jar",
+    "entries": 30,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.ext_1.1.10.E20211206-0858.jar",
+    "entries": 54,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.fsid_1.0.1.E20211206-0858.jar",
+    "entries": 18,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.gem_1.1.7.E20211206-0858.jar",
+    "entries": 50,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.jobs.external_1.1.9.E20211206-0858.jar",
+    "entries": 27,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.jobs_1.1.3.E20211206-0858.jar",
+    "entries": 68,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.lang_1.1.1.E20211206-0858.jar",
+    "entries": 25,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.log_1.1.3.E20211206-0858.jar",
+    "entries": 11,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.net_1.1.4.E20211206-0858.jar",
+    "entries": 74,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.persistence_1.1.24.E20211206-0858.jar",
+    "entries": 71,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.remgem_5.3.1.E20211206-0858.jar",
+    "entries": 546,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.runtime_1.1.23.E20211206-0858.jar",
+    "entries": 118,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.rup_1.2.7.E20211206-0858.jar",
+    "entries": 164,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.sdis_1.1.7.E20211206-0858.jar",
+    "entries": 26,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.sourceswitch_1.3.6.E20211206-0858.jar",
+    "entries": 387,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.task_1.1.13.E20211206-0858.jar",
+    "entries": 88,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.versioncollector_1.0.10.E20211206-0858.jar",
+    "entries": 33,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/arc.winstone_1.1.9.E20211206-0858.jar",
+    "entries": 110,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/ncfs.common_1.0.24.E20211206-0831.jar",
+    "entries": 82,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/ncfs.prodtracker_1.6.16.E20211206-0831.jar",
+    "entries": 12,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/ncfs.tracker.busdata_1.0.6.E20211206-0831.jar",
+    "entries": 16,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/ncfs.tracker.datacollector_1.0.1.E20211206-0831.jar",
+    "entries": 14,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/ncfs.tracker_2.1.2.E20211206-0831.jar",
+    "entries": 318,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/org.eclipse.paho.client.mqttv3.jar",
+    "entries": 144,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.core.diagnose_1.0.0.20211206-0827.jar",
+    "entries": 36,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.core.esim_1.0.0.20211206-0830.jar",
+    "entries": 33,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.core.proxy_1.0.0.20211206-0828.jar",
+    "entries": 76,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.core.registration_1.0.0.20211206-0828.jar",
+    "entries": 688,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.core.time_1.0.0.20211206-0827.jar",
+    "entries": 23,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.dsi.destimport_1.0.0.20211206-0829.jar",
+    "entries": 45,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.dsi.hybridradio_1.0.0.20211206-0830.jar",
+    "entries": 56,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.dsi.onlinedictation_1.2.1.20211206-0829.jar",
+    "entries": 49,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.dsi.onlineradio_1.0.0.20211206-0829.jar",
+    "entries": 58,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.dsi.onlineweather_1.0.0.20211206-0830.jar",
+    "entries": 51,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.dsi.operatorCall_1.0.0.20211206-0829.jar",
+    "entries": 64,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.dsi.poi_1.0.0.20211206-0828.jar",
+    "entries": 52,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.dsi.tourimport_1.0.0.20211206-0830.jar",
+    "entries": 38,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.generic.ols_1.0.0.20211206-0829.jar",
+    "entries": 63,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.http_1.0.0.20211206-0827.jar",
+    "entries": 122,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.javalogger_1.0.0.20211206-0826.jar",
+    "entries": 32,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.jobs_1.0.0.20211206-0828.jar",
+    "entries": 38,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.lib.util_2.7.4.20211206-0827.jar",
+    "entries": 423,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.mqtt_1.0.0.20211206-0828.jar",
+    "entries": 23,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.onlinesds.jar",
+    "entries": 97,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.test.ols_1.0.0..20211206-0830.jar",
+    "entries": 154,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.trafficlight2p_14.20.0.20181213-1628.jar",
+    "entries": 704,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles/service.vehiclehealth_1.0.0.20211206-0829.jar",
+    "entries": 16,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/bundles_prod/arc.ot_1.2.3.E20211206-0858.jar",
+    "entries": 144,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/hmi/lsd/DSITracer.jar",
+    "entries": 601,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/hmi/lsd/jars/AppDevelopment.jar",
+    "entries": 293,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/hmi/lsd/jars/diag.jar",
+    "entries": 345,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/hmi/lsd/jars/xEventRecorder.jar",
+    "entries": 33,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/hmi/lsd/jars/xTcpKeyPanel.jar",
+    "entries": 19,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/hmi/lsd/jars/xTcpLog.jar",
+    "entries": 27,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/hmi/lsd/lsd.jar",
+    "entries": 86966,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/hmi/lsd/production/jars/arc.prodlauncher_1.1.6.E20170214-1256.jar",
+    "entries": 34,
+    "bad_crc_entry": null
+  },
+  {
+    "path": "eso/ulp/arc-ulp-launcher.jar",
+    "entries": 6,
+    "bad_crc_entry": null
+  }
+]

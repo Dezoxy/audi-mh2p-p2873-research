@@ -1,0 +1,8 @@
+click==8.5.0
+dissect-cstruct==4.7
+dissect-qnxfs @ git+https://github.com/fox-it/dissect.qnxfs.git@b3a0f3e2be75e75418e99453a72cb11c43ca3f00
+dissect-util==3.24
+jawa==2.2.0
+kaitaistruct==0.10
+lz4==4.4.5
+pyelftools==0.33

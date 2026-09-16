@@ -1,0 +1,12 @@
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Proprietary firmware and everything extracted or built from it stay local.
+4K0906961AB_MH2p_ER_AUG35_P2873/
+analysis/
+vendor/
+build-tools/
+build/
+dist/

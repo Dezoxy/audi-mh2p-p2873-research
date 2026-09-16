@@ -1,0 +1,1147 @@
+[
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.IContext",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.ISPIScreenConnectedProvider",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.SmartphoneType",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.TMTTSHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.TerminalModeUtils",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.audio.IAudioManager",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.audio.TMAudioConnection",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.config.ITerminalModeConfiguration",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.device.TMDevice",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.diagnosis.IDiagnosisCommandProvider",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.diagnosis.IDiagnosisDataProvider",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.DSIResource",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.IAppState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.IDSIAppState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.IDSIResource",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.IResource",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.CarPlayAppState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.CarPlayResource",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.CarplayAudioType",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.CarplayButton",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.CarplayButtonState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.CarplayDSILifecycleController",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.CarplayUtils",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.ICarplayDSIController",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.ICarplayDSIControllerListener",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.MainAudioTypeUpdate",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.dsi.carplay.ScreenId",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.logging.LoggingUtil",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.AbstractDSISmartphoneManager",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.IDSISmartphoneManager",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.ILastmodehandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.IPhoneCallController",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.ISmartphoneProperties",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.ISpeechRequestHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.SPIServiceState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.carplay.CarPlaySpeechRequestHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.carplay.CarplayRequest",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.carplay.CarplaySmartphoneProperties",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.smartphone.carplay.RequestModeChangeAudio",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.Application",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.ApplicationOwner",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.ApplicationStateChange",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.IRequestor",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.IStateChange",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.IStateChangeAction",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.IStateHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.ITMState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.ITMStateListener",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.Resource",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.ResourceOwner",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.ResourceOwnerChange",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.ResourceState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.ResourceStateChange",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.commands.AbstractCommand",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.commands.AbstractDSICommand",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.commands.AbstractStateHandlerCommand",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.commands.SendResponseModeChanged",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.commands.SetSampleRate",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.app.terminalmode.statemachine.commands.UpdateMode",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.atip.hmi.modelaccess.ChoiceModelApp",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.atip.util.Util",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.atip.utils.commandlist2.CommandList",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.atip.utils.generics.Consumer",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.atip.utils.generics.GMap",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.atip.utils.generics.Generics",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.atip.utils.reactive.bindings.SPIBoolean",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.atip.utils.reactive.observables.Observables",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.audi.atip.utils.reactive.observables.Subscription",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "de.esolutions.fw.util.commons.Buffer",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "java.util.ArrayList",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "java.util.HashMap",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayDSIManager.java",
+    "import": "java.util.Map",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "org.dsi.ifc.carplay.AppState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "org.dsi.ifc.carplay.CallState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "org.dsi.ifc.carplay.DSICarplayListener",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "org.dsi.ifc.carplay.DeviceInfo",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "org.dsi.ifc.carplay.PlaybackInfo",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "org.dsi.ifc.carplay.Resource",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "org.dsi.ifc.carplay.TelephonyState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "org.dsi.ifc.carplay.TrackData",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "org.dsi.ifc.global.ResourceLocator",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.CombiBAPServiceNavi",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.CombiBAPConstantsNavi",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.data.CombiBAPNaviManeuverDescriptor",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.data.CombiBAPNaviLaneGuidanceData",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.data.CurrentPositionInfo",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.data.DistanceUnit",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "java.util.Timer",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "java.util.TimerTask",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.PartialPopupBAPService",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.mib.system.ISysServices",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.mib.system.units.IUnitManager",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.mib.system.units.IUnitProvider",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.mib.system.units.UnitSetting",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.app.car.api.core.ICarCoreServices",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.app.car.api.services.ICarExteriorLightService",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "de.audi.atip.utils.reactive.properties.ReadOnlyProperty",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "java.io.File",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "java.io.FileWriter",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "java.io.FileInputStream",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/carplay/CarPlayClusterIntegration.java",
+    "import": "java.io.PrintWriter",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.IContext",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.ITMDeviceSubsystem",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.ITerminalModeComponent",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.SmartphoneManager",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.dsi.IDSIControllerStateListener",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.dsi.androidauto2.DSIAndroidAuto2DSIController",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.dsi.androidauto2.DSIAndroidAuto2ListenerSafe",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.dsi.androidauto2.DSIAndroidAuto2Safe",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.events.IEventBus",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.keyevents.ITerminalModeDSIKeyEventsController",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.AndroidAuto2DSIManager",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.AndroidAuto2EventListener",
+    "status": "source"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.AndroidAuto2ListenerDistributor",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.AndroidAuto2RequestHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.AndroidAutoSmartphoneProperties",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.audio.AndroidAuto2AudioHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.mic.AndroidAuto2MicHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.nav.AndroidAuto2NavHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.nav.AndroidAutoClusterIntegration",
+    "status": "source"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.video.AndroidAuto2VideoHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.CombiBAPServiceNavi",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.atip.interapp.combi.bap.audio.CombiBAPServiceAudio",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.car.api.services.ICarStatisticsService",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.mib.system.ISysServices",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.car.api.core.ICarCoreServices",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.car.api.services.ICarExteriorLightService",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "org.dsi.ifc.map.DSIMapViewerControl",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.car.adi.legacy.sportchrono.StorageMountHandler",
+    "status": "not_found"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "org.osgi.framework.ServiceReference",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "org.osgi.framework.BundleContext",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.smartphone.androidauto2.voice.AndroidAuto2VoiceSessionHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.Application",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.ApplicationOwner",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.ApplicationStateChange",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.IRequestor",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.IStateChangeAction",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.IStateHandler",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.ITMState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.Resource",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.ResourceOwner",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.ResourceOwnerChange",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.ResourceState",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.ResourceStateChange",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.app.terminalmode.statemachine.commands.RequestModeChange",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.atip.log.LogChannel",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.atip.utils.ReflectionUtils",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.atip.utils.commandlist2.CommandList",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.atip.utils.commandlist2.ICommand",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.atip.utils.generics.GMap",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2Subsystem.java",
+    "import": "de.audi.atip.utils.generics.Generics",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.dsi.androidauto2.DSIAndroidAuto2DefaultListenerSafe",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.dsi.androidauto2.DSIAndroidAuto2Safe",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.events.IEventBus",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.events.PlayPositionEvent",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.events.PlayPositionLogEvent",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.events.PlayPositionLogger",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.events.PlayPositionLoggerConfiguration",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.events.PlaybackInfoChangedEvent",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.events.TrackDataChangedEvent",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.events.TrackPlayPositionEvent",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.app.terminalmode.smartphone.ISmartphoneProperties",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "de.audi.atip.log.LogChannel",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "org.dsi.ifc.androidauto2.PlaybackInfo",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "org.dsi.ifc.androidauto2.TrackData",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/AndroidAuto2EventListener.java",
+    "import": "org.dsi.ifc.global.ResourceLocator",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterAAMirror.java",
+    "import": "de.esolutions.hmi.service.IWidgetContext",
+    "status": "not_found"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterAAMirror.java",
+    "import": "java.io.File",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterAAMirror.java",
+    "import": "java.io.FileWriter",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterAAMirror.java",
+    "import": "java.io.PrintWriter",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterAAMirror.java",
+    "import": "java.text.SimpleDateFormat",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterAAMirror.java",
+    "import": "java.util.Date",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "org.osgi.framework.BundleActivator",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "org.osgi.framework.BundleContext",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "org.osgi.framework.ServiceReference",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "org.osgi.util.tracker.ServiceTracker",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "org.osgi.util.tracker.ServiceTrackerCustomizer",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.CombiBAPServiceNavi",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "de.audi.atip.log.LogChannel",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "de.audi.mib.system.ISysServices",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "de.audi.app.car.api.core.ICarCoreServices",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "de.audi.tghu.navi.app.cluster.IMapClusterService",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterActivator.java",
+    "import": "java.lang.reflect.Method",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterMapController.java",
+    "import": "de.audi.tghu.navi.app.cluster.IMapClusterService",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterMapController.java",
+    "import": "java.io.File",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterMapController.java",
+    "import": "java.io.FileWriter",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterMapController.java",
+    "import": "java.io.PrintWriter",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterMapController.java",
+    "import": "java.text.SimpleDateFormat",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/ClusterMapController.java",
+    "import": "java.util.Date",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.app.terminalmode.dsi.androidauto2.DSIAndroidAuto2ListenerSafe",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.app.terminalmode.dsi.androidauto2.NavigationFocusType",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.CombiBAPServiceNavi",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.CombiBAPConstantsNavi",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.data.DistanceUnit",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.data.CombiBAPNaviManeuverDescriptor",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.navi.data.CurrentPositionInfo",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.PartialPopupBAPService",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.PartialPopupBAPServiceListener",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.atip.interapp.combi.bap.data.PartialPopupBAPContent",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.app.car.api.services.ICarStatisticsService",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.app.car.api.sys.resources.statistics.IStatisticsResource",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.app.car.api.typedef.statistics.IStatisticsTypeCollection",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.app.car.api.core.ICarCoreServices",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.app.car.api.services.ICarExteriorLightService",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "org.dsi.ifc.map.DSIMapViewerControl",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.mib.system.ISysServices",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.mib.system.clock.IClock",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.mib.system.units.IUnitManager",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.mib.system.units.IUnitProvider",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.mib.system.units.UnitSetting",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.atip.utils.reactive.properties.ReadOnlyProperty",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "org.dsi.ifc.androidauto2.PlaybackInfo",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "org.dsi.ifc.androidauto2.TrackData",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "org.dsi.ifc.global.ResourceLocator",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.io.File",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.io.FileWriter",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.io.PrintWriter",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.io.FileInputStream",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.io.InputStreamReader",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.io.BufferedReader",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.text.SimpleDateFormat",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.util.Date",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.util.Timer",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.util.TimerTask",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.app.car.adi.legacy.sportchrono.StorageMountHandler",
+    "status": "not_found"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "de.audi.atip.log.LogChannel",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "org.osgi.framework.BundleContext",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.util.ArrayList",
+    "status": "firmware_jar"
+  },
+  {
+    "source": "vendor/mh2p-cluster/lsd/de/audi/app/terminalmode/smartphone/androidauto2/nav/AndroidAutoClusterIntegration.java",
+    "import": "java.util.List",
+    "status": "firmware_jar"
+  }
+]

@@ -1,0 +1,46 @@
+ELF files: 322 Validated JARs: 62 Java classes: 7
+cluster.c literal lookups found: 5 / 26
+ unresolved: NvMediaDeviceCreate
+ unresolved: NvMediaDeviceDestroy
+ unresolved: NvMediaVideoDecoderCreateEx
+ unresolved: NvMediaVideoDecoderDestroy
+ unresolved: NvMediaVideoDecoderRender
+ unresolved: NvMediaVideoDecoderSetAttributes
+ unresolved: NvMediaVideoMixerCreate
+ unresolved: NvMediaVideoMixerDestroy
+ unresolved: NvMediaVideoMixerRenderSurface
+ unresolved: NvMediaVideoSurfaceCreate
+ unresolved: NvMediaVideoSurfaceDestroy
+ unresolved: NvMediaVideoSurfaceWaitForCompletion
+ unresolved: NvMediaVideoSurfaceLock
+ unresolved: NvMediaVideoSurfaceUnlock
+ unresolved: NvxScreenCreateNvMediaVideoSurfaceSibling
+ unresolved: NvMedia2DCreate
+ unresolved: NvMedia2DDestroy
+ unresolved: NvMedia2DBlit
+ unresolved: NvMedia2DBlitExt
+ unresolved: screen_create_window_type
+ unresolved: screen_create_window_type
+dio_manager_preload.c literal lookups found: 10 / 10
+gal_cluster.c literal lookups found: 40 / 61
+ unresolved: screen_read_window
+ unresolved: screen_create_context
+ unresolved: NvMediaVideoMixerRenderSurface
+ unresolved: screen_create_window_type
+ unresolved: screen_set_window_property_cv
+ unresolved: screen_manage_window
+ unresolved: SSL_write
+ unresolved: NvMediaDeviceCreate
+ unresolved: NvMediaVideoDecoderCreateEx
+ unresolved: NvMediaVideoDecoderDestroy
+ unresolved: NvMediaVideoDecoderRender
+ unresolved: NvMediaVideoDecoderSetAttributes
+ unresolved: NvMediaVideoMixerCreate
+ unresolved: NvMediaVideoMixerDestroy
+ unresolved: NvMediaVideoMixerRenderSurface
+ unresolved: NvMediaVideoSurfaceCreate
+ unresolved: NvMediaVideoSurfaceDestroy
+ unresolved: NvMediaVideoSurfaceWaitForCompletion
+ unresolved: NvxScreenCreateNvMediaVideoSurfaceSibling
+ unresolved: NvMediaVideoSurfaceLock
+ unresolved: NvMediaVideoSurfaceUnlock
