@@ -12,7 +12,15 @@ Mods/AudiClusterIntegration/
   Update/selftest.bin    generated: known file for the on-unit hash self-test
   Update/payload/        generated: JAR, native files, gal.wrapper, dio_manager.wrapper
   Persist/install.sh     starts the cluster daemon only when state is COMMITTED
+failsafe.sh              card root; early-boot rollback when AudiClusterIntegration-RECOVER exists
 ```
+
+Precondition: ModKit's persistence chain must already be installed (run the
+plain ModKit SD update once and confirm a normal boot first). The install stops
+otherwise, so the cluster transaction never coincides with ModKit's own first
+install. Recovery without the HMI: create `AudiClusterIntegration-RECOVER` in
+the card root, insert the card, boot; read `AudiClusterIntegration-failsafe.log`.
+See `reports/07-recovery-launch-path.md`.
 
 State and journal live on the unit under `/mnt/app/eso/.audi-cluster/`.
 Backups are written to `<media>/AudiClusterIntegration-backup/<txid>/` and

@@ -47,6 +47,7 @@ class InstallerFixture(unittest.TestCase):
             p.chmod(FACTORY_MODES[rel])
         (self.app / 'eso/hmi/lsd/jars').mkdir(parents=True)
         (self.root / 'mnt/ota/modkit/Mods/AudiClusterIntegration/Persist').mkdir(parents=True)
+        self.set_modkit_chain(installed=True)
         self.media = self.root / 'media'
         self.media.mkdir()
         payload = self.root / 'payload'
@@ -66,6 +67,26 @@ class InstallerFixture(unittest.TestCase):
             (self.bin / name).write_text(body)
             (self.bin / name).chmod(0o755)
         self.state = self.app / 'eso/.audi-cluster/state'
+
+    def set_modkit_chain(self, installed):
+        """Model ModKit's persistence chain: wrapper script + factory ELF + persist script."""
+        b = self.app / 'eso/bin'
+        b.mkdir(parents=True, exist_ok=True)
+        persist = self.root / 'mnt/ota/modkit/modkit_persist.sh'
+        if installed:
+            (b / 'servicemgrmibhigh').write_bytes(b'#!/bin/sh\n/eso/bin/servicemgrmibhigh0 &\n')
+            (b / 'servicemgrmibhigh0').write_bytes(b'\x7fELF factory servicemgr')
+            persist.write_bytes(b'#!/bin/ksh\n')
+        else:
+            (b / 'servicemgrmibhigh').write_bytes(b'\x7fELF factory servicemgr')
+            (b / 'servicemgrmibhigh0').unlink(missing_ok=True)
+            persist.unlink(missing_ok=True)
+
+    def failsafe(self, marker=True):
+        if marker:
+            (self.media / 'AudiClusterIntegration-RECOVER').write_text('recover\n')
+        env = {'PATH': str(self.bin), 'AUDI_CLUSTER_FIXTURE_ROOT': str(self.root)}
+        return subprocess.run([KSH, str(self.media / 'failsafe.sh')], env=env, capture_output=True, text=True)
 
     def run_script(self, name, release='MH2p_ER_AUG35S_P2873', **extra):
         env = {'PATH': str(self.bin), 'MOD_PATH': str(self.mod / 'Update'), 'MEDIA_PATH': str(self.media),
@@ -169,7 +190,50 @@ class InstallAndUninstall(InstallerFixture):
         self.assertEqual(persist.stdout, '')
 
 
+class Failsafe(InstallerFixture):
+    def log(self):
+        return (self.media / 'AudiClusterIntegration-failsafe.log').read_text()
+
+    def test_marker_triggers_rollback_and_is_removed_only_on_success(self):
+        self.assertEqual(self.install(AUDI_CLUSTER_FAULT='after-replace-6').returncode, 99)
+        self.assertEqual(self.failsafe().returncode, 0, self.log())
+        self.assert_factory_intact()
+        self.assertEqual(self.state_text(), 'RESTORED')
+        self.assertFalse((self.media / 'AudiClusterIntegration-RECOVER').exists())
+        self.assertIn('recovery complete', self.log())
+
+    def test_without_marker_it_does_nothing(self):
+        self.assertEqual(self.install().returncode, 0)
+        r = self.failsafe(marker=False)
+        self.assertEqual(r.returncode, 0)
+        self.assert_installed()
+        self.assertFalse((self.media / 'AudiClusterIntegration-failsafe.log').exists())
+
+    def test_marker_is_kept_when_recovery_is_incomplete(self):
+        self.assertEqual(self.install().returncode, 0)
+        (self.app / 'eso/bin/apps/cluster/cluster').write_bytes(b'edited after install')
+        self.assertNotEqual(self.failsafe().returncode, 0)
+        self.assertTrue((self.media / 'AudiClusterIntegration-RECOVER').exists())
+        self.assertEqual(self.state_text(), 'ROLLBACK_INCOMPLETE')
+        self.assertIn('recovery incomplete', self.log())
+
+    def test_marker_with_nothing_installed_is_left_for_the_operator(self):
+        self.assertEqual(self.failsafe().returncode, 0)
+        self.assertTrue((self.media / 'AudiClusterIntegration-RECOVER').exists())
+        self.assert_factory_intact()
+
+
 class PreflightRefusals(InstallerFixture):
+    def test_refuses_without_modkit_persistence_chain(self):
+        self.set_modkit_chain(installed=False)
+        r = self.install()
+        self.assert_nothing_written(r)
+        self.assertIn('ModKit persistence', r.stderr)
+        # Wrapper present but persist script missing is also an incomplete chain.
+        self.set_modkit_chain(installed=True)
+        (self.root / 'mnt/ota/modkit/modkit_persist.sh').unlink()
+        self.assert_nothing_written(self.install())
+
     def assert_nothing_written(self, result):
         self.assertNotEqual(result.returncode, 0)
         self.assert_factory_intact()

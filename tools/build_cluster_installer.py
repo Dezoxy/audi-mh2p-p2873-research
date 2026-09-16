@@ -66,6 +66,7 @@ def build(payload_dir, factory_root, jar, output, inventory=None):
     for name in ['common.sh', 'install.sh', 'uninstall.sh']:
         shutil.copy(ROOT / 'port/installer/Update' / name, update / name)
     shutil.copy(ROOT / 'port/installer/Persist/install.sh', output / 'Mods' / MODULE / 'Persist/install.sh')
+    shutil.copy(ROOT / 'port/installer/failsafe.sh', output / 'failsafe.sh')
     lines = ['# audi-cluster-manifest v1'] + [f'release {r}' for r in RELEASES]
     st = selftest_bytes()
     (update / 'selftest.bin').write_bytes(st)
@@ -108,6 +109,7 @@ def build(payload_dir, factory_root, jar, output, inventory=None):
     for p in update.glob('*.sh'):
         p.chmod(0o755)
     (output / 'Mods' / MODULE / 'Persist/install.sh').chmod(0o755)
+    (output / 'failsafe.sh').chmod(0o755)
     return {'module_dir': str(output), 'jar': jar.name, 'payloads': {k: digest(v) for k, v in payloads.items()},
             'factory': factory, 'operations': [' '.join(o) for o in ops], 'accepted_releases': RELEASES,
             'integrity_on_unit': 'size + CRC-32 (gzip trailer); not tamper-proof',

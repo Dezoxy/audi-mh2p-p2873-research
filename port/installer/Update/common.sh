@@ -146,6 +146,54 @@ payload_path() { print "$MOD_PATH/payload/$1"; }
 # Manifest and journal hold unit paths; every file operation goes through tgt.
 tgt() { print "$FIXTURE_ROOT$1"; }
 
+# The only early-boot recovery path is ModKit's persistence chain:
+# servicemgrmibhigh (script) -> servicemgrmibhigh0 (factory ELF) -> modkit_persist.sh
+# -> card-root failsafe.sh. It must already be installed and intact, so the
+# cluster install never shares a transaction with ModKit's own first install.
+is_elf() { [[ -f "$1" ]] && [[ "$(dd if="$1" bs=1 skip=1 count=3 2>/dev/null)" == ELF ]]; }
+check_recovery_chain() {
+    typeset bin="$APP_ROOT/eso/bin"
+    [[ -f "$OTA_ROOT/modkit/modkit_persist.sh" ]] || fail 'ModKit persistence is not installed yet; run the plain ModKit SD update first, confirm a normal boot, then rerun with this module'
+    is_elf "$bin/servicemgrmibhigh" && fail 'servicemgrmibhigh is still the factory binary; ModKit persistence wrapper is not active'
+    is_elf "$bin/servicemgrmibhigh0" || fail 'servicemgrmibhigh0 is not the factory binary; unknown loader state'
+    [[ -f "$bin/servicemgrmibhigh" ]] || fail 'servicemgrmibhigh wrapper missing'
+}
+
+# Shared by uninstall.sh and failsafe.sh. Expects MANIFEST, JOURNAL and state
+# present. Prints progress; returns 0 only after every factory file verifies.
+perform_rollback() {
+    typeset kind path size crc sha mode cluster_dir
+    [[ -f "$JOURNAL" ]] || { print -u2 'state present but journal missing; manual review required'; return 1; }
+    BACKUP_DIR=$(awk '$2 == "BEGIN" { print $3 }' "$JOURNAL" | tail -1)
+    [[ -n "$BACKUP_DIR" ]] || { print -u2 'journal has no BEGIN record'; return 1; }
+    if [[ -f "$BACKUP_DIR/manifest.txt" ]]; then
+        MANIFEST="$BACKUP_DIR/manifest.txt"
+    else
+        log "warning: card backup $BACKUP_DIR not present; relying on on-unit .real originals"
+    fi
+    for proc in cluster gal dio_manager; do slay -f "$proc" 2>/dev/null; done
+    set_state ROLLING_BACK
+    rollback_from_journal
+    if (( ROLLBACK_FAILED != 0 )); then
+        set_state ROLLBACK_INCOMPLETE
+        print -u2 'some files were not restored; backup and journal retained for manual review'
+        return 1
+    fi
+    while read -r kind path size crc sha mode; do
+        [[ "$kind" == factory ]] || continue
+        verify_file "$(tgt "$path")" "$size" "$crc" || { set_state ROLLBACK_INCOMPLETE; print -u2 "restored file does not match baseline: $path"; return 1; }
+    done < "$MANIFEST"
+    cluster_dir="$APP_ROOT/eso/bin/apps/cluster"
+    if [[ -d "$cluster_dir" ]]; then
+        if dir_is_empty "$cluster_dir"; then rm -rf "$cluster_dir"; else log "left non-empty $cluster_dir in place"; fi
+    fi
+    rm -rf "$OTA_ROOT/modkit/Mods/$MODULE_NAME"
+    rm -f "$STATE_DIR/manifest.crc"
+    set_state RESTORED
+    log 'module files restored to the P2873 baseline; the journal and any card backup are retained'
+    log 'The ModKit loader and its servicemgrmibhigh wrapper are not removed by this module.'
+}
+
 # Test-only fault injection. Inert unless a fixture root is active.
 maybe_fault() {
     [[ -n "$FIXTURE_ROOT" ]] || return 0

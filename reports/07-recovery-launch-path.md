@@ -1,0 +1,60 @@
+# Recovery launch path — 2026-09-16
+
+Contract item 6 asked for an independently usable recovery launch path. It is
+now implemented and tested on the host; it has not run on a vehicle.
+
+## Design
+
+ModKit's persistence chain is the only early-boot hook available without the
+HMI: the factory `servicemgrmibhigh` is replaced by a script that starts the
+factory binary as `servicemgrmibhigh0` and then runs `modkit_persist.sh`,
+which runs a card-root `failsafe.sh` before any mod. The module uses that hook.
+
+- `failsafe.sh` (card root, shipped by the builder) does nothing unless the
+  operator has created `AudiClusterIntegration-RECOVER` next to it. With the
+  marker it remounts `/mnt/app` writable, runs the same rollback core as
+  `uninstall.sh` from the on-unit journal and the card backup, logs to
+  `AudiClusterIntegration-failsafe.log` on the card, and deletes the marker
+  only after every factory file verified. An incomplete recovery keeps the
+  marker and the state `ROLLBACK_INCOMPLETE`.
+- `install.sh` now refuses to run unless that chain is already installed and
+  intact: `modkit_persist.sh` present under `/mnt/ota/modkit`,
+  `servicemgrmibhigh` not an ELF file, `servicemgrmibhigh0` an ELF file. On a
+  first-ever ModKit run the loader installs its wrapper only after the addons
+  have executed, so the check fails by design. The required procedure is
+  therefore: run the plain ModKit SD update once, confirm a normal boot, then
+  rerun with this module. The cluster install never shares a transaction with
+  ModKit's own first install.
+- `uninstall.sh` and `failsafe.sh` share `perform_rollback` in `common.sh`,
+  so the two recovery paths cannot drift apart.
+
+## What this does and does not guarantee
+
+The fail-safe is reachable only while `servicemgrmibhigh` still starts and
+`modkit_persist.sh` still runs. Those files are ModKit's, are not touched by
+this module, and the precondition checks them before any write. It does not
+recover from damage outside this module's journal, and it is not a substitute
+for a full unit backup.
+
+## Tests
+
+Five new host tests: rollback via marker after an interrupted install, no-op
+without the marker, marker kept when a file was changed after install, marker
+left for the operator when nothing is installed, and install refusal when the
+persistence chain is missing or incomplete. Installer tests: 24; workspace: 47.
+
+## On-unit checks still open
+
+Two tool output formats are assumed and guarded rather than confirmed. With
+shell access on the unit, these commands settle both before any install:
+
+```sh
+gzip -1 -c /mnt/app/img_ver.txt | dd bs=1 skip=$(( $(gzip -1 -c /mnt/app/img_ver.txt | wc -c) - 8 )) count=4 2>/dev/null | hd
+df -kP /mnt/app
+df -kP /fs/sdb0
+```
+
+The first must print one line whose first four hex tokens after the offset
+are the bytes `d7 20 ca 7f` (CRC-32 `7fca20d7` of the P2873 `img_ver.txt`,
+little-endian). The `df` commands must print exactly one header and one data
+row with the free-space number in column four.

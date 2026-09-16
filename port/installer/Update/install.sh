@@ -14,6 +14,7 @@ trap 'rm -rf "$SCRATCH"' EXIT
 check_release
 selftest_hash_tool
 [[ -d "$APP_ROOT/eso" ]] || fail "application filesystem not present at $APP_ROOT"
+check_recovery_chain
 TXID=$(date +%Y%m%dT%H%M%S).$$
 BACKUP_ROOT="$MEDIA_PATH/${MODULE_NAME}-backup"
 BACKUP_DIR="$BACKUP_ROOT/$TXID"

@@ -40,7 +40,9 @@ loader's signed activation files to claim a stronger guarantee.
    an installation. These selected-file backups are not a full recovery image.
 6. Verify an independently usable recovery launch path. ModKit's early-boot
    failsafe depends on its own persistence wrapper functioning; it is not an
-   unconditional recovery guarantee.
+   unconditional recovery guarantee. Implemented: the install requires the
+   chain to be present and intact, and `failsafe.sh` performs the rollback
+   (see `reports/07-recovery-launch-path.md`).
 
 ## Planned mutation set (not yet approved for execution)
 

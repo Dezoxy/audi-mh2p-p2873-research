@@ -15,7 +15,7 @@ Work started 2026-09-16 from `Audi-Q3-MH2P-kutatas.md` and the locally supplied 
 
 This workspace contains local firmware analysis, a compiled experimental Java port, and an SD preflight addon. It is not a flashable cluster port. No vehicle connection, installation, firmware patch, or firmware executable was run.
 
-Current continuation: [installer transaction implementation and fault tests](reports/06-installer-transaction.md), [complete native dependency-name check](reports/05-native-runtime-closure.md), [native build readiness](reports/04-native-build-readiness.md) and [installer contract](port/installer/CONTRACT.md). No separate firmware-capture visit is required; the supplied firmware is the baseline, with checks planned inside installation. The user has no QNX SDK; native compilation and prebuilt reuse validation remain unresolved.
+Current continuation: [recovery launch path](reports/07-recovery-launch-path.md), [installer transaction implementation and fault tests](reports/06-installer-transaction.md), [complete native dependency-name check](reports/05-native-runtime-closure.md), [native build readiness](reports/04-native-build-readiness.md) and [installer contract](port/installer/CONTRACT.md). No separate firmware-capture visit is required; the supplied firmware is the baseline, with checks planned inside installation. The user has no QNX SDK; native compilation and prebuilt reuse validation remain unresolved.
 
 ## Workspace
 
