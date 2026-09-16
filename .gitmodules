@@ -1,0 +1,24 @@
+[submodule "third_party/MH2p_CarPlay_FullScreen"]
+	path = third_party/MH2p_CarPlay_FullScreen
+	url = https://github.com/LawPaul/MH2p_CarPlay_FullScreen.git
+[submodule "third_party/MH2p_CarPlay_WindowedFullScreen"]
+	path = third_party/MH2p_CarPlay_WindowedFullScreen
+	url = https://github.com/LawPaul/MH2p_CarPlay_WindowedFullScreen.git
+[submodule "third_party/MH2p_NavCompassIgnore"]
+	path = third_party/MH2p_NavCompassIgnore
+	url = https://github.com/LawPaul/MH2p_NavCompassIgnore.git
+[submodule "third_party/MH2p_GreenEngineeringMenu"]
+	path = third_party/MH2p_GreenEngineeringMenu
+	url = https://github.com/LawPaul/MH2p_GreenEngineeringMenu.git
+[submodule "third_party/mh2p-ssh-access"]
+	path = third_party/mh2p-ssh-access
+	url = https://github.com/fifthBro/mh2p-ssh-access.git
+[submodule "third_party/Q3Team-MH2p-GEM"]
+	path = third_party/Q3Team-MH2p-GEM
+	url = https://github.com/t0chk/Q3Team-MH2p-GEM.git
+[submodule "third_party/MH2p_SD_ModKit"]
+	path = third_party/MH2p_SD_ModKit
+	url = https://github.com/LawPaul/MH2p_SD_ModKit.git
+[submodule "third_party/mh2p-cluster"]
+	path = third_party/mh2p-cluster
+	url = https://github.com/fifthBro/mh2p-cluster.git

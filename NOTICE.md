@@ -19,13 +19,25 @@ The following parts are **not** MIT and are **not for commercial use**:
 - `port/installer/Update/*.wrapper` follow the wrapper approach of
   mh2p-cluster's release scripts and are treated as CC BY-NC-SA 4.0.
 
-Pinned upstream revisions used for analysis (checked out locally under
-`vendor/`, which is not part of this repository):
+Third-party projects referenced as pinned git submodules under `third_party/`
+(their content is fetched from the upstream repositories, not stored here;
+see `third_party/CATALOG.md`):
 
 | Project | Revision | License |
 |---|---|---|
 | fifthBro/mh2p-cluster | a37c917 | CC BY-NC-SA 4.0 |
 | LawPaul/MH2p_SD_ModKit | 82f9452 | CC BY-NC-SA 4.0 |
+| LawPaul/MH2p_CarPlay_FullScreen | 3aeecd5 | CC BY-NC-SA 4.0 |
+| LawPaul/MH2p_CarPlay_WindowedFullScreen | 3b6e513 | CC BY-NC-SA 4.0 |
+| LawPaul/MH2p_NavCompassIgnore | 1dc404c | CC BY-NC-SA 4.0 |
+| LawPaul/MH2p_GreenEngineeringMenu | cc47ec5 | CC BY-NC-SA 4.0 |
+| fifthBro/mh2p-ssh-access | cb0e543 | CC BY-NC-SA 4.0 |
+| t0chk/Q3Team-MH2p-GEM | ba1fe0b | CC BY-NC-SA 4.0 |
+
+Analysis tooling checked out locally under `vendor/` (not part of this repository):
+
+| Project | Revision | License |
+|---|---|---|
 | fox-it/dissect.qnxfs | b3a0f3e | see upstream |
 | NetherlandsForensicInstitute/qnxmount | 0379c06 | see upstream |
 | lclevy/dumpifs | bb77c71 | see upstream |

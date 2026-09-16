@@ -25,6 +25,7 @@ Current continuation: [recovery launch path](reports/07-recovery-launch-path.md)
 - `analysis/app/files/`: selected files extracted for private local analysis; no symlinks materialized.
 - `vendor/`: upstream source checkouts, with revisions in `evidence/provenance.json`.
 - `port/`: adapted Java sources, attribution, SD collector sources, and the journaled installer module (`port/installer/`).
+- `third_party/`: pinned submodules of the existing public MH2P modifications, with a [catalog](third_party/CATALOG.md); `tools/prepare_sd_card.py` assembles a card from them.
 - `build/java/`: experimental JAR; do not install on the vehicle.
 - `dist/Audi-P2873-preflight-addon.zip`: diagnostic addon only (tool probe and file capture), without the ModKit loader or port payload.
 - `evidence/build/`: build inputs, API retention checks, capture reference, and reproducibility results.
@@ -67,6 +68,15 @@ python3 tools/audit_firmware.py 4K0906961AB_MH2p_ER_AUG35_P2873 evidence/phase2
 ```
 
 Current evidence reports 2,960 successful checksum records (2,098 distinct payloads), six validated QNX images, and 97/97 literal native lookup matches. This is static research, not runtime compatibility approval. The user confirms a G35S vehicle and successful installation of this package about one year ago. Its internal G35 label is not treated as proof of incompatibility. Use this package as the working reference, then verify the current release and target-file hashes before prototype installation.
+
+## Assembling an SD card from existing mods
+
+```sh
+git submodule update --init
+python3 tools/prepare_sd_card.py --output /path/to/card-layout --mod navcompass --preflight
+```
+
+`--base modkit` (default) or `--base q3team`; `--mod` is repeatable; `ssh-access` needs `--ssh-pubkey`. The tool refuses unpinned submodules, conflicting mods, and non-empty output directories, and writes `CARD-MANIFEST.json`. Copy the result to a FAT32 card root and remove macOS hidden files before ejecting.
 
 ## Licensing
 
