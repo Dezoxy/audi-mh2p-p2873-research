@@ -63,6 +63,14 @@ is_elf "$APP_ROOT/eso/bin/servicemgrmibhigh0" && b=elf || b=not-elf
 [[ -f "$OTA_ROOT/modkit/modkit_persist.sh" ]] && c=present || c=missing
 result "modkit-chain INFO servicemgrmibhigh=$a servicemgrmibhigh0=$b modkit_persist=$c"
 run mounts mount
+# Network state: is there a hardware-free route to a shell (Wi-Fi AP or client)?
+run net-ifconfig ifconfig -a
+run net-sockstat sockstat -l
+run net-sockstat-all sockstat
+run net-processes sh -c "pidin ar 2>&1 | awk '/sshd|telnetd|inetd|hostapd|wpa_supplicant|dhcpd|io-pkt|ifwatchd/'"
+run net-ssh-files sh -c "ls -la '$APP_ROOT/root/.ssh' '$APP_ROOT/etc/ssh' /etc/ssh '$APP_ROOT/armle/usr/sbin/sshd' '$APP_ROOT/armle/usr/sbin/telnetd' '$APP_ROOT/armle/usr/sbin/inetd' 2>&1"
+run net-inetd sh -c "cat /etc/inetd.conf '$APP_ROOT/etc/inetd.conf' 2>&1"
+run net-wifi-conf sh -c "ls -la /etc/hostapd* /etc/wpa* '$APP_ROOT/etc/hostapd'* '$APP_ROOT/etc/wpa'* /var/etc/hostapd* /ramdisk/pps/services/wifi* 2>&1"
 rm -rf "$SCRATCH"
 print 'probe-complete-v1' > "$out/COMPLETE"
 print "Probe complete in $out; run tools/verify_probe.py on the host."

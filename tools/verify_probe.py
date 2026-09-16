@@ -60,6 +60,12 @@ def verify(probe):
         'hash_tools_present': [t for t in ['cksum', 'md5sum', 'sum', 'cmp', 'od'] if tools.get(t, 'MISSING') != 'MISSING'],
         'modkit_chain': checks.get('modkit-chain', {}).get('detail', 'unknown'),
         'environment': read(probe, 'env.txt').strip().splitlines()[:3],
+        'network': {
+            'interfaces_with_inet': [l.strip() for l in read(probe, 'net-ifconfig.txt').splitlines() if 'inet ' in l],
+            'listening': [l.strip() for l in read(probe, 'net-sockstat.txt').splitlines()[1:] if l.strip()][:20],
+            'daemons': [l.strip() for l in read(probe, 'net-processes.txt').splitlines() if l.strip()][:20],
+            'ssh_key_dir_present': '.ssh' in read(probe, 'net-ssh-files.txt') and 'No such file' not in read(probe, 'net-ssh-files.txt').split('.ssh')[0][-80:],
+        },
         'checks': checks,
         'installation_approved': False,
     }

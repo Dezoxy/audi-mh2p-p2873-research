@@ -6,6 +6,9 @@ without shell access: it runs the real installer library functions on the
 unit (`hd` output format, `df -kP` layout, the gzip-trailer CRC-32 pipeline,
 the pure-shell directory test, ELF detection), records which utilities exist,
 the ksh version, mounts, and whether ModKit's persistence chain is installed.
+It also records the network state (interfaces and addresses, listening
+sockets, ssh/telnet/Wi-Fi daemons, SSH key directory), which tells whether a
+shell is reachable over the unit's Wi-Fi without extra hardware.
 Results go to `AudiP2873-probe/` on the card; judge them on the host with:
 
 ```sh
