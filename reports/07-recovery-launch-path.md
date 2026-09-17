@@ -35,15 +35,18 @@ executes. The diagnostic card therefore carries a card-root `failsafe.sh`
 (`port/sd/failsafe-heartbeat.sh`) that only appends a timestamp line to
 `AudiP2873-failsafe-heartbeat.txt` on the card. After the SD update, one
 further normal boot with the card inserted must add a line; `verify_probe.py`
-reports the lines as `failsafe_heartbeats`. The cluster module's own
-`failsafe.sh` writes the same heartbeat before its marker check.
+reports the lines as `failsafe_heartbeats`. This proves hook execution only,
+not ordering before HMI class loading or successful rollback. The cluster
+module's own `failsafe.sh` writes the same heartbeat before its marker check.
 
 ## Unattended rollback at boot
 
-Independent of the card, the persisted startup entry rolls back any
-transaction whose state is not `COMMITTED` or `RESTORED` (report 06, third
-review). The card fail-safe remains the route for a committed install that
-misbehaves, and for an unattended rollback that reports incomplete.
+Update publishes and verifies the complete recovery package before payload
+staging. It cannot rely on ModKit's later copy of Persist, because power loss
+during Update prevents that copy. Independent of the card, the startup entry
+rolls back any transaction whose state is not `COMMITTED` or `RESTORED` (report 06, third
+and fourth reviews). The card fail-safe remains the route for a committed
+install that misbehaves, and for an unattended rollback that reports incomplete.
 
 ## What this does and does not guarantee
 

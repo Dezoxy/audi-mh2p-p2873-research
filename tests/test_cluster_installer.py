@@ -16,7 +16,7 @@ builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
 # Present on the unit (stage-1/2 images or /mnt/app/armle) and used by the scripts.
 UNIT_TOOLS = ['awk', 'sed', 'wc', 'dd', 'cp', 'mv', 'rm', 'mkdir', 'ls',
-              'date', 'cat', 'head', 'tail', 'dirname', 'basename', 'gzip', 'df']
+              'date', 'cat', 'head', 'tail', 'dirname', 'basename', 'gzip', 'df', 'cut']
 SHIMS = {
     'hd': '#!/bin/sh\nexec /usr/bin/hexdump -C "$@"\n',
     'slay': '#!/bin/sh\nexit 0\n',
@@ -48,7 +48,7 @@ class InstallerFixture(unittest.TestCase):
             p.write_bytes(data)
             p.chmod(FACTORY_MODES[rel])
         (self.app / 'eso/hmi/lsd/jars').mkdir(parents=True)
-        (self.root / 'mnt/ota/modkit/Mods/AudiClusterIntegration/Persist').mkdir(parents=True)
+        (self.root / 'mnt/ota/modkit/Logs').mkdir(parents=True)
         self.set_modkit_chain(installed=True)
         self.media = self.root / 'media'
         self.media.mkdir()
@@ -73,10 +73,12 @@ class InstallerFixture(unittest.TestCase):
             (self.bin / name).unlink(missing_ok=True)
             (self.bin / name).write_text(body)
             (self.bin / name).chmod(0o755)
+        (self.bin / 'ksh').symlink_to(KSH)
+        self.persist_dir = self.root / 'mnt/ota/modkit/Mods/AudiClusterIntegration/Persist'
         self.state = self.app / 'eso/.audi-cluster/state'
 
-    CHAIN_WRAPPER = b'#!/bin/sh\n\n/eso/bin/servicemgrmibhigh0 &\n\nif [[ -e /mnt/ota/modkit/modkit_persist.sh ]]; then\n    /bin/ksh /mnt/ota/modkit/modkit_persist.sh &\nfi\n'
-    CHAIN_PERSIST = b'#!/bin/ksh\nfailsafe() { ksh "$1/failsafe.sh"; }\nfailsafe /fs/sdb0\n'
+    CHAIN_WRAPPER = (builder.MODKIT_DIR / 'servicemgrmibhigh.sh').read_bytes()
+    CHAIN_PERSIST = (builder.MODKIT_DIR / 'modkit_persist.sh').read_bytes()
 
     def set_modkit_chain(self, installed):
         """Model ModKit's persistence chain: wrapper script + factory ELF + persist script."""
@@ -387,27 +389,88 @@ class InterruptedTransactions(InstallerFixture):
         self.assert_factory_intact()
 
     def persist(self):
-        return subprocess.run([KSH, str(self.mod / 'Persist/install.sh')], capture_output=True, text=True,
+        # Execute the pinned boot dispatcher, adapting only hardware paths and
+        # hardware-only wait/release discovery. Module discovery is unchanged.
+        script = self.CHAIN_PERSIST.decode()
+        script = script.replace('waitfor /dev/mcd/AUTORUN 20', ':').replace('sleep 2', ':')
+        script = '\n'.join('export RELEASE_VERSION=MH2p_ER_AUG35S_P2873'
+                           if line.startswith('export RELEASE_VERSION=') else line
+                           for line in script.splitlines())
+        for prefix in ['/mnt/ota', '/fs/', '/dev/ooc/']:
+            script = script.replace(prefix, str(self.root) + prefix)
+        dispatcher = self.root / 'boot-dispatcher.sh'
+        dispatcher.write_text(script)
+        return subprocess.run([KSH, str(dispatcher)], capture_output=True, text=True,
                               env={'PATH': str(self.bin), 'AUDI_CLUSTER_FIXTURE_ROOT': str(self.root)})
 
     def test_boot_rolls_back_an_uncommitted_transaction_unattended(self):
-        # Crash after the JAR (last file) was switched but before COMMITTED: the JAR is on the classpath.
-        self.assertEqual(self.install(AUDI_CLUSTER_FAULT=f'after-replace-{OP_COUNT}').returncode, 99)
-        self.assertTrue((self.app / 'eso/hmi/lsd/jars/test.jar').exists())
-        shutil.rmtree(self.media / 'AudiClusterIntegration-backup')  # no card at boot
-        r = self.persist()
-        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-        self.assertIn('unattended rollback complete', r.stdout)
-        self.assertEqual(self.state_text(), 'RESTORED')
-        self.assert_factory_intact()
-        self.assertEqual(self.persist().stdout, '')  # next boot: nothing to do
+        # Simulate power loss before ModKit can return from Update and copy Persist.
+        for fault in ['after-recovery-publish', 'after-staging',
+                      *(f'after-replace-{n}' for n in range(1, OP_COUNT + 1)),
+                      *(f'mid-switch-{n}' for n in WRAP_STEPS)]:
+            with self.subTest(fault=fault):
+                self.setUp()
+                self.assertFalse(self.persist_dir.exists())
+                self.assertEqual(self.install(AUDI_CLUSTER_FAULT=fault).returncode, 99)
+                self.assertTrue((self.persist_dir / 'install.sh').is_file())
+                shutil.rmtree(self.media)  # entire card absent, including scripts and manifest
+                r = self.persist()
+                self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+                log = self.root / 'mnt/ota/modkit/Logs/AudiClusterIntegration-Persist.log'
+                self.assertIn('unattended rollback complete', log.read_text())
+                self.assertEqual(self.state_text(), 'RESTORED')
+                self.assert_factory_intact()
+                self.assertFalse(self.persist_dir.exists())
+                self.assertEqual(self.persist().returncode, 0)
+                self.assertEqual(self.state_text(), 'RESTORED')
 
     def test_boot_rollback_needs_the_packaged_library(self):
         self.assertEqual(self.install(AUDI_CLUSTER_FAULT='after-replace-3').returncode, 99)
-        (self.mod / 'Persist/common.sh').unlink()
-        r = self.persist()
+        (self.persist_dir / 'common.sh').unlink()
+        shutil.rmtree(self.media)
+        self.persist()
+        log = self.root / 'mnt/ota/modkit/Logs/AudiClusterIntegration-Persist.log'
+        self.assertIn('cannot roll back', log.read_text())
+        self.assertNotEqual(self.state_text(), 'RESTORED')
+
+    def test_recovery_copy_failure_prevents_payload_writes(self):
+        r = self.install(FAIL_CP_MATCH='Persist/common.sh')
         self.assertNotEqual(r.returncode, 0)
-        self.assertIn('cannot roll back', r.stdout)
+        self.assertIn('cannot copy recovery', r.stderr)
+        self.assertFalse(self.persist_dir.exists())
+        self.assert_factory_intact()
+
+    def test_recovery_permission_failure_prevents_payload_writes(self):
+        r = self.install(FAIL_CHMOD_MATCH='Persist/install.sh')
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn('cannot set recovery entry mode', r.stderr)
+        self.assertFalse(self.persist_dir.exists())
+        self.assert_factory_intact()
+
+    def test_corrupt_recovery_source_prevents_payload_writes(self):
+        (self.mod / 'Persist/common.sh').write_text('damaged')
+        r = self.install()
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn('recovery verification failed', r.stderr)
+        self.assert_factory_intact()
+
+    def test_recovery_publish_interruption_keeps_factory_and_is_not_discovered(self):
+        self.assertEqual(self.install(AUDI_CLUSTER_FAULT='before-recovery-publish').returncode, 99)
+        self.assertFalse(self.persist_dir.exists())
+        self.assert_factory_intact()
+        # Interrupted pre-publish directories are outside ModKit's discovery tree.
+        shutil.rmtree(self.media)
+        self.assertEqual(self.persist().returncode, 0)
+        self.assert_factory_intact()
+
+    def test_existing_unknown_recovery_is_not_overwritten(self):
+        self.persist_dir.mkdir(parents=True)
+        entry = self.persist_dir / 'install.sh'
+        entry.write_text('unknown module')
+        r = self.install()
+        self.assertNotEqual(r.returncode, 0)
+        self.assertEqual(entry.read_text(), 'unknown module')
+        self.assert_factory_intact()
 
     def test_jar_is_the_last_file_switched(self):
         ops = [l for l in (self.mod / 'Update/manifest.txt').read_text().splitlines() if l.startswith('op ')]

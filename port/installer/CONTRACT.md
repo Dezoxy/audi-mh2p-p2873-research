@@ -42,7 +42,9 @@ loader's signed activation files to claim a stronger guarantee.
    failsafe depends on its own persistence wrapper functioning; it is not an
    unconditional recovery guarantee. Implemented: the install requires the
    chain to be present and intact, and `failsafe.sh` performs the rollback
-   (see `reports/07-recovery-launch-path.md`).
+   (see `reports/07-recovery-launch-path.md`). The module-specific recovery
+   package must also be published before payload staging; the base loader
+   copies Persist only after Update returns, too late for an interrupted install.
 
 ## Planned mutation set (not yet approved for execution)
 
@@ -50,7 +52,8 @@ loader's signed activation files to claim a stronger guarantee.
 - Add native payload/configuration under `/mnt/app/eso/bin/apps/cluster/`.
 - Install the required process wrappers for `gal` and `dio_manager` only after
   their original executables are backed up and exact expected bytes verified.
-- Install a module startup entry only after all payload files are committed.
+- Publish and verify the complete module recovery/startup package on the unit
+  before staging any payload. Start the daemon only after commit.
 - Keep changes to the ModKit loader itself separate in the manifest and backup
   record. Its `servicemgrmibhigh` wrapper is not a cluster-specific mutation.
 
