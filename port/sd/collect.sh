@@ -1,5 +1,6 @@
 #!/bin/sh
 # Audi P2873 preflight. Reads the unit; writes only to a new output directory.
+# Uses echo only: printf was not found in the unit images and must not be relied on.
 # Usage: sh collect.sh /fs/sdb0/AudiP2873-capture [fixture-root]
 set -eu
 umask 077
@@ -22,13 +23,13 @@ fi
 # mkdir is deliberately exclusive: previous captures are never overwritten.
 mkdir "$output" || exit 2
 trap 'echo "Capture interrupted; no COMPLETE marker means incomplete" >&2; exit 1' HUP INT TERM
-printf '%s\n' 'Audi P2873 preflight v1; no installation performed' > "$output/status.txt"
-printf '%s\n' "${RELEASE_VERSION:-UNKNOWN}" > "$output/release.txt"
+echo 'Audi P2873 preflight v1; no installation performed' > "$output/status.txt"
+echo "${RELEASE_VERSION:-UNKNOWN}" > "$output/release.txt"
 if [ -z "$source_root" ] && [ -x /mnt/app/armle/usr/bin/pc ]; then
     # Record raw evidence as well as the loader's version; do not guess its format.
     /mnt/app/armle/usr/bin/pc b:46924065:401 > "$output/release-pc.txt" 2>&1 || :
 fi
-printf 'OEM=%s\nTYPE=%s\nHMI_TYPE=%s\nMODKIT_VERSION=%s\n' "${OEM:-UNKNOWN}" "${TYPE:-UNKNOWN}" "${HMI_TYPE:-UNKNOWN}" "${MODKIT_VERSION:-UNKNOWN}" > "$output/loader-environment.txt"
+{ echo "OEM=${OEM:-UNKNOWN}"; echo "TYPE=${TYPE:-UNKNOWN}"; echo "HMI_TYPE=${HMI_TYPE:-UNKNOWN}"; echo "MODKIT_VERSION=${MODKIT_VERSION:-UNKNOWN}"; } > "$output/loader-environment.txt"
 uname -a > "$output/uname.txt"
 failed=0
 while IFS= read -r target; do
@@ -39,9 +40,9 @@ while IFS= read -r target; do
     destination="$output/files$target"
     mkdir -p "$(dirname "$destination")"
     if [ -f "$source" ] && cp "$source" "$destination"; then
-        printf 'COPIED %s\n' "$target" >> "$output/status.txt"
+        echo "COPIED $target" >> "$output/status.txt"
     else
-        printf 'MISSING_OR_UNREADABLE %s\n' "$target" >> "$output/status.txt"
+        echo "MISSING_OR_UNREADABLE $target" >> "$output/status.txt"
         failed=1
     fi
 done < "$here/targets.txt"
@@ -53,5 +54,5 @@ if [ "$failed" -ne 0 ]; then
     echo 'Incomplete capture. No unit files were changed.' >&2
     exit 1
 fi
-printf '%s\n' 'capture-complete-v1' > "$output/COMPLETE"
+echo 'capture-complete-v1' > "$output/COMPLETE"
 echo 'Capture complete. Compare on the host; this is not installation approval.'
