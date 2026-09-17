@@ -26,6 +26,10 @@ NEW_FILES = [('cluster', f'{APP}/eso/bin/apps/cluster/cluster', '755'),
              ('cluster_config.json', f'{APP}/eso/bin/apps/cluster/cluster_config.json', '644')]
 WRAPPED = [('gal.wrapper', f'{APP}/eso/bin/apps/gal'), ('dio_manager.wrapper', f'{APP}/eso/bin/apps/dio_manager')]
 FACTORY_CHECKS = ['img_ver.txt', 'eso/bin/apps/gal', 'eso/bin/apps/dio_manager']
+# ModKit persistence chain files as installed by modkit_install.sh at the pinned revision.
+MODKIT_DIR = ROOT / 'third_party/MH2p_SD_ModKit/Data/ExceptionList.fec_2017327-0730/0'
+CHAIN = [('servicemgrmibhigh.sh', f'{APP}/eso/bin/servicemgrmibhigh'), ('modkit_persist.sh', '/mnt/ota/modkit/modkit_persist.sh')]
+MARKER = '.built-by-build_cluster_installer'
 
 
 def digest(data):
@@ -55,11 +59,13 @@ def inventory_modes(path):
     return modes
 
 
-def build(payload_dir, factory_root, jar, output, inventory=None):
-    payload_dir, factory_root = Path(payload_dir), Path(factory_root)
+def build(payload_dir, factory_root, jar, output, inventory=None, modkit_dir=MODKIT_DIR):
+    payload_dir, factory_root, modkit_dir = Path(payload_dir), Path(factory_root), Path(modkit_dir)
     modes = inventory_modes(inventory) if inventory else {}
     update = output / 'Mods' / MODULE / 'Update'
-    if output.exists():
+    if output.exists() and any(output.iterdir()):
+        if not (output / MARKER).is_file():
+            sys.exit(f'refusing to replace {output}: not empty and not a previous build of this tool')
         shutil.rmtree(output)
     (update / 'payload').mkdir(parents=True)
     (output / 'Mods' / MODULE / 'Persist').mkdir(parents=True)
@@ -72,8 +78,6 @@ def build(payload_dir, factory_root, jar, output, inventory=None):
     (update / 'selftest.bin').write_bytes(st)
     lines.append(f"selftest selftest.bin {len(st)} {digest(st)['crc32']}")
     payloads, ops = {}, []
-    ops.append(('new', f'{APP}/eso/hmi/lsd/jars/{jar.name}', jar.name, '644'))
-    payloads[jar.name] = jar.read_bytes()
     for name, dest, mode in NEW_FILES:
         src = payload_dir / name
         if not src.is_file():
@@ -83,6 +87,9 @@ def build(payload_dir, factory_root, jar, output, inventory=None):
     for name, dest in WRAPPED:
         payloads[name] = (ROOT / 'port/installer/Update' / name).read_bytes()
         ops.append(('wrap', dest, name, '755'))
+    # The JAR is live as soon as it sits in the classpath directory, so it is switched last.
+    ops.append(('new', f'{APP}/eso/hmi/lsd/jars/{jar.name}', jar.name, '644'))
+    payloads[jar.name] = jar.read_bytes()
     for name, data in payloads.items():
         (update / 'payload' / name).write_bytes(data)
         d = digest(data)
@@ -103,6 +110,14 @@ def build(payload_dir, factory_root, jar, output, inventory=None):
         d['mode'] = mode
         factory[f'{APP}/{rel}'] = d
         lines.append(f"factory {APP}/{rel} {d['size']} {d['crc32']} {d['sha256']} {mode}")
+    chain = {}
+    for fname, dest in CHAIN:
+        src = modkit_dir / fname
+        if not src.is_file():
+            sys.exit(f'ModKit chain file missing: {src} (git submodule update --init)')
+        d = digest(src.read_bytes())
+        chain[dest] = d
+        lines.append(f"chain {dest} {d['size']} {d['crc32']} {d['sha256']}")
     for op, dest, name, mode in ops:
         lines.append(f'op {op} {dest} {name} {mode}')
     (update / 'manifest.txt').write_text('\n'.join(lines) + '\n')
@@ -110,7 +125,8 @@ def build(payload_dir, factory_root, jar, output, inventory=None):
         p.chmod(0o755)
     (output / 'Mods' / MODULE / 'Persist/install.sh').chmod(0o755)
     (output / 'failsafe.sh').chmod(0o755)
-    return {'module_dir': str(output), 'jar': jar.name, 'payloads': {k: digest(v) for k, v in payloads.items()},
+    (output / MARKER).write_text('build output; safe to replace\n')
+    return {'chain': chain,'module_dir': str(output), 'jar': jar.name, 'payloads': {k: digest(v) for k, v in payloads.items()},
             'factory': factory, 'operations': [' '.join(o) for o in ops], 'accepted_releases': RELEASES,
             'integrity_on_unit': 'size + CRC-32 (gzip trailer); not tamper-proof',
             'approved_for_vehicle': False, 'vehicle_tested': False}

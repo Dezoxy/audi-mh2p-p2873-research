@@ -1,5 +1,10 @@
 #!/bin/ksh
 # Wrapper installed at /mnt/app/eso/bin/apps/gal; the factory binary is at gal.real.
+# The hook is loaded only while the module's transaction state is COMMITTED, so a
+# reboot during install or rollback runs the factory binary unmodified.
+state=/mnt/app/eso/.audi-cluster/state
 preload=/mnt/app/eso/bin/apps/cluster/gal_cluster.so
-[[ -f "$preload" ]] && export LD_PRELOAD=$preload
+if [[ -f "$state" && "$(cat "$state")" == COMMITTED && -f "$preload" ]]; then
+    export LD_PRELOAD=$preload
+fi
 exec /mnt/app/eso/bin/apps/gal.real "$@"

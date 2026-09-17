@@ -87,7 +87,7 @@ with a PATH containing only symlinks to the unit's tool set plus shims for
 | Unrelated file left in the cluster directory | directory kept, file untouched |
 | Restored permissions | factory mode (fixture uses 750 for `gal`, wrapper is 755) |
 
-All 42 workspace tests pass (`evidence/build/test-results-installer.txt`).
+All 61 workspace tests pass (`evidence/build/test-results-installer.txt`).
 
 ## Independent review
 
@@ -102,6 +102,36 @@ recovery now uses the manifest recorded with the transaction's backup; and
 firmware copies lose their permission bits, the builder now takes factory
 modes from `analysis/app/filesystem-inventory.json` and stops if a mode is
 missing. No ksh93-only constructs were found.
+
+## Second review (2026-09-17)
+
+An external static review found four must-fix items and one improvement;
+all are fixed and tested on the `fix/installer-review-gaps` branch:
+
+- **Rollback could get stuck after a legitimate interruption.** A crash after
+  `REPLACE_BEGIN` but before the original was moved, or after a restoration
+  but before its `RESTORE_DONE` record, left the factory binary in place and
+  rollback refused it as "not ours". Rollback now recognises a target that
+  already verifies as the factory file, removes a matching leftover `.real`,
+  and records it as restored. Two new fault points cover both windows for
+  every operation.
+- **The commit gate did not cover activation.** The wrappers now load the
+  hook only while the state file says `COMMITTED`, so a reboot during
+  install or rollback runs the factory binaries unmodified. The JAR is now
+  the last file switched, immediately before the state write. Residual
+  window: a crash between that last rename and the state write leaves the
+  JAR alone active for one boot, without natives or daemon, until recovery
+  runs. This is documented rather than hidden.
+- **The chain check was presence only.** The manifest now records the exact
+  size and hashes of ModKit's wrapper script and persist script at the pinned
+  revision, and the check demands those bytes plus the factory ELF next to
+  them. It still cannot prove the chain executes at boot from inside the
+  update stage.
+- **The builder could delete an arbitrary output directory.** It now refuses
+  a non-empty directory unless it carries the marker of a previous build.
+- **The card assembler ignored local changes in submodules.** It now refuses
+  any submodule with modified or untracked files and validates every
+  submodule before writing a single file.
 
 ## Build and evidence
 

@@ -32,6 +32,7 @@ NEW_TARGETS = ['eso/bin/apps/cluster/cluster', 'eso/bin/apps/cluster/gal_cluster
                'eso/bin/apps/cluster/dio_cluster.so', 'eso/bin/apps/cluster/cluster_config.json',
                'eso/hmi/lsd/jars/test.jar']
 OP_COUNT = 7
+WRAP_STEPS = (5, 6)  # the JAR is switched last (step 7)
 
 
 class InstallerFixture(unittest.TestCase):
@@ -56,7 +57,12 @@ class InstallerFixture(unittest.TestCase):
             (payload / n).write_bytes(f'payload {n}\n'.encode() * 40)
         jar = self.root / 'test.jar'
         jar.write_bytes(b'PK jar bytes' * 100)
-        builder.build(payload, self.app, jar, self.media)
+        modkit = self.root / 'modkit-files'
+        modkit.mkdir()
+        (modkit / 'servicemgrmibhigh.sh').write_bytes(self.CHAIN_WRAPPER)
+        (modkit / 'modkit_persist.sh').write_bytes(self.CHAIN_PERSIST)
+        self.modkit = modkit
+        builder.build(payload, self.app, jar, self.media, modkit_dir=modkit)
         self.mod = self.media / 'Mods/AudiClusterIntegration'
         self.bin = self.root / 'bin'
         self.bin.mkdir()
@@ -68,15 +74,18 @@ class InstallerFixture(unittest.TestCase):
             (self.bin / name).chmod(0o755)
         self.state = self.app / 'eso/.audi-cluster/state'
 
+    CHAIN_WRAPPER = b'#!/bin/sh\n\n/eso/bin/servicemgrmibhigh0 &\n\nif [[ -e /mnt/ota/modkit/modkit_persist.sh ]]; then\n    /bin/ksh /mnt/ota/modkit/modkit_persist.sh &\nfi\n'
+    CHAIN_PERSIST = b'#!/bin/ksh\nfailsafe() { ksh "$1/failsafe.sh"; }\nfailsafe /fs/sdb0\n'
+
     def set_modkit_chain(self, installed):
         """Model ModKit's persistence chain: wrapper script + factory ELF + persist script."""
         b = self.app / 'eso/bin'
         b.mkdir(parents=True, exist_ok=True)
         persist = self.root / 'mnt/ota/modkit/modkit_persist.sh'
         if installed:
-            (b / 'servicemgrmibhigh').write_bytes(b'#!/bin/sh\n/eso/bin/servicemgrmibhigh0 &\n')
+            (b / 'servicemgrmibhigh').write_bytes(self.CHAIN_WRAPPER)
             (b / 'servicemgrmibhigh0').write_bytes(b'\x7fELF factory servicemgr')
-            persist.write_bytes(b'#!/bin/ksh\n')
+            persist.write_bytes(self.CHAIN_PERSIST)
         else:
             (b / 'servicemgrmibhigh').write_bytes(b'\x7fELF factory servicemgr')
             (b / 'servicemgrmibhigh0').unlink(missing_ok=True)
@@ -169,6 +178,32 @@ class InstallAndUninstall(InstallerFixture):
         self.assertEqual(r.returncode, 0, r.stderr)
         self.assertEqual(stray.read_bytes(), b'not ours')
         self.assert_factory_intact()
+
+    def test_wrappers_load_hooks_only_when_committed(self):
+        for name in ['gal', 'dio_manager']:
+            text = (ROOT / f'port/installer/Update/{name}.wrapper').read_text()
+            self.assertIn('== COMMITTED', text)
+            self.assertIn(f'exec /mnt/app/eso/bin/apps/{name}.real', text)
+            self.assertLess(text.index('COMMITTED'), text.index('LD_PRELOAD='))
+
+    def test_refuses_altered_chain_files(self):
+        (self.app / 'eso/bin/servicemgrmibhigh').write_bytes(b'#!/bin/sh\necho not modkit\n')
+        r = self.install()
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn('pinned ModKit release', r.stderr)
+        self.assert_factory_intact()
+        self.assertFalse((self.app / 'eso/.audi-cluster').exists())
+        self.assertEqual(self.backups(), [])
+
+    def test_builder_refuses_foreign_output_directory(self):
+        foreign = self.root / 'foreign'
+        foreign.mkdir()
+        (foreign / 'keep.txt').write_text('mine')
+        with self.assertRaises(SystemExit):
+            builder.build(self.root / 'payload', self.app, self.root / 'test.jar', foreign, modkit_dir=self.modkit)
+        self.assertEqual((foreign / 'keep.txt').read_text(), 'mine')
+        builder.build(self.root / 'payload', self.app, self.root / 'test.jar', self.root / 'again', modkit_dir=self.modkit)
+        builder.build(self.root / 'payload', self.app, self.root / 'test.jar', self.root / 'again', modkit_dir=self.modkit)
 
     def test_persist_launches_the_validated_path(self):
         text = (ROOT / 'port/installer/Persist/install.sh').read_text()
@@ -317,10 +352,30 @@ class InterruptedTransactions(InstallerFixture):
                 self.assert_recovers_then_installs(f'after-replace-{n}')
 
     def test_interrupted_between_the_two_renames_of_a_wrapper_swap(self):
-        for n in (OP_COUNT - 1, OP_COUNT):
+        for n in WRAP_STEPS:
             with self.subTest(step=n):
                 self.setUp()
                 self.assert_recovers_then_installs(f'mid-switch-{n}')
+
+    def test_interrupted_after_begin_record_before_any_file_moved(self):
+        for n in range(1, OP_COUNT + 1):
+            with self.subTest(step=n):
+                self.setUp()
+                self.assert_recovers_then_installs(f'before-move-original-{n}')
+
+    def test_interrupted_after_restoration_before_restore_done_record(self):
+        self.assertEqual(self.install(AUDI_CLUSTER_FAULT='after-replace-6').returncode, 99)
+        r = self.uninstall(AUDI_CLUSTER_FAULT='before-restore-done')
+        self.assertEqual(r.returncode, 99)
+        r = self.uninstall()
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assert_factory_intact()
+        self.assertIn('already-in-place', (self.app / 'eso/.audi-cluster/journal').read_text())
+
+    def test_jar_is_the_last_file_switched(self):
+        ops = [l for l in (self.mod / 'Update/manifest.txt').read_text().splitlines() if l.startswith('op ')]
+        self.assertTrue(ops[-1].endswith('test.jar 644'), ops[-1])
+        self.assertTrue(all('.wrapper' in l for l in ops[-3:-1]), ops)
 
 
 class RollbackRefusals(InstallerFixture):

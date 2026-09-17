@@ -111,6 +111,7 @@ while read -r kind op path payload mode; do
     n=$((n + 1))
     file=$(tgt "$path")
     journal_write REPLACE_BEGIN "$op" "$path" "$payload" "$mode"
+    maybe_fault "before-move-original-$n"
     if [[ "$op" == wrap ]]; then
         [[ -e "$file.real" ]] && fail "refusing to overwrite $path.real"
         mv "$file" "$file.real" || fail "cannot move original $path"

@@ -53,6 +53,16 @@ class CardAssembly(unittest.TestCase):
         self.assertIn('ssh-ed25519', (out2 / 'Mods/mh2p-ssh-access/Update/authorized_keys').read_text())
         self.assertTrue((out2 / 'Mods/mh2p-ssh-access/Persist/install.sh').is_file())
 
+    def test_refuses_dirty_submodule(self):
+        stray = ROOT / 'third_party/MH2p_NavCompassIgnore/UNTRACKED-test-file'
+        stray.write_text('x')
+        try:
+            with self.assertRaises(SystemExit):
+                tool.assemble(self.out, 'modkit', ['navcompass'], None, False, False)
+        finally:
+            stray.unlink()
+        self.assertFalse((self.out / 'Mods').exists())
+
     def test_refuses_non_empty_output_and_unpinned_submodule(self):
         self.out.mkdir()
         (self.out / 'stale').write_text('x')
