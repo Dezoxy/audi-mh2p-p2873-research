@@ -19,7 +19,7 @@ def build():
         p = ROOT / 'analysis/app/files' / name
         files['/mnt/app/' + name] = {'sha256': hashlib.sha256(p.read_bytes()).hexdigest(),
                                     'size': p.stat().st_size}
-    manifest = {'schema': 1, 'allowed_releases': ['MH2p_ER_AUG35_P2873', 'MH2p_ER_AUG35S_P2873'],
+    manifest = {'schema': 1, 'allowed_releases': ['MH2p_ER_AU_P2873', 'MH2p_ER_AUG35_P2873', 'MH2p_ER_AUG35S_P2873'],
                 'vehicle_identity': 'G35S (user confirmed)', 'files': files}
     evidence = ROOT / 'evidence/build'
     evidence.mkdir(parents=True, exist_ok=True)

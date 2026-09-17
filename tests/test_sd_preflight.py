@@ -42,7 +42,7 @@ class PreflightTests(unittest.TestCase):
         self.source = self.unit / self.target.lstrip('/')
         self.source.parent.mkdir(parents=True)
         self.source.write_bytes(b'original unit bytes')
-        self.manifest = {'allowed_releases': ['MH2p_ER_AUG35_P2873', 'MH2p_ER_AUG35S_P2873'],
+        self.manifest = {'allowed_releases': ['MH2p_ER_AU_P2873', 'MH2p_ER_AUG35_P2873', 'MH2p_ER_AUG35S_P2873'],
                          'files': {self.target: {'sha256': hashlib.sha256(self.source.read_bytes()).hexdigest(),
                                                 'size': self.source.stat().st_size}}}
         self.output = self.root / 'capture'
@@ -88,12 +88,23 @@ class PreflightTests(unittest.TestCase):
         copy.symlink_to(self.source)
         self.assertFalse(verifier.verify(self.output, self.manifest)['baseline_match'])
 
-    def test_adapter_rejects_wrong_release_before_writes(self):
-        result = subprocess.run(['sh', str(ROOT / 'port/sd/install.sh')],
-                                env={**os.environ, 'MOD_PATH': str(self.script), 'MEDIA_PATH': str(self.root),
-                                     'RELEASE_VERSION': 'MH2p_US_PO416_P2870'}, capture_output=True)
-        self.assertNotEqual(result.returncode, 0)
-        self.assertFalse((self.root / 'AudiP2873-capture').exists())
+    def test_adapter_does_not_gate_the_capture_on_release(self):
+        # Card 1 showed the release gate blocked a legitimate read-only capture (the unit reported
+        # MH2p_ER_AU_P2873, not AUG35). The adapter must run the collector regardless of release;
+        # the collector records the release for the host verifier to judge.
+        text = (ROOT / 'port/sd/install.sh').read_text()
+        self.assertIn('collect.sh', text)
+        # No release `case` may sit between the shebang and the collect invocation.
+        before_collect = text.split('collect.sh')[0]
+        self.assertNotIn('exit 2', before_collect)
+        self.assertNotIn('capture skipped', text)
+
+    def test_collector_records_an_unexpected_release(self):
+        r = subprocess.run(['sh', str(self.script / 'collect.sh'), str(self.output), str(self.unit)],
+                           env={**os.environ, 'RELEASE_VERSION': 'MH2p_ER_AU_P2873'}, capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertEqual((self.output / 'release.txt').read_text().strip(), 'MH2p_ER_AU_P2873')
+        self.assertEqual(self.source.read_bytes(), b'original unit bytes')  # read-only
 
     def test_card_scripts_call_no_tool_missing_from_the_update_mode_path(self):
         # Update mode has PATH=.:/proc/boot:/bin:/usr/bin:/usr/sbin:/sbin; dirname, basename and sed
@@ -114,16 +125,11 @@ class PreflightTests(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stderr)
         self.assertTrue(verifier.verify(self.output, self.manifest)['baseline_match'])
 
-    def test_collector_and_adapter_work_under_ksh(self):
+    def test_collector_works_under_ksh(self):
         r = subprocess.run([KSH, str(self.script / 'collect.sh'), str(self.output), str(self.unit)],
-                           env={**os.environ, 'RELEASE_VERSION': 'MH2p_ER_AUG35_P2873'}, capture_output=True, text=True)
+                           env={**os.environ, 'RELEASE_VERSION': 'MH2p_ER_AU_P2873'}, capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stderr)
         self.assertTrue(verifier.verify(self.output, self.manifest)['baseline_match'])
-        r = subprocess.run([KSH, str(ROOT / 'port/sd/install.sh')], capture_output=True, text=True,
-                           env={**os.environ, 'MOD_PATH': str(self.script), 'MEDIA_PATH': str(self.root),
-                                'RELEASE_VERSION': 'MH2p_US_PO416_P2870'})
-        self.assertEqual(r.returncode, 2)
-        self.assertFalse((self.root / 'AudiP2873-capture').exists())
 
     def test_live_mode_refuses_internal_destination(self):
         result = subprocess.run(['sh', str(self.script / 'collect.sh'), str(self.output)], capture_output=True)
