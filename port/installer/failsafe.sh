@@ -7,6 +7,8 @@
 # only after every factory file verified. It never installs anything.
 set -u
 media=$(cd "$(dirname "$0")" && pwd -P)
+# Heartbeat on every boot with the card inserted: evidence that the early-boot hook is reached.
+print "$(date) failsafe hook reached" >> "$media/AudiP2873-failsafe-heartbeat.txt" 2>/dev/null
 marker="$media/AudiClusterIntegration-RECOVER"
 [[ -e "$marker" ]] || exit 0
 module="$media/Mods/AudiClusterIntegration/Update"

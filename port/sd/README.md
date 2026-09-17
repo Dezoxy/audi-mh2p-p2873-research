@@ -29,7 +29,12 @@ for this unit. It is not an installation approval.
 3. Insert the card and start the software update from the MMI menu as for a
    normal SD update. ModKit runs, executes this addon, and writes
    `Logs/AudiP2873Preflight.log`, `AudiP2873-probe/` and `AudiP2873-capture/`.
-4. Take the card back to the host and run `verify_probe.py` and
+4. Put the card back in and let the unit boot normally once more (restart
+   the MMI or cycle the ignition), then remove it. The card-root
+   `failsafe.sh` appends a line to `AudiP2873-failsafe-heartbeat.txt`, which
+   proves ModKit's early-boot hook is reached on this unit. It writes nothing
+   to the unit.
+5. Take the card back to the host and run `verify_probe.py` and
    `verify_capture.py`.
 
 Running ModKit is itself a modification: its loader replaces

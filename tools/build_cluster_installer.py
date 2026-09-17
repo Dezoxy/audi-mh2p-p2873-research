@@ -125,6 +125,9 @@ def build(payload_dir, factory_root, jar, output, inventory=None, modkit_dir=MOD
         p.chmod(0o755)
     (output / 'Mods' / MODULE / 'Persist/install.sh').chmod(0o755)
     (output / 'failsafe.sh').chmod(0o755)
+    # The persisted startup entry rolls back unattended, so it needs its own copies.
+    for name in ['common.sh', 'manifest.txt', 'selftest.bin']:
+        shutil.copy(update / name, output / 'Mods' / MODULE / 'Persist' / name)
     (output / MARKER).write_text('build output; safe to replace\n')
     return {'chain': chain,'module_dir': str(output), 'jar': jar.name, 'payloads': {k: digest(v) for k, v in payloads.items()},
             'factory': factory, 'operations': [' '.join(o) for o in ops], 'accepted_releases': RELEASES,

@@ -15,13 +15,14 @@ spec = importlib.util.spec_from_file_location('build_cluster_installer', ROOT / 
 builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
 # Present on the unit (stage-1/2 images or /mnt/app/armle) and used by the scripts.
-UNIT_TOOLS = ['awk', 'sed', 'wc', 'dd', 'cp', 'mv', 'rm', 'mkdir', 'chmod', 'ls',
+UNIT_TOOLS = ['awk', 'sed', 'wc', 'dd', 'cp', 'mv', 'rm', 'mkdir', 'ls',
               'date', 'cat', 'head', 'tail', 'dirname', 'basename', 'gzip', 'df']
 SHIMS = {
     'hd': '#!/bin/sh\nexec /usr/bin/hexdump -C "$@"\n',
     'slay': '#!/bin/sh\nexit 0\n',
     'sync': '#!/bin/sh\nexit 0\n',  # host-wide flush is slow on macOS and irrelevant to the fixture
     'df': '#!/bin/sh\nif [ -n "$FAKE_FREE_KB" ]; then echo "fs 1 1 $FAKE_FREE_KB 1% /x"; echo "fs 1 1 $FAKE_FREE_KB 1% /x"; exit 0; fi\nexec /bin/df "$@"\n',
+    'chmod': '#!/bin/sh\nfor a in "$@"; do case "$a" in *"$FAIL_CHMOD_MATCH"*) [ -n "$FAIL_CHMOD_MATCH" ] && exit 1;; esac; done\nexec /bin/chmod "$@"\n',
     'cp': '#!/bin/sh\nfor a in "$@"; do case "$a" in *"$FAIL_CP_MATCH"*) [ -n "$FAIL_CP_MATCH" ] && exit 1;; esac; done\nexec /bin/cp "$@"\n',
 }
 FACTORY = {'img_ver.txt': b'IMG 1.0\n', 'eso/bin/apps/gal': b'\x7fELF gal factory ' * 500,
@@ -363,14 +364,50 @@ class InterruptedTransactions(InstallerFixture):
                 self.setUp()
                 self.assert_recovers_then_installs(f'before-move-original-{n}')
 
-    def test_interrupted_after_restoration_before_restore_done_record(self):
-        self.assertEqual(self.install(AUDI_CLUSTER_FAULT='after-replace-6').returncode, 99)
-        r = self.uninstall(AUDI_CLUSTER_FAULT='before-restore-done')
-        self.assertEqual(r.returncode, 99)
-        r = self.uninstall()
-        self.assertEqual(r.returncode, 0, r.stderr)
+    def test_interrupted_after_each_restoration_before_its_done_record(self):
+        # Restoration runs newest first: JAR (1), dio_manager (2), gal (3), then the four new files.
+        for n in range(1, OP_COUNT + 1):
+            with self.subTest(step=n):
+                self.setUp()
+                self.assertEqual(self.install().returncode, 0)
+                self.assertEqual(self.uninstall(AUDI_CLUSTER_FAULT=f'before-restore-done-{n}').returncode, 99)
+                r = self.uninstall()
+                self.assertEqual(r.returncode, 0, r.stderr)
+                self.assert_factory_intact()
+                if n in (2, 3):
+                    self.assertIn('already-in-place', (self.app / 'eso/.audi-cluster/journal').read_text())
+
+    def test_failed_permission_restore_is_not_reported_as_success(self):
+        self.assertEqual(self.install(AUDI_CLUSTER_FAULT='before-move-original-5').returncode, 99)
+        r = self.uninstall(FAIL_CHMOD_MATCH='eso/bin/apps/gal')
+        self.assertNotEqual(r.returncode, 0)
+        self.assertEqual(self.state_text(), 'ROLLBACK_INCOMPLETE')
+        self.assertIn('cannot restore mode', r.stderr)
+        self.assertEqual(self.uninstall().returncode, 0)
         self.assert_factory_intact()
-        self.assertIn('already-in-place', (self.app / 'eso/.audi-cluster/journal').read_text())
+
+    def persist(self):
+        return subprocess.run([KSH, str(self.mod / 'Persist/install.sh')], capture_output=True, text=True,
+                              env={'PATH': str(self.bin), 'AUDI_CLUSTER_FIXTURE_ROOT': str(self.root)})
+
+    def test_boot_rolls_back_an_uncommitted_transaction_unattended(self):
+        # Crash after the JAR (last file) was switched but before COMMITTED: the JAR is on the classpath.
+        self.assertEqual(self.install(AUDI_CLUSTER_FAULT=f'after-replace-{OP_COUNT}').returncode, 99)
+        self.assertTrue((self.app / 'eso/hmi/lsd/jars/test.jar').exists())
+        shutil.rmtree(self.media / 'AudiClusterIntegration-backup')  # no card at boot
+        r = self.persist()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn('unattended rollback complete', r.stdout)
+        self.assertEqual(self.state_text(), 'RESTORED')
+        self.assert_factory_intact()
+        self.assertEqual(self.persist().stdout, '')  # next boot: nothing to do
+
+    def test_boot_rollback_needs_the_packaged_library(self):
+        self.assertEqual(self.install(AUDI_CLUSTER_FAULT='after-replace-3').returncode, 99)
+        (self.mod / 'Persist/common.sh').unlink()
+        r = self.persist()
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn('cannot roll back', r.stdout)
 
     def test_jar_is_the_last_file_switched(self):
         ops = [l for l in (self.mod / 'Update/manifest.txt').read_text().splitlines() if l.startswith('op ')]

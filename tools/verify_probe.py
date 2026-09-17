@@ -66,6 +66,7 @@ def verify(probe):
             'daemons': [l.strip() for l in read(probe, 'net-processes.txt').splitlines() if l.strip()][:20],
             'ssh_key_dir_present': '.ssh' in read(probe, 'net-ssh-files.txt') and 'No such file' not in read(probe, 'net-ssh-files.txt').split('.ssh')[0][-80:],
         },
+        'failsafe_heartbeats': [l for l in read(probe.parent, 'AudiP2873-failsafe-heartbeat.txt').splitlines() if l.strip()],
         'checks': checks,
         'installation_approved': False,
     }

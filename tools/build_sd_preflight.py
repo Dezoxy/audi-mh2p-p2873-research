@@ -42,6 +42,7 @@ def build():
     img_ver = (ROOT / 'analysis/app/files/img_ver.txt').read_bytes()
     entries[prefix + 'probe-expected.txt'] = (f'selftest {len(selftest)} {zlib.crc32(selftest) & 0xffffffff:08x}\n'
                                               f'img_ver {len(img_ver)} {zlib.crc32(img_ver) & 0xffffffff:08x}\n').encode()
+    entries['failsafe.sh'] = (ROOT / 'port/sd/failsafe-heartbeat.sh').read_bytes()
     entries['capture-reference.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
     with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as z:
         for name, data in sorted(entries.items()):
