@@ -51,14 +51,22 @@ hook's log path (`/tmp/dio_cluster.log`) records every TLV it sees.
 
 1. iAP2 ABI/offset review of `dio_cluster.so` against the firmware `libesoiap2.so`
    (struct sizes, the message-view layout, the deployMessage signature). Static.
-2. A capture-only card that also runs the TLV logger during a real Waze CarPlay
-   session, to answer the Waze question from the phone. Read-only on the unit.
+2. Answering the Waze question needs the iAP2 message stream, and the only
+   tool for that in these repos is `dio_manager_preload.c`. **That hook is not
+   read-only**: it is a native preload into `dio_manager` that injects a
+   route-guidance identification TLV and rewrites identification messages, with
+   its ABI still unverified. It is a separate experiment with brick risk to
+   phone integration, never part of a diagnostic card, and must not run before
+   the real-binary ABI recheck. (Corrected after review: an earlier draft of
+   this line called it a read-only logger.)
 
 ## What still blocks a real attempt
 
 - The car runs a build whose `img_ver.txt` differs from the analysed package
-  (42 vs 41 bytes, `G35S` vs `G35`). The real binaries must be captured and
-  hashed before trusting any of the above for this car.
+  (42 vs 41 bytes, CRC differs). No single-character insertion into the package
+  file, with any printable character, reproduces the car's checksum, so
+  "`G35S` instead of `G35`" does not explain it; the content differs by more.
+  The real file and binaries must be captured before drawing conclusions.
 - Native ABI/offset compatibility is unproven.
 - The independent-map tier has no working CarPlay precedent at all.
 
@@ -135,9 +143,10 @@ Nothing at the linker or ABI-flags level blocks it.
    field-offset ABI is not exercised by these signatures, but the payload was
    built against some Screen version; a different Screen minor on the car could
    still differ semantically. Confirm the firmware Screen version once captured.
-3. **This is the package's libraries.** The car runs a build that differs
-   (card 1). Card 2 captures the real libraries; rerun this exact check against
-   them before trusting it for this vehicle.
+3. **This is the package's libraries.** The car runs a build whose version
+   file differs (card 1); how much else differs is unknown. Card 2 captures the
+   real libraries; rerun this exact check against them before trusting it for
+   this vehicle.
 
 Conclusion for the mirror: statically, it is as clear as it can get without the
 car. The remaining gates are runtime display behaviour and the real-binary

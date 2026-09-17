@@ -270,6 +270,17 @@ class ProbeTests(unittest.TestCase):
         for tool in ['gzip', 'hd', 'wc', 'awk', 'sed']:
             self.assertNotEqual(after[tool], 'MISSING', tool)
 
+    def test_verifier_separates_tool_result_from_baseline_mismatch(self):
+        self.assertEqual(self.probe().returncode, 0)
+        lines = (self.out / 'result.txt').read_text().splitlines()
+        lines = [l if not l.startswith('check crc-img_ver ') else 'check crc-img_ver FAIL expected size=41 got size=42' for l in lines]
+        (self.out / 'result.txt').write_text('\n'.join(lines) + '\n')
+        v = probe_verifier.verify(self.out)
+        self.assertTrue(v['crc_tool_ok'])
+        self.assertFalse(v['img_ver_matches_package'])
+        # The host fixture lacks unit-only tools such as slay; only that may hold the verdict down.
+        self.assertEqual(v['assumptions_hold'], not v['tools_missing'], 'a baseline mismatch must not read as a broken tool')
+
     def test_probe_refuses_overwrite(self):
         self.out.mkdir()
         self.assertNotEqual(self.probe().returncode, 0)
