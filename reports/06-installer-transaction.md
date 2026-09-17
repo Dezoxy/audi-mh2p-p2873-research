@@ -43,8 +43,13 @@ Order of `install.sh`, run by the loader during the SD update stage:
 7. An exclusive per-transaction backup directory is created on the card. The
    journal is rotated, never truncated. Each factory file is copied, reread
    and verified before `BACKUP_COMPLETE` is recorded.
-8. Each payload is copied to `<target>.staging` on the destination filesystem,
-   verified and chmodded.
+8. The complete recovery package is copied to a staging directory outside
+   ModKit's `Mods` discovery tree, checked against recovery manifest records,
+   synced, and published with one directory rename. The installed manifest is
+   checked against the current Update manifest. An existing identical package
+   can be reused; an unknown package stops the install. Only then is each
+   payload copied to `<target>.staging` on the destination filesystem, verified
+   and chmodded.
 9. `cluster`, `gal` and `dio_manager` are stopped; each switch is one rename
    with `REPLACE_BEGIN` and `REPLACE_DONE` journal records. Wrapper swaps
    rename the original to `.real` first.
@@ -82,12 +87,16 @@ with a PATH containing only symlinks to the unit's tool set plus shims for
 | Partial uninstall (corrupt `.real` and corrupt backup) | `ROLLBACK_INCOMPLETE`, other files restored, backup retained; completes after the backup is repaired |
 | Rollback against a subsequently changed file | refused for that file only, `ROLLBACK_INCOMPLETE` |
 | Existing cluster JAR or pre-existing target | stops |
-| Startup entry without commit | does nothing |
+| Startup entry without transaction state | does nothing |
+| Uncommitted transaction with the entire card absent | ModKit discovers the on-unit package and restores the baseline |
+| Recovery copy/permission failure or corrupt source | stops before payload staging |
 | Uninstall with the card backup absent | restored from on-unit `.real` originals |
 | Unrelated file left in the cluster directory | directory kept, file untouched |
 | Restored permissions | factory mode (fixture uses 750 for `gal`, wrapper is 755) |
 
-All 65 workspace tests pass (`evidence/build/test-results-installer.txt`).
+Current isolated-worktree validation: 70 workspace tests discovered, 57 passed
+and 13 skipped because proprietary firmware and generated artifacts are absent.
+Both changed shell scripts pass `ksh -n`. CI runs the suite under ksh93 and mksh.
 
 ## Independent review
 
@@ -123,8 +132,9 @@ all are fixed and tested on the `fix/installer-review-gaps` branch:
   between that rename and the state write leaves the JAR on the live
   classpath. The first fix left it there until an operator acted; the
   startup entry now rolls back any uncommitted transaction unattended at the
-  next boot (see "Third review"), which bounds the exposure to one boot of
-  the JAR alone, without natives or daemon.
+  next boot if recovery executes successfully (see "Fourth review"). There
+  is no proven bound on exposure on hardware; removal does not unload classes
+  that an already-running HMI has loaded.
 - **The chain check was presence only.** The manifest now records the exact
   size and hashes of ModKit's wrapper script and persist script at the pinned
   revision, and the check demands those bytes plus the factory ELF next to
@@ -143,8 +153,9 @@ all are fixed and tested on the `fix/installer-review-gaps` branch:
   `common.sh`, `manifest.txt` and `selftest.bin`; when the recorded state is
   neither `COMMITTED` nor `RESTORED` it remounts `/mnt/app` writable and runs
   the shared rollback from the on-unit `.real` originals, with no card and no
-  marker. Tested with the card backup removed. Ordering relative to HMI start
-  at boot is unknown, so the JAR may load once before it is removed.
+  marker. The initial test removed only the backup and still executed the
+  entry from the card; the fourth review corrects that gap. Ordering relative
+  to HMI start is unverified, so the JAR may load before removal.
 - **Ignored `chmod` failure.** Both restoration branches now fail when the
   factory mode cannot be set and check the execute bit for executable modes,
   since byte verification cannot see permissions. Tested with a failing
@@ -154,6 +165,26 @@ all are fixed and tested on the `fix/installer-review-gaps` branch:
   of the seven `RESTORE_DONE` records.
 - **Early-boot recovery was undemonstrated.** See report 07: the card now
   carries a heartbeat `failsafe.sh`.
+
+## Fourth review (2026-09-17)
+
+The base ModKit loader runs Update before copying Persist. The previous
+implementation therefore had no module-specific recovery on the unit if the
+first cluster install lost power before returning. Update now publishes the
+complete recovery package itself before payload staging. Its code and self-test
+bytes are pinned in the manifest, and all copies plus the manifest and entry
+permissions are verified before proceeding. A crash before publication leaves
+factory files untouched and the partial package outside boot discovery.
+
+The boot test uses the pinned ModKit dispatcher with hardware paths, media
+waiting and release discovery adapted for the host fixture. It removes the
+**entire card** and exercises recovery after publication, staging, each of seven
+replacements, and both wrapper rename gaps. It starts with no cluster Persist
+package and never simulates the loader's later copy. Copy/permission failures,
+corrupt recovery source and unknown existing recovery packages block writes.
+These tests demonstrate host discovery and restoration, not QNX boot ordering,
+filesystem power-loss durability or a vehicle recovery guarantee. The heartbeat
+only proves that the card hook was reached.
 
 ## Build and evidence
 
