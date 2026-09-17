@@ -118,6 +118,12 @@ def build(payload_dir, factory_root, jar, output, inventory=None, modkit_dir=MOD
         d = digest(src.read_bytes())
         chain[dest] = d
         lines.append(f"chain {dest} {d['size']} {d['crc32']} {d['sha256']}")
+    # Pin recovery code independently of payload; the manifest itself is copied verbatim.
+    persist = output / 'Mods' / MODULE / 'Persist'
+    for name in ['install.sh', 'common.sh', 'selftest.bin']:
+        src = persist / name if name == 'install.sh' else update / name
+        d = digest(src.read_bytes())
+        lines.append(f"recovery {name} {d['size']} {d['crc32']} {d['sha256']}")
     for op, dest, name, mode in ops:
         lines.append(f'op {op} {dest} {name} {mode}')
     (update / 'manifest.txt').write_text('\n'.join(lines) + '\n')

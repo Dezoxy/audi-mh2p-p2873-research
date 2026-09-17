@@ -88,6 +88,46 @@ done < "$MANIFEST"
 cp "$MANIFEST" "$BACKUP_DIR/manifest.txt" || fail 'cannot record manifest with backup'
 set_state BACKUP_COMPLETE
 
+# Publish a complete recovery package before any live payload can be switched.
+# ModKit's own Persist copy happens AFTER this script returns, which is too late
+# for a power loss during this transaction. Stage outside Mods so boot discovery
+# cannot execute a partial package; publish the module with one directory rename.
+recovery_source="$here/../Persist"
+recovery_dest="$OTA_ROOT/modkit/Mods/$MODULE_NAME"
+verify_recovery_package() {
+    typeset name rec dir=$1
+    for name in install.sh common.sh selftest.bin; do
+        rec=$(manifest_lookup recovery "$name"); set -- $rec
+        [[ -n "${1:-}" && -n "${2:-}" ]] || fail "missing recovery manifest record: $name"
+        verify_file "$dir/$name" "$1" "$2" || fail "recovery verification failed: $name"
+    done
+    verify_file "$dir/manifest.txt" "$(file_size "$MANIFEST")" "$manifest_crc" || fail 'recovery manifest differs'
+    [[ -x "$dir/install.sh" ]] || fail 'recovery entry is not executable'
+}
+verify_recovery_package "$recovery_source"
+if [[ -e "$recovery_dest" || -L "$recovery_dest" ]]; then
+    # A retry may reuse the identical package. Never replace an unknown module.
+    [[ ! -L "$recovery_dest" && ! -L "$recovery_dest/Persist" ]] || fail 'symlink at recovery destination'
+    [[ ! -e "$recovery_dest/Post" && ! -e "$recovery_dest/uninstall.txt" ]] || fail 'unexpected recovery module state'
+    verify_recovery_package "$recovery_dest/Persist"
+else
+    recovery_stage="$OTA_ROOT/modkit/.${MODULE_NAME}-recovery.$TXID"
+    mkdir "$recovery_stage" || fail 'cannot create recovery staging directory'
+    mkdir "$recovery_stage/Persist" || fail 'cannot create recovery Persist directory'
+    for name in install.sh common.sh manifest.txt selftest.bin; do
+        cp "$recovery_source/$name" "$recovery_stage/Persist/$name" || fail "cannot copy recovery $name"
+    done
+    chmod 755 "$recovery_stage/Persist/install.sh" || fail 'cannot set recovery entry mode'
+    verify_recovery_package "$recovery_stage/Persist"
+    sync
+    maybe_fault before-recovery-publish
+    mkdir -p "$OTA_ROOT/modkit/Mods" || fail 'cannot create ModKit module directory'
+    mv "$recovery_stage" "$recovery_dest" || fail 'cannot publish recovery package'
+    sync
+fi
+verify_recovery_package "$recovery_dest/Persist"
+maybe_fault after-recovery-publish
+
 # 6. Stage on the destination filesystem and verify before any switch.
 maybe_fault before-staging
 while read -r kind op path payload mode; do

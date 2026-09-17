@@ -1,6 +1,6 @@
 #!/bin/ksh
-# Startup entry copied to /mnt/ota by the ModKit loader regardless of the
-# Update result, and run on every boot. COMMITTED starts the daemon. Any other
+# Startup entry published to /mnt/ota by Update before payload staging, then
+# discovered by ModKit on every boot. COMMITTED starts the daemon. Any other
 # recorded state means a transaction was interrupted: the JAR may sit on the
 # live classpath, so the module is rolled back here, unattended, from the
 # on-unit originals. No card or operator marker is needed.
