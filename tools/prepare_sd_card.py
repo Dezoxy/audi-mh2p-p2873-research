@@ -42,12 +42,21 @@ def checked_out_revision(name):
     return out.stdout.strip() or None
 
 
+def worktree_changes(name):
+    out = subprocess.run(['git', 'status', '--porcelain', '--untracked-files=all'], cwd=THIRD / name,
+                         capture_output=True, text=True)
+    return [l for l in out.stdout.splitlines() if l.strip()]
+
+
 def require_pinned(name, allow_unpinned):
     if not (THIRD / name).is_dir() or not any((THIRD / name).iterdir()):
         sys.exit(f'submodule not checked out: third_party/{name} (run: git submodule update --init)')
     pinned, actual = pinned_revision(name), checked_out_revision(name)
     if pinned != actual and not allow_unpinned:
         sys.exit(f'third_party/{name} is at {actual}, repository pins {pinned}; refusing (use --allow-unpinned to override)')
+    changes = worktree_changes(name)
+    if changes and not allow_unpinned:
+        sys.exit(f'third_party/{name} has local changes or untracked files; refusing: {changes[:3]}')
     return actual
 
 
@@ -74,14 +83,15 @@ def assemble(output, base, mods, ssh_pubkey, preflight, allow_unpinned):
         sys.exit('the q3team base uses the ModKit v1 layout; ModKit v2 mods cannot be added to it')
     if 'ssh-access' in mods and not ssh_pubkey:
         sys.exit('ssh-access needs --ssh-pubkey FILE (your OpenSSH public key)')
-    revisions = {}
-    output.mkdir(parents=True, exist_ok=True)
+    # Validate every submodule before the first write, so a refusal leaves no partial card.
     base_sub = BASES[base]
-    revisions[base_sub] = require_pinned(base_sub, allow_unpinned)
+    revisions = {base_sub: require_pinned(base_sub, allow_unpinned)}
+    for name in mods:
+        revisions[MODS[name][0]] = require_pinned(MODS[name][0], allow_unpinned)
+    output.mkdir(parents=True, exist_ok=True)
     copy_tree(THIRD / base_sub, output)
     for name in mods:
         sub, folder = MODS[name]
-        revisions[sub] = require_pinned(sub, allow_unpinned)
         dst = output / 'Mods' / folder
         dst.mkdir(parents=True)
         for stage in STAGES:

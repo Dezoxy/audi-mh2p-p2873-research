@@ -134,6 +134,7 @@ current_state() { [[ -f "$STATE_FILE" ]] && cat "$STATE_FILE" || print NONE; }
 #   selftest <file> <size> <crc32>
 #   payload <file> <size> <crc32> <sha256> <mode>
 #   factory <abs-path> <size> <crc32> <sha256> <mode>
+#   chain <abs-path> <size> <crc32> <sha256>          (pinned ModKit persistence files)
 #   op new <abs-path> <payload-file> <mode>
 #   op wrap <abs-path> <payload-file> <mode>   (factory file moves to <path>.real)
 manifest_lookup() {
@@ -152,11 +153,17 @@ tgt() { print "$FIXTURE_ROOT$1"; }
 # cluster install never shares a transaction with ModKit's own first install.
 is_elf() { [[ -f "$1" ]] && [[ "$(dd if="$1" bs=1 skip=1 count=3 2>/dev/null)" == ELF ]]; }
 check_recovery_chain() {
-    typeset bin="$APP_ROOT/eso/bin"
+    typeset bin="$APP_ROOT/eso/bin" kind path size crc sha found=0
     [[ -f "$OTA_ROOT/modkit/modkit_persist.sh" ]] || fail 'ModKit persistence is not installed yet; run the plain ModKit SD update first, confirm a normal boot, then rerun with this module'
     is_elf "$bin/servicemgrmibhigh" && fail 'servicemgrmibhigh is still the factory binary; ModKit persistence wrapper is not active'
     is_elf "$bin/servicemgrmibhigh0" || fail 'servicemgrmibhigh0 is not the factory binary; unknown loader state'
-    [[ -f "$bin/servicemgrmibhigh" ]] || fail 'servicemgrmibhigh wrapper missing'
+    # The wrapper and persist script must be the exact pinned ModKit files, not any script by that name.
+    while read -r kind path size crc sha; do
+        [[ "$kind" == chain ]] || continue
+        found=1
+        verify_file "$(tgt "$path")" "$size" "$crc" || fail "recovery chain file differs from the pinned ModKit release: $path"
+    done < "$MANIFEST"
+    (( found == 1 )) || fail 'manifest has no chain records'
 }
 
 # Shared by uninstall.sh and failsafe.sh. Expects MANIFEST, JOURNAL and state
@@ -209,12 +216,12 @@ restore_entry() {
     file=$(tgt "$path")
     rec=$(manifest_lookup payload "$payload"); set -- $rec; psize=${1:-}; pcrc=${2:-}
     [[ -n "$psize" && -n "$pcrc" ]] || { print -u2 "unknown payload $payload in journal"; return 1; }
-    if [[ -e "$file" ]] && ! verify_file "$file" "$psize" "$pcrc"; then
-        print -u2 "refusing to touch $path: bytes differ from the installed payload"
-        return 1
-    fi
     case "$kind" in
         new)
+            if [[ -e "$file" ]] && ! verify_file "$file" "$psize" "$pcrc"; then
+                print -u2 "refusing to touch $path: bytes differ from the installed payload"
+                return 1
+            fi
             rm -f "$file" || return 1
             journal_write RESTORE_DONE "$kind" "$path"
             ;;
@@ -222,6 +229,19 @@ restore_entry() {
             rec=$(manifest_lookup factory "$path"); set -- $rec; fsize=${1:-}; fcrc=${2:-}; fmode=${4:-}
             [[ -n "$fsize" && -n "$fcrc" && -n "$fmode" ]] || { print -u2 "no factory record for $path"; return 1; }
             real="$file.real"
+            if [[ -e "$file" ]] && ! verify_file "$file" "$psize" "$pcrc" && ! verify_file "$file" "$fsize" "$fcrc"; then
+                print -u2 "refusing to touch $path: bytes are neither the installed wrapper nor the factory file"
+                return 1
+            fi
+            if verify_file "$file" "$fsize" "$fcrc"; then
+                # Interrupted before the original was moved, or restored before RESTORE_DONE was written.
+                if [[ -e "$real" ]]; then
+                    if verify_file "$real" "$fsize" "$fcrc"; then rm -f "$real"; else print -u2 "warning: $path.real left in place; bytes are neither factory nor ours"; fi
+                fi
+                chmod "$fmode" "$file" 2>/dev/null
+                journal_write RESTORE_DONE "$kind" "$path" already-in-place
+                return 0
+            fi
             if verify_file "$real" "$fsize" "$fcrc"; then
                 mv -f "$real" "$file" || return 1
             elif verify_file "$BACKUP_DIR/files$path" "$fsize" "$fcrc"; then
@@ -235,6 +255,7 @@ restore_entry() {
             fi
             chmod "$fmode" "$file" || return 1
             verify_file "$file" "$fsize" "$fcrc" || return 1
+            maybe_fault before-restore-done
             journal_write RESTORE_DONE "$kind" "$path"
             ;;
         *) return 1;;
