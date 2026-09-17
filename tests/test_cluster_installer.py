@@ -16,7 +16,7 @@ builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
 # Present on the unit (stage-1/2 images or /mnt/app/armle) and used by the scripts.
 UNIT_TOOLS = ['awk', 'sed', 'wc', 'dd', 'cp', 'mv', 'rm', 'mkdir', 'ls',
-              'date', 'cat', 'head', 'tail', 'dirname', 'basename', 'gzip', 'df', 'cut']
+              'date', 'cat', 'head', 'tail', 'gzip', 'df', 'cut']  # no dirname/basename: unreachable in update mode
 SHIMS = {
     'hd': '#!/bin/sh\nexec /usr/bin/hexdump -C "$@"\n',
     'slay': '#!/bin/sh\nexit 0\n',

@@ -3,11 +3,23 @@
 # real installer library functions. Reads the unit; writes only to a new output
 # directory on the card. Usage: ksh probe.sh /fs/sdb0/AudiP2873-probe
 set -u
-here=$(cd "$(dirname "$0")" && pwd -P)
+case "$0" in */*) here=${0%/*};; *) here=.;; esac   # no dirname: it is not on the update-mode PATH
+here=$(cd "$here" && pwd -P)
 out=${1:?A new output directory on removable media is required}
 mkdir "$out" || { print -u2 "refusing to overwrite $out"; exit 2; }
 SCRATCH="$out/scratch"; mkdir "$SCRATCH" || exit 2
-MOD_PATH=$here; MEDIA_PATH=${MEDIA_PATH:-$(dirname "$out")}
+# Exactly what the update stage gave us, before common.sh appends the app-partition directories.
+{ print "PATH_RECEIVED=${PATH:-unset}"; print "LD_LIBRARY_PATH_RECEIVED=${LD_LIBRARY_PATH:-unset}"; } > "$out/path-received.txt"
+lookup_tools() {
+    typeset t p
+    for t in gzip dd hd wc cp mv rm mkdir chmod ls df sync awk sed date cat head tail dirname basename slay find expr mount ksh sh \
+             printf cksum md5sum sum cmp od rmdir tee grep cut sockstat ifconfig pidin; do
+        p=$(whence -p "$t" 2>/dev/null); print "$t ${p:-MISSING}"
+    done
+}
+lookup_tools > "$out/tools-before.txt"
+case "$out" in */*) media_default=${out%/*};; *) media_default=.;; esac
+MOD_PATH=$here; MEDIA_PATH=${MEDIA_PATH:-$media_default}
 . "$here/common.sh"
 result() { print "check $*" >> "$out/result.txt"; }
 run() { typeset name=$1; shift; "$@" > "$out/$name.txt" 2>&1; print "$name rc=$?" >> "$out/status.txt"; }
@@ -16,13 +28,11 @@ run() { typeset name=$1; shift; "$@" > "$out/$name.txt" 2>&1; print "$name rc=$?
     print "RELEASE_VERSION=${RELEASE_VERSION:-unset} OEM=${OEM:-unset} TYPE=${TYPE:-unset} MODKIT_VERSION=${MODKIT_VERSION:-unset}"
     print "MOD_PATH=$MOD_PATH MEDIA_PATH=$MEDIA_PATH APP_ROOT=$APP_ROOT"
     print "KSH_VERSION=${KSH_VERSION:-unset} SHELL0=$0"
+    print "PATH_NOW=$PATH"
     uname -a
 } > "$out/env.txt" 2>&1
 
-for t in gzip dd hd wc cp mv rm mkdir chmod ls df sync awk sed date cat head tail dirname basename slay find expr mount ksh sh \
-         printf cksum md5sum sum cmp od rmdir tee grep; do
-    p=$(whence -p "$t" 2>/dev/null); print "$t ${p:-MISSING}"
-done > "$out/tools.txt"
+lookup_tools > "$out/tools.txt"   # after the append
 
 run wc-raw sh -c "wc -c < '$here/selftest.bin'"
 run hd-first8 sh -c "dd if='$here/selftest.bin' bs=1 count=8 2>/dev/null | hd"

@@ -90,3 +90,36 @@ The first must print one line whose first four hex tokens after the offset
 are the bytes `d7 20 ca 7f` (CRC-32 `7fca20d7` of the P2873 `img_ver.txt`,
 little-endian). The `df` commands must print exactly one header and one data
 row with the free-space number in column four.
+
+## Software-update mode has a short PATH (2026-09-17)
+
+An independent pre-flight review found, and a re-parse of all images confirmed,
+that `etc/boot/startup.swup.sh` sets `PATH=.:/proc/boot:/bin:/usr/bin:/usr/sbin:/sbin`
+and a narrowed library path for software-update mode. Every other mode gets
+the long path from `etc/boot/common.sh`. The stage-1 image (61 entries,
+identical across the six hardware variants) supplies `ksh`, `sh` (a link to
+`ksh`), `mount`, `waitfor` and `echo`. `sed`, `awk` and `gzip` exist only in
+`/mnt/app/armle/bin`; `dirname`, `basename`, `hd` and `wc` only in
+`/mnt/app/armle/usr/bin`. ModKit's own `sed` pipeline works on real cars, so
+the effective update-stage PATH is probably wider, but that is inference.
+
+Consequences applied:
+
+- No script calls `dirname` or `basename` any more; self-location uses
+  `${0%/*}` with a guard for a slash-less `$0`. This covers the card scripts
+  and the installer, uninstaller, startup entry and module fail-safe.
+- `common.sh` appends the four app-partition tool directories and the matching
+  library directories, using the `${VAR:+$VAR:}` form. Sourcing it still
+  executes only assignments.
+- The probe records `PATH` and `LD_LIBRARY_PATH` as received and looks up every
+  tool before sourcing the library, then again after, so the card answers
+  which PATH the update stage really has. It now runs before the release
+  check, because it only reads and is what explains an unexpected release.
+- The collector needs only `mkdir`, `cp`, `ls` and `uname` from the boot image
+  plus `pc` by absolute path.
+- The heartbeat accepts only the three media roots.
+
+Host tests run the probe with a PATH of boot-image tools only and the
+app-partition tools under the fake unit, and the collector with four tools.
+Whether those app-partition binaries need libraries outside the narrowed
+library path could not be checked: none of them is extracted locally.

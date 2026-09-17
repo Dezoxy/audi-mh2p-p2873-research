@@ -5,7 +5,8 @@
 # live classpath, so the module is rolled back here, unattended, from the
 # on-unit originals. No card or operator marker is needed.
 set -u
-here=$(cd "$(dirname "$0")" && pwd -P)
+case "$0" in */*) here=${0%/*};; *) here=.;; esac   # no dirname: it is not on the update-mode PATH
+here=$(cd "$here" && pwd -P)
 root=${AUDI_CLUSTER_FIXTURE_ROOT:-}
 state="$root/mnt/app/eso/.audi-cluster/state"
 daemon="$root/mnt/app/eso/bin/apps/cluster/cluster"

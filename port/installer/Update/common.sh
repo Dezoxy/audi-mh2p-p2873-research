@@ -17,6 +17,14 @@ if [[ -n "${AUDI_CLUSTER_FIXTURE_ROOT:-}" ]]; then
 else
     FIXTURE_ROOT=
 fi
+# Software-update mode runs with PATH=.:/proc/boot:/bin:/usr/bin:/usr/sbin:/sbin and a narrowed
+# library path (etc/boot/startup.swup.sh). gzip, hd, wc, awk and sed exist only on the app
+# partition, so append its directories. Appending keeps system directories first and affects
+# only this process. The ${VAR:+...} form avoids an empty element and is safe under set -u.
+PATH="${PATH:+$PATH:}$FIXTURE_ROOT/mnt/app/armle/bin:$FIXTURE_ROOT/mnt/app/armle/usr/bin:$FIXTURE_ROOT/mnt/app/armle/sbin:$FIXTURE_ROOT/mnt/app/armle/usr/sbin"
+LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$FIXTURE_ROOT/mnt/app/armle/lib:$FIXTURE_ROOT/mnt/app/armle/lib/dll:$FIXTURE_ROOT/mnt/app/armle/usr/lib:$FIXTURE_ROOT/mnt/app/usr/lib"
+export PATH LD_LIBRARY_PATH
+
 APP_ROOT="$FIXTURE_ROOT/mnt/app"
 OTA_ROOT="$FIXTURE_ROOT/mnt/ota"
 STATE_DIR="$APP_ROOT/eso/.audi-cluster"

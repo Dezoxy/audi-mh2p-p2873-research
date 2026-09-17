@@ -15,6 +15,12 @@ Results go to `AudiP2873-probe/` on the card; judge them on the host with:
 python3 tools/verify_probe.py /Volumes/YOUR_CARD/AudiP2873-probe
 ```
 
+`path_received` and `unreachable_before_path_append` show which PATH the
+update stage really provides: the firmware's update mode sets a short PATH
+that excludes the app partition, where `gzip`, `hd`, `wc`, `awk` and `sed` live.
+If the probe folder is missing or empty, read `Logs/AudiP2873Preflight.log`:
+ModKit redirects the addon's output there, including any "not found" line.
+
 `assumptions_hold: true` means the installer's tool assumptions are confirmed
 for this unit. It is not an installation approval.
 

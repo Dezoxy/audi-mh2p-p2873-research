@@ -2,7 +2,8 @@
 # Audi cluster integration: journaled install transaction (ModKit Update stage).
 # Implements port/installer/CONTRACT.md. Not vehicle-tested.
 set -u
-here=$(cd "$(dirname "$0")" && pwd -P)
+case "$0" in */*) here=${0%/*};; *) here=.;; esac   # no dirname: it is not on the update-mode PATH
+here=$(cd "$here" && pwd -P)
 . "$here/common.sh"
 MANIFEST="$here/manifest.txt"
 [[ -f "$MANIFEST" ]] || fail 'manifest.txt missing'
@@ -79,7 +80,7 @@ set_state BACKING_UP
 while read -r kind path size crc sha mode; do
     [[ "$kind" == factory ]] || continue
     dest="$BACKUP_DIR/files$path"
-    mkdir -p "$(dirname "$dest")" || fail 'backup mkdir failed'
+    mkdir -p "${dest%/*}" || fail 'backup mkdir failed'
     cp "$(tgt "$path")" "$dest" || fail "backup copy failed for $path"
     verify_file "$dest" "$size" "$crc" || fail "backup reread mismatch for $path"
     ls -ld "$(tgt "$path")" >> "$BACKUP_DIR/original-modes.txt"
@@ -139,7 +140,7 @@ while read -r kind op path payload mode; do
     [[ "$kind" == op ]] || continue
     rec=$(manifest_lookup payload "$payload"); set -- $rec
     file=$(tgt "$path")
-    mkdir -p "$(dirname "$file")" || fail "cannot create $(dirname "$path")"
+    mkdir -p "${file%/*}" || fail "cannot create ${path%/*}"
     cp "$(payload_path "$payload")" "$file.staging" || fail "staging copy failed for $path"
     verify_file "$file.staging" "$1" "$2" || fail "staged file mismatch for $path"
     chmod "$mode" "$file.staging" || fail "chmod failed for $path.staging"

@@ -6,7 +6,8 @@
 # on-unit journal and the card backup, logs to the card, and removes the marker
 # only after every factory file verified. It never installs anything.
 set -u
-media=$(cd "$(dirname "$0")" && pwd -P)
+case "$0" in */*) media=${0%/*};; *) media=.;; esac   # no dirname: it is not on the update-mode PATH
+media=$(cd "$media" && pwd -P)
 # Heartbeat on every boot with the card inserted: evidence that the early-boot hook is reached.
 print "$(date) failsafe hook reached" >> "$media/AudiP2873-failsafe-heartbeat.txt" 2>/dev/null
 marker="$media/AudiClusterIntegration-RECOVER"
