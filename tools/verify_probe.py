@@ -8,7 +8,8 @@ import sys
 HEX2 = re.compile(r'^[0-9a-fA-F]{2}$')
 REQUIRED_TOOLS = ['gzip', 'dd', 'hd', 'wc', 'cp', 'mv', 'rm', 'mkdir', 'chmod', 'ls', 'df', 'sync', 'awk', 'sed',
                   'date', 'cat', 'head', 'tail', 'dirname', 'basename', 'slay', 'mount', 'ksh']
-CRC_CHECKS = ['crc-selftest', 'crc-img_ver', 'crc-altered-rejected']
+TOOL_CHECKS = ['crc-selftest', 'crc-altered-rejected']   # does the checksum primitive work on this unit
+BASELINE_CHECKS = ['crc-img_ver']                          # does the unit's file match the analysed package
 
 
 def hd_bytes(text):
@@ -53,7 +54,9 @@ def verify(probe):
         'complete': (probe / 'COMPLETE').exists(),
         'hd_format_ok': hd_bytes(read(probe, 'hd-first8.txt'))[:8] == first and hd_bytes(read(probe, 'hd-last8.txt'))[:8] == last,
         'df_format_ok': df_rows_ok(read(probe, 'df-app.txt')) and df_rows_ok(read(probe, 'df-media.txt')),
-        'crc_pipeline_ok': all(checks.get(k, {}).get('status') == 'PASS' for k in CRC_CHECKS),
+        'crc_tool_ok': all(checks.get(k, {}).get('status') == 'PASS' for k in TOOL_CHECKS),
+        'img_ver_matches_package': all(checks.get(k, {}).get('status') == 'PASS' for k in BASELINE_CHECKS),
+        'img_ver_detail': checks.get('crc-img_ver', {}).get('detail', ''),
         'free_space_ok': bool(free_lines) and all(' PASS ' in l for l in free_lines),
         'dir_is_empty_ok': checks.get('dir-is-empty', {}).get('status') == 'PASS',
         'tools_missing': [t for t in REQUIRED_TOOLS if tools.get(t, 'MISSING') == 'MISSING'],
@@ -73,7 +76,9 @@ def verify(probe):
         'checks': checks,
         'installation_approved': False,
     }
-    v['assumptions_hold'] = all([v['complete'], v['hd_format_ok'], v['df_format_ok'], v['crc_pipeline_ok'],
+    v['crc_pipeline_ok'] = v['crc_tool_ok']  # kept for older callers; tool result only
+    # Tool assumptions are about the unit's utilities. A package/baseline mismatch is a separate finding.
+    v['assumptions_hold'] = all([v['complete'], v['hd_format_ok'], v['df_format_ok'], v['crc_tool_ok'],
                                  v['free_space_ok'], v['dir_is_empty_ok'], not v['tools_missing']])
     return v
 
