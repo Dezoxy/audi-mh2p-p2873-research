@@ -95,6 +95,12 @@ class PreflightTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertFalse((self.root / 'AudiP2873-capture').exists())
 
+    def test_card_scripts_do_not_depend_on_printf(self):
+        # printf was not found in the unit images; a missing command under set -e would abort the capture.
+        for name in ['collect.sh', 'install.sh', 'uninstall.sh', 'failsafe-heartbeat.sh']:
+            code = [l for l in (ROOT / 'port/sd' / name).read_text().splitlines() if not l.lstrip().startswith('#')]
+            self.assertFalse([l for l in code if 'printf' in l], name)
+
     def test_live_mode_refuses_internal_destination(self):
         result = subprocess.run(['sh', str(self.script / 'collect.sh'), str(self.output)], capture_output=True)
         self.assertNotEqual(result.returncode, 0)
