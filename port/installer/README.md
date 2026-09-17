@@ -11,7 +11,8 @@ Mods/AudiClusterIntegration/
   Update/manifest.txt    generated: releases, payload/factory sizes, CRC-32, SHA-256, ops
   Update/selftest.bin    generated: known file for the on-unit hash self-test
   Update/payload/        generated: JAR, native files, gal.wrapper, dio_manager.wrapper
-  Persist/install.sh     starts the cluster daemon only when state is COMMITTED
+  Persist/install.sh     COMMITTED: starts the daemon; any uncommitted state: unattended rollback
+  Persist/common.sh, manifest.txt, selftest.bin   generated copies that rollback needs at boot
 failsafe.sh              card root; early-boot rollback when AudiClusterIntegration-RECOVER exists
 ```
 

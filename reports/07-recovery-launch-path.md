@@ -28,6 +28,23 @@ which runs a card-root `failsafe.sh` before any mod. The module uses that hook.
 - `uninstall.sh` and `failsafe.sh` share `perform_rollback` in `common.sh`,
   so the two recovery paths cannot drift apart.
 
+## Demonstrating that the hook is reached
+
+Matching ModKit's script bytes shows the chain is installed, not that it
+executes. The diagnostic card therefore carries a card-root `failsafe.sh`
+(`port/sd/failsafe-heartbeat.sh`) that only appends a timestamp line to
+`AudiP2873-failsafe-heartbeat.txt` on the card. After the SD update, one
+further normal boot with the card inserted must add a line; `verify_probe.py`
+reports the lines as `failsafe_heartbeats`. The cluster module's own
+`failsafe.sh` writes the same heartbeat before its marker check.
+
+## Unattended rollback at boot
+
+Independent of the card, the persisted startup entry rolls back any
+transaction whose state is not `COMMITTED` or `RESTORED` (report 06, third
+review). The card fail-safe remains the route for a committed install that
+misbehaves, and for an unattended rollback that reports incomplete.
+
 ## What this does and does not guarantee
 
 The fail-safe is reachable only while `servicemgrmibhigh` still starts and

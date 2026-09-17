@@ -105,7 +105,7 @@ class PreflightTests(unittest.TestCase):
             self.skipTest('requires the locally built addon ZIP (not in the repository)')
         with zipfile.ZipFile(ROOT / 'dist/Audi-P2873-preflight-addon.zip') as z:
             self.assertIsNone(z.testzip())
-            self.assertEqual(set(z.namelist()), {'README.md', 'capture-reference.json',
+            self.assertEqual(set(z.namelist()), {'README.md', 'capture-reference.json', 'failsafe.sh',
                 *['Mods/AudiP2873Preflight/Update/' + n for n in PROBE_ENTRIES]})
             self.assertEqual(z.read('Mods/AudiP2873Preflight/Update/collect.sh'), (ROOT / 'port/sd/collect.sh').read_bytes())
 
@@ -168,6 +168,20 @@ class ProbeTests(unittest.TestCase):
         self.assertFalse(v['assumptions_hold'])
         (self.out / 'tools.txt').write_text('gzip MISSING\n')
         self.assertIn('gzip', probe_verifier.verify(self.out)['tools_missing'])
+
+    def test_heartbeat_failsafe_only_appends_to_the_card(self):
+        card = self.root / 'card'
+        card.mkdir()
+        shutil.copy(ROOT / 'port/sd/failsafe-heartbeat.sh', card / 'failsafe.sh')
+        before = {p: p.read_bytes() for p in (self.root / 'mnt').rglob('*') if p.is_file()}
+        for _ in range(2):
+            self.assertEqual(subprocess.run([KSH, str(card / 'failsafe.sh')], capture_output=True).returncode, 0)
+        self.assertEqual(sorted(p.name for p in card.iterdir()), ['AudiP2873-failsafe-heartbeat.txt', 'failsafe.sh'])
+        self.assertEqual(len((card / 'AudiP2873-failsafe-heartbeat.txt').read_text().splitlines()), 2)
+        self.assertEqual({p: p.read_bytes() for p in (self.root / 'mnt').rglob('*') if p.is_file()}, before)
+        probe_dir = card / 'AudiP2873-probe'
+        probe_dir.mkdir()
+        self.assertEqual(len(probe_verifier.verify(probe_dir)['failsafe_heartbeats']), 2)
 
     def test_probe_refuses_overwrite(self):
         self.out.mkdir()

@@ -87,7 +87,7 @@ with a PATH containing only symlinks to the unit's tool set plus shims for
 | Unrelated file left in the cluster directory | directory kept, file untouched |
 | Restored permissions | factory mode (fixture uses 750 for `gal`, wrapper is 755) |
 
-All 61 workspace tests pass (`evidence/build/test-results-installer.txt`).
+All 65 workspace tests pass (`evidence/build/test-results-installer.txt`).
 
 ## Independent review
 
@@ -113,15 +113,18 @@ all are fixed and tested on the `fix/installer-review-gaps` branch:
   but before its `RESTORE_DONE` record, left the factory binary in place and
   rollback refused it as "not ours". Rollback now recognises a target that
   already verifies as the factory file, removes a matching leftover `.real`,
-  and records it as restored. Two new fault points cover both windows for
-  every operation.
+  and records it as restored. The before-move fault runs for every
+  operation; the restoration fault was first tested for one step only and
+  now runs per step for all seven (third review).
 - **The commit gate did not cover activation.** The wrappers now load the
   hook only while the state file says `COMMITTED`, so a reboot during
   install or rollback runs the factory binaries unmodified. The JAR is now
-  the last file switched, immediately before the state write. Residual
-  window: a crash between that last rename and the state write leaves the
-  JAR alone active for one boot, without natives or daemon, until recovery
-  runs. This is documented rather than hidden.
+  the last file switched, immediately before the state write. A crash
+  between that rename and the state write leaves the JAR on the live
+  classpath. The first fix left it there until an operator acted; the
+  startup entry now rolls back any uncommitted transaction unattended at the
+  next boot (see "Third review"), which bounds the exposure to one boot of
+  the JAR alone, without natives or daemon.
 - **The chain check was presence only.** The manifest now records the exact
   size and hashes of ModKit's wrapper script and persist script at the pinned
   revision, and the check demands those bytes plus the factory ELF next to
@@ -132,6 +135,25 @@ all are fixed and tested on the `fix/installer-review-gaps` branch:
 - **The card assembler ignored local changes in submodules.** It now refuses
   any submodule with modified or untracked files and validates every
   submodule before writing a single file.
+
+## Third review (2026-09-17)
+
+- **JAR left active after a crash.** `Persist/install.sh` runs on every boot
+  from the copy ModKit keeps under `/mnt/ota`. It now ships with its own
+  `common.sh`, `manifest.txt` and `selftest.bin`; when the recorded state is
+  neither `COMMITTED` nor `RESTORED` it remounts `/mnt/app` writable and runs
+  the shared rollback from the on-unit `.real` originals, with no card and no
+  marker. Tested with the card backup removed. Ordering relative to HMI start
+  at boot is unknown, so the JAR may load once before it is removed.
+- **Ignored `chmod` failure.** Both restoration branches now fail when the
+  factory mode cannot be set and check the execute bit for executable modes,
+  since byte verification cannot see permissions. Tested with a failing
+  `chmod` shim: the state becomes `ROLLBACK_INCOMPLETE`, and a later run
+  completes.
+- **Coverage claim.** A per-step fault counter exercises a crash before each
+  of the seven `RESTORE_DONE` records.
+- **Early-boot recovery was undemonstrated.** See report 07: the card now
+  carries a heartbeat `failsafe.sh`.
 
 ## Build and evidence
 

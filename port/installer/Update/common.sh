@@ -209,6 +209,9 @@ maybe_fault() {
     exit 99
 }
 
+# Byte verification cannot see permissions; an executable mode must leave the file executable.
+mode_ok() { case "$2" in [1357]*) [[ -x "$1" ]];; *) return 0;; esac; }
+
 # Restore one journaled replacement. Arguments: kind unit-path payload mode.
 # Returns 0 on verified restoration, 1 when the current file is not ours.
 restore_entry() {
@@ -223,6 +226,7 @@ restore_entry() {
                 return 1
             fi
             rm -f "$file" || return 1
+            maybe_fault "before-restore-done-${RESTORE_STEP:-0}"
             journal_write RESTORE_DONE "$kind" "$path"
             ;;
         wrap)
@@ -238,7 +242,8 @@ restore_entry() {
                 if [[ -e "$real" ]]; then
                     if verify_file "$real" "$fsize" "$fcrc"; then rm -f "$real"; else print -u2 "warning: $path.real left in place; bytes are neither factory nor ours"; fi
                 fi
-                chmod "$fmode" "$file" 2>/dev/null
+                chmod "$fmode" "$file" || { print -u2 "cannot restore mode $fmode on $path"; return 1; }
+                mode_ok "$file" "$fmode" || { print -u2 "$path is not executable after chmod $fmode"; return 1; }
                 journal_write RESTORE_DONE "$kind" "$path" already-in-place
                 return 0
             fi
@@ -253,9 +258,10 @@ restore_entry() {
                 print -u2 "no verified original for $path in $real or the card backup"
                 return 1
             fi
-            chmod "$fmode" "$file" || return 1
+            chmod "$fmode" "$file" || { print -u2 "cannot restore mode $fmode on $path"; return 1; }
+            mode_ok "$file" "$fmode" || { print -u2 "$path is not executable after chmod $fmode"; return 1; }
             verify_file "$file" "$fsize" "$fcrc" || return 1
-            maybe_fault before-restore-done
+            maybe_fault "before-restore-done-${RESTORE_STEP:-0}"
             journal_write RESTORE_DONE "$kind" "$path"
             ;;
         *) return 1;;
@@ -277,6 +283,7 @@ clean_staging() {
 rollback_from_journal() {
     typeset lines line stamp event kind path payload mode n
     ROLLBACK_FAILED=0
+    RESTORE_STEP=0
     clean_staging
     [[ -f "$JOURNAL" ]] || return 0
     lines=$(awk '$2 == "REPLACE_BEGIN" { print NR }' "$JOURNAL" | sed '1!G;h;$!d')
@@ -286,6 +293,7 @@ rollback_from_journal() {
         if awk -v p="$path" '$2 == "RESTORE_DONE" && $4 == p { f = 1 } END { exit !f }' "$JOURNAL"; then
             continue
         fi
+        RESTORE_STEP=$((RESTORE_STEP + 1))
         restore_entry "$kind" "$path" "$payload" "$mode" || ROLLBACK_FAILED=1
     done
 }
