@@ -97,3 +97,48 @@ Net: mirroring the head unit (with CarPlay on it) to the cluster is the most
 statically supported tier. The display target is confirmed present in Audi
 firmware. The open risks are display ownership/contention and native ABI, both
 of which need the captured binaries and, ultimately, bench/vehicle validation.
+
+## ABI review, part 2: native linkage of the mirror payload (2026-09-17)
+
+Deeper than the 214/214 name match of report 05. Compared the upstream prebuilt
+payload (`cluster`, `gal_cluster.so`, `dio_cluster.so` from the v0034 release)
+against the firmware's graphics libraries extracted from stage-2 image-03. All
+static linkage checks pass.
+
+**ELF ABI flags identical.** Every payload and every firmware binary is
+`EM_ARM, EABI5, soft-float, e_flags=0x5000202`. The float ABI matches, so
+floating-point arguments cross the hook boundary intact; a soft/hard mismatch
+(the classic silent corruptor) is ruled out.
+
+**No symbol versioning.** The payloads declare no GNU version requirements, so
+there is no symbol-version mismatch to resolve. QNX linkage is by plain name.
+
+**Every entry point the mirror uses is exported by the firmware libraries:**
+
+| Library (firmware, image-03) | Exports | Mirror calls checked | Result |
+|---|---:|---|---|
+| `libscreen.so.1` | 224 | `screen_read_display`, `screen_create_pixmap(+_buffer)`, `screen_get_display_property_iv`, `screen_get_context_property_pv`, `screen_create_context`, `screen_create_window`, `screen_set_window_property_iv/cv`, `screen_post_window`, `screen_get_buffer/pixmap_property_pv` | all present |
+| `libEGL.so.1` | 35 | `eglGetDisplay`, `eglInitialize`, `eglCreateWindowSurface`, `eglMakeCurrent`, `eglSwapBuffers` | all present |
+| `libGLESv2.so.2` | 316 | `glBindTexture`, `glTexImage2D`, `glTexSubImage2D`, `glDrawArrays` | all present |
+| `libnvmedia.so` | 172 | `NvMediaDeviceCreate`, `NvMediaVideoDecoderCreateEx`, `NvMediaVideoDecoderRender`, `NvMediaVideoMixerCreate` | all present (the H.264 path, not needed for the plain mirror) |
+
+Net: the mirror payload is link-compatible with the firmware graphics stack.
+Nothing at the linker or ABI-flags level blocks it.
+
+**What this does NOT prove, and what is now the whole remaining risk:**
+
+1. **Display ownership/contention on surface 33.** Linkage says the calls
+   resolve; it says nothing about whether a third-party window may own or share
+   displayable 33 while the factory cluster renders there. This is the first
+   thing that writes to the cluster and the main runtime unknown.
+2. **Opaque-struct / Screen-version match.** The calls pass opaque handles, so
+   field-offset ABI is not exercised by these signatures, but the payload was
+   built against some Screen version; a different Screen minor on the car could
+   still differ semantically. Confirm the firmware Screen version once captured.
+3. **This is the package's libraries.** The car runs a build that differs
+   (card 1). Card 2 captures the real libraries; rerun this exact check against
+   them before trusting it for this vehicle.
+
+Conclusion for the mirror: statically, it is as clear as it can get without the
+car. The remaining gates are runtime display behaviour and the real-binary
+recheck, both of which need the vehicle.
