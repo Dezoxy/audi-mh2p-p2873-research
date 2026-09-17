@@ -27,7 +27,11 @@ def verify(capture, manifest):
         checks.append({'path': name, 'match': match, 'sha256': actual})
         if not match:
             failures.append('Missing, linked or different file: ' + name)
+    matched = sum(1 for c in checks if c['match'])
     return {'baseline_match': not failures, 'release': release, 'checks': checks, 'failures': failures,
+            'files_matching_package': matched, 'files_total': len(checks),
+            'note': 'This car may run a build different from the analysed package; per-file matches '
+                    'above are the useful signal (e.g. gal/dio_manager identical, lsd.jar/version files differ).',
             'installation_approved': False,
             'remaining_checks': ['Native build/ABI', 'Active display routing and map restoration',
                                  'Existing mods and classloader precedence', 'Backup/rollback and recovery validation']}
