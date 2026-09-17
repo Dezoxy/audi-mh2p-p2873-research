@@ -58,10 +58,12 @@ for a full unit backup.
 
 ## Tests
 
-Five new host tests: rollback via marker after an interrupted install, no-op
+The original five recovery host tests cover rollback via marker after an interrupted install, no-op
 without the marker, marker kept when a file was changed after install, marker
 left for the operator when nothing is installed, and install refusal when the
-persistence chain is missing or incomplete. Installer tests: 24; workspace: 47.
+persistence chain is missing or incomplete. Current coverage also includes
+ModKit discovering the preinstalled recovery entry with the whole card absent;
+see report 06 for validation results.
 
 ## On-unit checks: collected by SD card
 
