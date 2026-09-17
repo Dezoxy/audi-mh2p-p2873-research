@@ -94,9 +94,11 @@ with a PATH containing only symlinks to the unit's tool set plus shims for
 | Unrelated file left in the cluster directory | directory kept, file untouched |
 | Restored permissions | factory mode (fixture uses 750 for `gal`, wrapper is 755) |
 
-Current isolated-worktree validation: 70 workspace tests discovered, 57 passed
-and 13 skipped because proprietary firmware and generated artifacts are absent.
-Both changed shell scripts pass `ksh -n`. CI runs the suite under ksh93 and mksh.
+Validation: 72 workspace tests discovered. With the firmware and generated
+artifacts present, all 72 run and pass locally. In CI and any clean checkout,
+59 pass and 13 skip because proprietary firmware and generated artifacts are
+absent. The changed shell scripts pass `ksh -n`. CI runs the suite under ksh93
+and mksh.
 
 ## Independent review
 
@@ -185,6 +187,13 @@ corrupt recovery source and unknown existing recovery packages block writes.
 These tests demonstrate host discovery and restoration, not QNX boot ordering,
 filesystem power-loss durability or a vehicle recovery guarantee. The heartbeat
 only proves that the card hook was reached.
+
+Review follow-ups on the same change: the executable check applies only to
+the on-unit copy, because the FAT32 card carries no permission bits and the
+unit may report card scripts as non-executable; staging directories left by
+interrupted earlier runs are removed before a new one is created; and the
+installer fixture skips, rather than errors, when the ModKit submodule is not
+checked out.
 
 ## Build and evidence
 

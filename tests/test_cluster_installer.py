@@ -32,10 +32,13 @@ FACTORY_MODES = {'img_ver.txt': 0o644, 'eso/bin/apps/gal': 0o750, 'eso/bin/apps/
 NEW_TARGETS = ['eso/bin/apps/cluster/cluster', 'eso/bin/apps/cluster/gal_cluster.so',
                'eso/bin/apps/cluster/dio_cluster.so', 'eso/bin/apps/cluster/cluster_config.json',
                'eso/hmi/lsd/jars/test.jar']
+# The fixture uses ModKit's real persistence files; without the submodule the suite skips.
+MODKIT_PRESENT = (builder.MODKIT_DIR / 'modkit_persist.sh').is_file()
 OP_COUNT = 7
 WRAP_STEPS = (5, 6)  # the JAR is switched last (step 7)
 
 
+@unittest.skipUnless(MODKIT_PRESENT, 'requires the MH2p_SD_ModKit submodule (git submodule update --init)')
 class InstallerFixture(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -77,8 +80,8 @@ class InstallerFixture(unittest.TestCase):
         self.persist_dir = self.root / 'mnt/ota/modkit/Mods/AudiClusterIntegration/Persist'
         self.state = self.app / 'eso/.audi-cluster/state'
 
-    CHAIN_WRAPPER = (builder.MODKIT_DIR / 'servicemgrmibhigh.sh').read_bytes()
-    CHAIN_PERSIST = (builder.MODKIT_DIR / 'modkit_persist.sh').read_bytes()
+    CHAIN_WRAPPER = (builder.MODKIT_DIR / 'servicemgrmibhigh.sh').read_bytes() if MODKIT_PRESENT else b''
+    CHAIN_PERSIST = (builder.MODKIT_DIR / 'modkit_persist.sh').read_bytes() if MODKIT_PRESENT else b''
 
     def set_modkit_chain(self, installed):
         """Model ModKit's persistence chain: wrapper script + factory ELF + persist script."""
@@ -462,6 +465,23 @@ class InterruptedTransactions(InstallerFixture):
         shutil.rmtree(self.media)
         self.assertEqual(self.persist().returncode, 0)
         self.assert_factory_intact()
+
+    def test_card_copy_without_execute_bit_still_installs(self):
+        # FAT32 has no permission bits; the unit may report card scripts as non-executable.
+        (self.mod / 'Persist/install.sh').chmod(0o644)
+        r = self.install()
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertTrue(os.access(self.persist_dir / 'install.sh', os.X_OK))
+        self.assert_installed()
+
+    def test_stale_recovery_staging_directories_are_removed(self):
+        self.assertEqual(self.install(AUDI_CLUSTER_FAULT='before-recovery-publish').returncode, 99)
+        stale = lambda: list((self.root / 'mnt/ota/modkit').glob('.AudiClusterIntegration-recovery.*'))
+        self.assertEqual(len(stale()), 1)
+        self.assertNotEqual(self.install().returncode, 0)  # interrupted transaction is rolled back first
+        self.assertEqual(self.install().returncode, 0)
+        self.assertEqual(stale(), [])
+        self.assert_installed()
 
     def test_existing_unknown_recovery_is_not_overwritten(self):
         self.persist_dir.mkdir(parents=True)
