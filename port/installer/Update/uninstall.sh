@@ -2,7 +2,8 @@
 # Audi cluster integration: journaled removal (ModKit Update stage with uninstall.txt).
 # Restores only what this module's journal recorded. Never touches the ModKit loader.
 set -u
-here=$(cd "$(dirname "$0")" && pwd -P)
+case "$0" in */*) here=${0%/*};; *) here=.;; esac   # no dirname: it is not on the update-mode PATH
+here=$(cd "$here" && pwd -P)
 . "$here/common.sh"
 MANIFEST="$here/manifest.txt"
 [[ -f "$MANIFEST" ]] || fail 'manifest.txt missing'

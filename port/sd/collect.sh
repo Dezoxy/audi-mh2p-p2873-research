@@ -1,16 +1,19 @@
 #!/bin/sh
 # Audi P2873 preflight. Reads the unit; writes only to a new output directory.
-# Uses echo only: printf was not found in the unit images and must not be relied on.
+# Uses only shell builtins and tools from the boot image /bin (mkdir, cp, ls, uname), plus pc by
+# absolute path: software-update mode has a short PATH that excludes the app partition.
 # Usage: sh collect.sh /fs/sdb0/AudiP2873-capture [fixture-root]
 set -eu
 umask 077
-here=$(CDPATH= cd "$(dirname "$0")" && pwd -P)
+case "$0" in */*) here=${0%/*};; *) here=.;; esac   # no dirname: it is not on the update-mode PATH
+here=$(CDPATH= cd "$here" && pwd -P)
 output=${1:?A new output directory on writable removable media is required}
 source_root=${2:-}
 case "$output" in /*) ;; *) echo 'Output must be absolute' >&2; exit 2;; esac
 case "$output" in */.|*/..|*/) echo 'Invalid output directory' >&2; exit 2;; esac
-parent=$(CDPATH= cd "$(dirname "$output")" && pwd -P) || exit 2
-output="$parent/$(basename "$output")"
+pdir=${output%/*}; [ -n "$pdir" ] || pdir=/
+parent=$(CDPATH= cd "$pdir" && pwd -P) || exit 2
+output="$parent/${output##*/}"
 if [ -n "$source_root" ]; then
     case "$source_root" in /*) ;; *) echo 'Fixture root must be absolute' >&2; exit 2;; esac
 else
@@ -38,7 +41,7 @@ while IFS= read -r target; do
     case "$target" in *..*|*'|'*) echo 'Invalid capture target' >&2; exit 2;; esac
     source="$source_root$target"
     destination="$output/files$target"
-    mkdir -p "$(dirname "$destination")"
+    mkdir -p "${destination%/*}"
     if [ -f "$source" ] && cp "$source" "$destination"; then
         echo "COPIED $target" >> "$output/status.txt"
     else

@@ -95,11 +95,35 @@ class PreflightTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertFalse((self.root / 'AudiP2873-capture').exists())
 
-    def test_card_scripts_do_not_depend_on_printf(self):
-        # printf was not found in the unit images; a missing command under set -e would abort the capture.
-        for name in ['collect.sh', 'install.sh', 'uninstall.sh', 'failsafe-heartbeat.sh']:
+    def test_card_scripts_call_no_tool_missing_from_the_update_mode_path(self):
+        # Update mode has PATH=.:/proc/boot:/bin:/usr/bin:/usr/sbin:/sbin; dirname, basename and sed
+        # exist only on the app partition. A missing command under set -e aborts the script.
+        import re
+        call = re.compile(r'\$\(\s*(CDPATH= )?(dirname|basename)\b|(^|[;&|(]\s*)(printf|sed|dirname|basename)\s')
+        for name in ['collect.sh', 'install.sh', 'uninstall.sh', 'failsafe-heartbeat.sh', 'probe.sh']:
             code = [l for l in (ROOT / 'port/sd' / name).read_text().splitlines() if not l.lstrip().startswith('#')]
-            self.assertFalse([l for l in code if 'printf' in l], name)
+            self.assertFalse([l for l in code if call.search(l)], name)
+
+    def test_collector_needs_only_boot_image_tools(self):
+        boot = self.root / 'boot-bin'
+        boot.mkdir()
+        for t in ['mkdir', 'cp', 'ls', 'uname']:
+            (boot / t).symlink_to(shutil.which(t))
+        r = subprocess.run([KSH, str(self.script / 'collect.sh'), str(self.output), str(self.unit)],
+                           env={'PATH': str(boot), 'RELEASE_VERSION': 'MH2p_ER_AUG35_P2873'}, capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertTrue(verifier.verify(self.output, self.manifest)['baseline_match'])
+
+    def test_collector_and_adapter_work_under_ksh(self):
+        r = subprocess.run([KSH, str(self.script / 'collect.sh'), str(self.output), str(self.unit)],
+                           env={**os.environ, 'RELEASE_VERSION': 'MH2p_ER_AUG35_P2873'}, capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertTrue(verifier.verify(self.output, self.manifest)['baseline_match'])
+        r = subprocess.run([KSH, str(ROOT / 'port/sd/install.sh')], capture_output=True, text=True,
+                           env={**os.environ, 'MOD_PATH': str(self.script), 'MEDIA_PATH': str(self.root),
+                                'RELEASE_VERSION': 'MH2p_US_PO416_P2870'})
+        self.assertEqual(r.returncode, 2)
+        self.assertFalse((self.root / 'AudiP2873-capture').exists())
 
     def test_live_mode_refuses_internal_destination(self):
         result = subprocess.run(['sh', str(self.script / 'collect.sh'), str(self.output)], capture_output=True)
@@ -180,14 +204,65 @@ class ProbeTests(unittest.TestCase):
         card.mkdir()
         shutil.copy(ROOT / 'port/sd/failsafe-heartbeat.sh', card / 'failsafe.sh')
         before = {p: p.read_bytes() for p in (self.root / 'mnt').rglob('*') if p.is_file()}
+        env = {**os.environ, 'AUDI_HEARTBEAT_TEST_DIR': str(card.resolve())}
+        elsewhere = subprocess.run([KSH, str(card / 'failsafe.sh')], capture_output=True)  # not a media root
+        self.assertEqual(elsewhere.returncode, 0)
+        self.assertEqual(sorted(p.name for p in card.iterdir()), ['failsafe.sh'])
         for _ in range(2):
-            self.assertEqual(subprocess.run([KSH, str(card / 'failsafe.sh')], capture_output=True).returncode, 0)
+            self.assertEqual(subprocess.run([KSH, str(card / 'failsafe.sh')], capture_output=True, env=env).returncode, 0)
         self.assertEqual(sorted(p.name for p in card.iterdir()), ['AudiP2873-failsafe-heartbeat.txt', 'failsafe.sh'])
         self.assertEqual(len((card / 'AudiP2873-failsafe-heartbeat.txt').read_text().splitlines()), 2)
         self.assertEqual({p: p.read_bytes() for p in (self.root / 'mnt').rglob('*') if p.is_file()}, before)
         probe_dir = card / 'AudiP2873-probe'
         probe_dir.mkdir()
         self.assertEqual(len(probe_verifier.verify(probe_dir)['failsafe_heartbeats']), 2)
+
+    def test_probe_records_received_path_and_runs_from_a_bare_filename(self):
+        env = {**os.environ, 'PATH': f"{self.bin}:{os.environ['PATH']}", 'AUDI_CLUSTER_FIXTURE_ROOT': str(self.root),
+               'MEDIA_PATH': str(self.root), 'RELEASE_VERSION': 'MH2p_ER_AUG35S_P2873'}
+        r = subprocess.run([KSH, 'probe.sh', str(self.out)], cwd=self.mod, env=env, capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        received = (self.out / 'path-received.txt').read_text()
+        self.assertIn(f'PATH_RECEIVED={self.bin}:', received)
+        self.assertNotIn('/mnt/app/armle', received)          # recorded before the append
+        self.assertIn('/mnt/app/armle/usr/bin', (self.out / 'env.txt').read_text())
+        self.assertTrue((self.out / 'tools-before.txt').is_file())
+        v = probe_verifier.verify(self.out)
+        self.assertTrue(v['path_received'])
+        self.assertIsInstance(v['unreachable_before_path_append'], list)
+
+    BOOT_IMAGE_TOOLS = ['mkdir', 'cp', 'ls', 'uname', 'date', 'cat', 'head', 'dd', 'df', 'rm', 'mount', 'sh']
+
+    def update_mode_path(self):
+        """PATH as in software-update mode: boot-image tools only. App-partition tools sit under the fake unit."""
+        boot = self.root / 'boot-bin'
+        boot.mkdir()
+        for t in self.BOOT_IMAGE_TOOLS:
+            (boot / t).symlink_to(shutil.which(t))
+        for rel, tools in [('mnt/app/armle/bin', ['gzip', 'awk', 'sed']), ('mnt/app/armle/usr/bin', ['wc'])]:
+            d = self.root / rel
+            d.mkdir(parents=True, exist_ok=True)
+            for t in tools:
+                (d / t).symlink_to(shutil.which(t))
+        shutil.copy(self.bin / 'hd', self.root / 'mnt/app/armle/usr/bin/hd')
+        (self.root / 'mnt/app/armle/usr/bin/hd').write_text('#!/bin/sh\nexec /usr/bin/hexdump -C "$@"\n')
+        return str(boot)
+
+    def test_probe_completes_with_the_update_mode_path(self):
+        env = {'PATH': self.update_mode_path(), 'AUDI_CLUSTER_FIXTURE_ROOT': str(self.root),
+               'MEDIA_PATH': str(self.root), 'RELEASE_VERSION': 'MH2p_ER_AUG35S_P2873'}
+        r = subprocess.run([KSH, str(self.mod / 'probe.sh'), str(self.out)], env=env, capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        v = probe_verifier.verify(self.out)
+        self.assertTrue(v['complete'])
+        self.assertTrue(v['hd_format_ok'], v)
+        self.assertTrue(v['crc_pipeline_ok'], v)
+        self.assertTrue(v['free_space_ok'], v)
+        for tool in ['gzip', 'hd', 'wc', 'awk', 'sed']:
+            self.assertIn(tool, v['unreachable_before_path_append'])
+        after = dict(l.split(' ', 1) for l in (self.out / 'tools.txt').read_text().splitlines())
+        for tool in ['gzip', 'hd', 'wc', 'awk', 'sed']:
+            self.assertNotEqual(after[tool], 'MISSING', tool)
 
     def test_probe_refuses_overwrite(self):
         self.out.mkdir()

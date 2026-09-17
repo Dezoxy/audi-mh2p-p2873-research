@@ -94,9 +94,9 @@ with a PATH containing only symlinks to the unit's tool set plus shims for
 | Unrelated file left in the cluster directory | directory kept, file untouched |
 | Restored permissions | factory mode (fixture uses 750 for `gal`, wrapper is 755) |
 
-Validation: 72 workspace tests discovered. With the firmware and generated
-artifacts present, all 72 run and pass locally. In CI and any clean checkout,
-59 pass and 13 skip because proprietary firmware and generated artifacts are
+Validation: 77 workspace tests discovered. With the firmware and generated
+artifacts present, all 77 run and pass locally. In CI and any clean checkout,
+64 pass and 13 skip because proprietary firmware and generated artifacts are
 absent. The changed shell scripts pass `ksh -n`. CI runs the suite under ksh93
 and mksh.
 
