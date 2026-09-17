@@ -94,7 +94,7 @@ with a PATH containing only symlinks to the unit's tool set plus shims for
 | Unrelated file left in the cluster directory | directory kept, file untouched |
 | Restored permissions | factory mode (fixture uses 750 for `gal`, wrapper is 755) |
 
-All 65 workspace tests pass (`evidence/build/test-results-installer.txt`).
+All 72 workspace tests run and pass locally; CI skips the firmware-dependent ones (`evidence/build/test-results-installer.txt`).
 
 ## Independent review
 
@@ -183,6 +183,13 @@ corrupt recovery source and unknown existing recovery packages block writes.
 These tests demonstrate host discovery and restoration, not QNX boot ordering,
 filesystem power-loss durability or a vehicle recovery guarantee. The heartbeat
 only proves that the card hook was reached.
+
+Review follow-ups on the same change: the executable check applies only to
+the on-unit copy, because the FAT32 card carries no permission bits and the
+unit may report card scripts as non-executable; staging directories left by
+interrupted earlier runs are removed before a new one is created; and the
+installer fixture skips, rather than errors, when the ModKit submodule is not
+checked out.
 
 ## Build and evidence
 
