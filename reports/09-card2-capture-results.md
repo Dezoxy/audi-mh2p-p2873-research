@@ -56,17 +56,19 @@ their bytes (1.2 MB of 1.47 MB for `gal`). Their export sets, import sets and
 `DT_NEEDED` lists are byte-for-byte identical to the package's (1286/488,
 832/513 and 1123/90 symbols respectively); the differences are the GNU
 build-id and symbol addresses shifted by a few bytes, which then shifts every
-absolute address and branch offset in the code. That is the signature of the
-same source rebuilt in a different build train, not of different code.
+absolute address and branch offset in the code. This is consistent with a
+rebuild of closely related source in a different build train. It does not
+establish identical source, compiler, structure layouts or implementation:
+with most bytes differing, the code inside those functions is unverified.
 
 Consequences:
 - The hooks attach by symbol name through the dynamic loader, so shifted
   addresses do not affect them. The 214/214 import match (report 05) and the
   three iAP2 symbols the CarPlay hook needs (report 08) are confirmed present
   in the **car's** `libesoiap2.so`.
-- Struct layouts come from the source and compiler, which the identical symbol
-  tables indicate are the same; this is not proof, and the earlier caveat
-  stands that name matching is not layout matching.
+- Identical symbol tables say nothing about structure layouts or function
+  bodies. Loading the hooks into these binaries still needs layout evidence
+  that no static symbol check can give.
 
 ## New caveat: the graphics libraries were not captured
 
@@ -89,7 +91,10 @@ precondition requires.
 
 - Version question answered: G35S 006PROD, 2205.10.0.
 - The Java side stands as built. Nothing to re-base.
-- The native side's interface is identical; the ABI review's symbol-level
-  conclusions transfer to the car. Layout is still unproven on hardware.
-- One more capture (the four graphics libraries) closes the last static gap
-  before the first controlled write to the cluster.
+- The native side's exported interface is identical; only the symbol-level
+  conclusions of the ABI review transfer to the car. Layout and behaviour
+  are unverified, and identical symbol sets do not establish readiness to
+  load the hooks.
+- Capturing the four graphics libraries closes the library-version gap in
+  the static review. It does not by itself establish that the hooks or the
+  renderer can be loaded safely; that remains a hardware question.
