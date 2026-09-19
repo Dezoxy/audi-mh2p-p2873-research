@@ -17,7 +17,7 @@ def verify(capture, manifest):
         failures.append('Live release is unsupported or unknown: ' + release)
     checks = []
     for name, expected in manifest['files'].items():
-        if not name.startswith('/mnt/app/') or '..' in Path(name).parts:
+        if not name.startswith(('/mnt/app/', '/lib/', '/usr/lib/')) or '..' in Path(name).parts:
             raise ValueError('Invalid reference target')
         p = capture / 'files' / name.lstrip('/')
         # A symlink in a capture must never redirect verification to another file.

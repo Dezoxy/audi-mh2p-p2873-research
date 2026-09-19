@@ -8,17 +8,23 @@ import zipfile
 import zlib
 
 ROOT = Path(__file__).resolve().parents[1]
-TARGETS = ['version_info.txt', 'img_ver.txt', 'target.properties',
-           'eso/bin/apps/gal', 'eso/bin/apps/dio_manager',
-           'eso/lib/libesoiap2.so', 'eso/lib/libautoreceiver.so', 'eso/hmi/lsd/lsd.jar']
+APP_TARGETS = ['version_info.txt', 'img_ver.txt', 'target.properties',
+               'eso/bin/apps/gal', 'eso/bin/apps/dio_manager',
+               'eso/lib/libesoiap2.so', 'eso/lib/libautoreceiver.so', 'eso/hmi/lsd/lsd.jar']
+# Graphics libraries live in the stage-2 boot image, not on /mnt/app. The reference copies come from
+# the package's image-03; the car's are expected to differ (2205 build) and are captured for ABI recheck.
+BOOT_LIBS = {'/usr/lib/libscreen.so.1': 'analysis/stage2-extracted/image-03/files/usr/lib/libscreen.so.1',
+             '/lib/libEGL.so.1': 'analysis/stage2-extracted/image-03/files/lib/libEGL.so.1',
+             '/lib/libGLESv2.so.2': 'analysis/stage2-extracted/image-03/files/lib/libGLESv2.so.2',
+             '/lib/libnvmedia.so': 'analysis/stage2-extracted/image-03/files/lib/libnvmedia.so'}
+TARGETS = {**{'/mnt/app/' + n: 'analysis/app/files/' + n for n in APP_TARGETS}, **BOOT_LIBS}
 
 
 def build():
     files = {}
-    for name in TARGETS:
-        p = ROOT / 'analysis/app/files' / name
-        files['/mnt/app/' + name] = {'sha256': hashlib.sha256(p.read_bytes()).hexdigest(),
-                                    'size': p.stat().st_size}
+    for unit_path, ref in TARGETS.items():
+        p = ROOT / ref
+        files[unit_path] = {'sha256': hashlib.sha256(p.read_bytes()).hexdigest(), 'size': p.stat().st_size}
     manifest = {'schema': 1, 'allowed_releases': ['MH2p_ER_AU_P2873', 'MH2p_ER_AUG35_P2873', 'MH2p_ER_AUG35S_P2873'],
                 'vehicle_identity': 'G35S (user confirmed)', 'files': files}
     evidence = ROOT / 'evidence/build'
@@ -32,6 +38,8 @@ def build():
     for name in ['collect.sh', 'install.sh', 'uninstall.sh', 'probe.sh']:
         entries[prefix + name] = (ROOT / 'port/sd' / name).read_bytes()
     entries[prefix + 'targets.txt'] = ('\n'.join(files) + '\n').encode()
+    # The card-root fail-safe copies these during a normal boot, when the real stage-2 image is the root.
+    entries[prefix + 'bootlibs.txt'] = ('\n'.join(BOOT_LIBS) + '\n').encode()
     # The probe exercises the real installer library on the unit.
     entries[prefix + 'common.sh'] = (ROOT / 'port/installer/Update/common.sh').read_bytes()
     spec = importlib.util.spec_from_file_location('bci', ROOT / 'tools/build_cluster_installer.py')

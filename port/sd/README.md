@@ -21,6 +21,14 @@ that excludes the app partition, where `gzip`, `hd`, `wc`, `awk` and `sed` live.
 If the probe folder is missing or empty, read `Logs/AudiP2873Preflight.log`:
 ModKit redirects the addon's output there, including any "not found" line.
 
+Card 3 adds the four graphics libraries from the stage-2 boot image
+(`libscreen`, `libEGL`, `libGLESv2`, `libnvmedia`), captured two ways because
+the update stage runs from a separate ramdisk root and may not see them: the
+collector tries during the update, and the card-root `failsafe.sh` copies
+them during a normal boot into `AudiP2873-bootlibs/` (created once, never
+overwritten). Verify with `verify_capture.py --reference` on either directory;
+the car's copies are expected to differ from the package (2205 build).
+
 `assumptions_hold: true` means the installer's tool assumptions are confirmed
 for this unit. It is not an installation approval.
 

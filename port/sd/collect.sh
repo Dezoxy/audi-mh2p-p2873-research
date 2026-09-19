@@ -37,7 +37,7 @@ uname -a > "$output/uname.txt"
 failed=0
 while IFS= read -r target; do
     [ -n "$target" ] || continue
-    case "$target" in /mnt/app/*) ;; *) echo 'Unexpected capture target' >&2; exit 2;; esac
+    case "$target" in /mnt/app/*|/lib/*|/usr/lib/*) ;; *) echo 'Unexpected capture target' >&2; exit 2;; esac
     case "$target" in *..*|*'|'*) echo 'Invalid capture target' >&2; exit 2;; esac
     source="$source_root$target"
     destination="$output/files$target"
