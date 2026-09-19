@@ -54,7 +54,9 @@ def build():
     entries['failsafe.sh'] = (ROOT / 'port/sd/failsafe-heartbeat.sh').read_bytes()
     entries['capture-reference.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
     # The boot-library capture has no release.txt and only these four files.
-    bootlibs = {'schema': 1, 'requires_release': False, 'files': {k: v for k, v in files.items() if k in BOOT_LIBS}}
+    # Optional during the update-stage capture, but the whole point of the boot capture: required there.
+    bootlibs = {'schema': 1, 'requires_release': False,
+                'files': {k: {**v, 'optional': False} for k, v in files.items() if k in BOOT_LIBS}}
     (evidence / 'bootlibs-reference.json').write_text(json.dumps(bootlibs, indent=2) + '\n')
     entries['bootlibs-reference.json'] = (json.dumps(bootlibs, indent=2) + '\n').encode()
     with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as z:

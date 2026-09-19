@@ -335,6 +335,18 @@ class ProbeTests(unittest.TestCase):
         self.assertTrue((card2 / 'AudiP2873-bootlibs-2/COMPLETE').is_file())
         self.assertFalse((card2 / 'AudiP2873-bootlibs/COMPLETE').exists())  # the failed attempt is left as evidence
 
+    def test_missing_boot_library_fails_the_boot_capture(self):
+        # Regression: the four libraries are optional in the update-stage reference but required here.
+        ref = json.loads((ROOT / 'evidence/build/bootlibs-reference.json').read_text())
+        self.assertEqual(len(ref['files']), 4)
+        self.assertTrue(all(v['optional'] is False for v in ref['files'].values()), ref['files'])
+        capture = self.root / 'bootlibs-empty'
+        (capture / 'files').mkdir(parents=True)
+        (capture / 'COMPLETE').write_text('capture-complete-v1\n')
+        r = verifier.verify(capture, ref)
+        self.assertFalse(r['baseline_match'])
+        self.assertEqual(len(r['failures']), 4)
+
     def test_bootlibs_reference_verifies_without_release(self):
         capture = self.root / 'bootlibs'
         (capture / 'files/lib').mkdir(parents=True)
