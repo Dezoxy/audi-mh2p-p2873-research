@@ -13,7 +13,7 @@ def verify(capture, manifest):
     if not (capture / 'COMPLETE').is_file() or (capture / 'COMPLETE').read_text().strip() != 'capture-complete-v1':
         failures.append('Capture incomplete')
     release = (capture / 'release.txt').read_text().strip() if (capture / 'release.txt').is_file() else 'UNKNOWN'
-    if release not in manifest['allowed_releases']:
+    if manifest.get('requires_release', True) and release not in manifest.get('allowed_releases', []):
         failures.append('Live release is unsupported or unknown: ' + release)
     checks = []
     for name, expected in manifest['files'].items():
@@ -24,8 +24,9 @@ def verify(capture, manifest):
         linked = any(q.is_symlink() for q in [p, *p.parents] if q != capture.parent)
         actual = hashlib.sha256(p.read_bytes()).hexdigest() if p.is_file() and not linked else None
         match = actual == expected['sha256'] and p.stat().st_size == expected['size'] if actual else False
-        checks.append({'path': name, 'match': match, 'sha256': actual})
-        if not match:
+        absent_optional = actual is None and expected.get('optional', False)
+        checks.append({'path': name, 'match': match, 'sha256': actual, 'absent_optional': absent_optional})
+        if not match and not absent_optional:
             failures.append('Missing, linked or different file: ' + name)
     matched = sum(1 for c in checks if c['match'])
     return {'baseline_match': not failures, 'release': release, 'checks': checks, 'failures': failures,

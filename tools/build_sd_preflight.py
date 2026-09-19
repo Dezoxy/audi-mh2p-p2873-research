@@ -24,7 +24,8 @@ def build():
     files = {}
     for unit_path, ref in TARGETS.items():
         p = ROOT / ref
-        files[unit_path] = {'sha256': hashlib.sha256(p.read_bytes()).hexdigest(), 'size': p.stat().st_size}
+        files[unit_path] = {'sha256': hashlib.sha256(p.read_bytes()).hexdigest(), 'size': p.stat().st_size,
+                            'optional': unit_path in BOOT_LIBS}
     manifest = {'schema': 1, 'allowed_releases': ['MH2p_ER_AU_P2873', 'MH2p_ER_AUG35_P2873', 'MH2p_ER_AUG35S_P2873'],
                 'vehicle_identity': 'G35S (user confirmed)', 'files': files}
     evidence = ROOT / 'evidence/build'
@@ -37,7 +38,7 @@ def build():
     prefix = 'Mods/AudiP2873Preflight/Update/'
     for name in ['collect.sh', 'install.sh', 'uninstall.sh', 'probe.sh']:
         entries[prefix + name] = (ROOT / 'port/sd' / name).read_bytes()
-    entries[prefix + 'targets.txt'] = ('\n'.join(files) + '\n').encode()
+    entries[prefix + 'targets.txt'] = ('\n'.join(('?' if f in BOOT_LIBS else '') + f for f in files) + '\n').encode()
     # The card-root fail-safe copies these during a normal boot, when the real stage-2 image is the root.
     entries[prefix + 'bootlibs.txt'] = ('\n'.join(BOOT_LIBS) + '\n').encode()
     # The probe exercises the real installer library on the unit.
@@ -52,6 +53,10 @@ def build():
                                               f'img_ver {len(img_ver)} {zlib.crc32(img_ver) & 0xffffffff:08x}\n').encode()
     entries['failsafe.sh'] = (ROOT / 'port/sd/failsafe-heartbeat.sh').read_bytes()
     entries['capture-reference.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
+    # The boot-library capture has no release.txt and only these four files.
+    bootlibs = {'schema': 1, 'requires_release': False, 'files': {k: v for k, v in files.items() if k in BOOT_LIBS}}
+    (evidence / 'bootlibs-reference.json').write_text(json.dumps(bootlibs, indent=2) + '\n')
+    entries['bootlibs-reference.json'] = (json.dumps(bootlibs, indent=2) + '\n').encode()
     with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as z:
         for name, data in sorted(entries.items()):
             item = zipfile.ZipInfo(name, (1980, 1, 1, 0, 0, 0))
