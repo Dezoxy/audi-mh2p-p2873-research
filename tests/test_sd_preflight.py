@@ -24,8 +24,8 @@ def load(name):
 
 verifier = load('verify_capture')
 probe_verifier = load('verify_probe')
-PROBE_ENTRIES = ['collect.sh', 'install.sh', 'uninstall.sh', 'targets.txt', 'probe.sh', 'common.sh',
-                 'selftest.bin', 'probe-expected.txt']
+PROBE_ENTRIES = ['collect.sh', 'install.sh', 'uninstall.sh', 'targets.txt', 'bootlibs.txt', 'probe.sh',
+                 'common.sh', 'selftest.bin', 'probe-expected.txt']
 
 
 class PreflightTests(unittest.TestCase):
@@ -131,6 +131,27 @@ class PreflightTests(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stderr)
         self.assertTrue(verifier.verify(self.output, self.manifest)['baseline_match'])
 
+    def test_collector_accepts_boot_library_targets(self):
+        lib = self.unit / 'usr/lib/libscreen.so.1'
+        lib.parent.mkdir(parents=True)
+        lib.write_bytes(b'\x7fELF screen')
+        (self.script / 'targets.txt').write_text(self.target + '\n/usr/lib/libscreen.so.1\n')
+        self.assertEqual(self.collect().returncode, 0)
+        self.assertEqual((self.output / 'files/usr/lib/libscreen.so.1').read_bytes(), b'\x7fELF screen')
+        manifest = {**self.manifest, 'files': {**self.manifest['files'], '/usr/lib/libscreen.so.1':
+                    {'sha256': hashlib.sha256(b'\x7fELF screen').hexdigest(), 'size': len(b'\x7fELF screen')}}}
+        self.assertTrue(verifier.verify(self.output, manifest)['baseline_match'])
+        (self.script / 'targets.txt').write_text('/etc/passwd\n')
+        self.assertNotEqual(self.collect().returncode, 0)  # any other root is still refused
+
+    def test_optional_targets_missing_do_not_fail_the_capture(self):
+        (self.script / 'targets.txt').write_text(self.target + '\n?/lib/libEGL.so.1\n')
+        self.assertEqual(self.collect().returncode, 0)
+        self.assertTrue((self.output / 'COMPLETE').is_file())
+        self.assertIn('OPTIONAL_MISSING /lib/libEGL.so.1', (self.output / 'status.txt').read_text())
+        ref = {**self.manifest, 'files': {**self.manifest['files'], '/lib/libEGL.so.1': {'sha256': 'x', 'size': 1, 'optional': True}}}
+        self.assertTrue(verifier.verify(self.output, ref)['baseline_match'])
+
     def test_live_mode_refuses_internal_destination(self):
         result = subprocess.run(['sh', str(self.script / 'collect.sh'), str(self.output)], capture_output=True)
         self.assertNotEqual(result.returncode, 0)
@@ -141,7 +162,7 @@ class PreflightTests(unittest.TestCase):
             self.skipTest('requires the locally built addon ZIP (not in the repository)')
         with zipfile.ZipFile(ROOT / 'dist/Audi-P2873-preflight-addon.zip') as z:
             self.assertIsNone(z.testzip())
-            self.assertEqual(set(z.namelist()), {'README.md', 'capture-reference.json', 'failsafe.sh',
+            self.assertEqual(set(z.namelist()), {'README.md', 'capture-reference.json', 'bootlibs-reference.json', 'failsafe.sh',
                 *['Mods/AudiP2873Preflight/Update/' + n for n in PROBE_ENTRIES]})
             self.assertEqual(z.read('Mods/AudiP2873Preflight/Update/collect.sh'), (ROOT / 'port/sd/collect.sh').read_bytes())
 
@@ -280,6 +301,49 @@ class ProbeTests(unittest.TestCase):
         self.assertFalse(v['img_ver_matches_package'])
         # The host fixture lacks unit-only tools such as slay; only that may hold the verdict down.
         self.assertEqual(v['assumptions_hold'], not v['tools_missing'], 'a baseline mismatch must not read as a broken tool')
+
+    def test_heartbeat_captures_boot_libraries_once_and_only_to_the_card(self):
+        card = self.root / 'card'
+        (card / 'Mods/AudiP2873Preflight/Update').mkdir(parents=True)
+        shutil.copy(ROOT / 'port/sd/failsafe-heartbeat.sh', card / 'failsafe.sh')
+        (card / 'Mods/AudiP2873Preflight/Update/bootlibs.txt').write_text('/usr/lib/libscreen.so.1\n/lib/libEGL.so.1\n')
+        unit = self.root / 'bootroot'
+        (unit / 'usr/lib').mkdir(parents=True); (unit / 'lib').mkdir()
+        (unit / 'usr/lib/libscreen.so.1').write_bytes(b'screen'); (unit / 'lib/libEGL.so.1').write_bytes(b'egl')
+        before = {p: p.read_bytes() for p in unit.rglob('*') if p.is_file()}
+        env = {**os.environ, 'AUDI_HEARTBEAT_TEST_DIR': str(card.resolve()), 'AUDI_BOOTLIBS_ROOT': str(unit)}
+        self.assertEqual(subprocess.run([KSH, str(card / 'failsafe.sh')], capture_output=True, env=env).returncode, 0)
+        out = card / 'AudiP2873-bootlibs'
+        self.assertTrue((out / 'COMPLETE').is_file())
+        self.assertEqual((out / 'files/usr/lib/libscreen.so.1').read_bytes(), b'screen')
+        self.assertEqual({p: p.read_bytes() for p in unit.rglob('*') if p.is_file()}, before)
+        (out / 'COMPLETE').write_text('keep')
+        subprocess.run([KSH, str(card / 'failsafe.sh')], capture_output=True, env=env)  # second boot
+        self.assertEqual((out / 'COMPLETE').read_text(), 'keep')  # never overwritten
+        self.assertFalse((card / 'AudiP2873-bootlibs-2').exists())  # completed: no retry directory
+        unit2 = self.root / 'bootroot2'; unit2.mkdir()
+        card2 = self.root / 'card2'; (card2 / 'Mods/AudiP2873Preflight/Update').mkdir(parents=True)
+        shutil.copy(ROOT / 'port/sd/failsafe-heartbeat.sh', card2 / 'failsafe.sh')
+        (card2 / 'Mods/AudiP2873Preflight/Update/bootlibs.txt').write_text('/lib/libEGL.so.1\n')
+        env2 = {**os.environ, 'AUDI_HEARTBEAT_TEST_DIR': str(card2.resolve()), 'AUDI_BOOTLIBS_ROOT': str(unit2)}
+        subprocess.run([KSH, str(card2 / 'failsafe.sh')], capture_output=True, env=env2)
+        self.assertFalse((card2 / 'AudiP2873-bootlibs/COMPLETE').exists())  # missing library: no COMPLETE
+        self.assertIn('MISSING_OR_UNREADABLE', (card2 / 'AudiP2873-bootlibs/status.txt').read_text())
+        # An incomplete attempt must not block the next boot: it retries into a numbered directory.
+        (unit2 / 'lib').mkdir(); (unit2 / 'lib/libEGL.so.1').write_bytes(b'egl')
+        subprocess.run([KSH, str(card2 / 'failsafe.sh')], capture_output=True, env=env2)
+        self.assertTrue((card2 / 'AudiP2873-bootlibs-2/COMPLETE').is_file())
+        self.assertFalse((card2 / 'AudiP2873-bootlibs/COMPLETE').exists())  # the failed attempt is left as evidence
+
+    def test_bootlibs_reference_verifies_without_release(self):
+        capture = self.root / 'bootlibs'
+        (capture / 'files/lib').mkdir(parents=True)
+        (capture / 'files/lib/libEGL.so.1').write_bytes(b'egl')
+        (capture / 'COMPLETE').write_text('capture-complete-v1\n')
+        ref = {'requires_release': False, 'files': {'/lib/libEGL.so.1': {'sha256': hashlib.sha256(b'egl').hexdigest(), 'size': 3, 'optional': True}}}
+        r = verifier.verify(capture, ref)
+        self.assertTrue(r['baseline_match'], r['failures'])
+        self.assertEqual(r['release'], 'UNKNOWN')
 
     def test_probe_refuses_overwrite(self):
         self.out.mkdir()

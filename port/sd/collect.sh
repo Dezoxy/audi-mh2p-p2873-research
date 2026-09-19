@@ -37,13 +37,17 @@ uname -a > "$output/uname.txt"
 failed=0
 while IFS= read -r target; do
     [ -n "$target" ] || continue
-    case "$target" in /mnt/app/*) ;; *) echo 'Unexpected capture target' >&2; exit 2;; esac
+    optional=0
+    case "$target" in \?*) optional=1; target=${target#?};; esac   # '?' prefix: missing is recorded, not fatal
+    case "$target" in /mnt/app/*|/lib/*|/usr/lib/*) ;; *) echo 'Unexpected capture target' >&2; exit 2;; esac
     case "$target" in *..*|*'|'*) echo 'Invalid capture target' >&2; exit 2;; esac
     source="$source_root$target"
     destination="$output/files$target"
     mkdir -p "${destination%/*}"
     if [ -f "$source" ] && cp "$source" "$destination"; then
         echo "COPIED $target" >> "$output/status.txt"
+    elif [ "$optional" -eq 1 ]; then
+        echo "OPTIONAL_MISSING $target" >> "$output/status.txt"
     else
         echo "MISSING_OR_UNREADABLE $target" >> "$output/status.txt"
         failed=1
