@@ -20,6 +20,13 @@ BOOT_LIBS = {'/usr/lib/libscreen.so.1': 'analysis/stage2-extracted/image-03/file
 TARGETS = {**{'/mnt/app/' + n: 'analysis/app/files/' + n for n in APP_TARGETS}, **BOOT_LIBS}
 
 
+def bootlibs_reference(files):
+    """Reference for the normal-boot capture: only the boot libraries, no release, and all required.
+    They are optional in the update-stage capture but are the whole point of this one."""
+    return {'schema': 1, 'requires_release': False,
+            'files': {k: {**v, 'optional': False} for k, v in files.items() if k in BOOT_LIBS}}
+
+
 def build():
     files = {}
     for unit_path, ref in TARGETS.items():
@@ -54,9 +61,7 @@ def build():
     entries['failsafe.sh'] = (ROOT / 'port/sd/failsafe-heartbeat.sh').read_bytes()
     entries['capture-reference.json'] = (json.dumps(manifest, indent=2) + '\n').encode()
     # The boot-library capture has no release.txt and only these four files.
-    # Optional during the update-stage capture, but the whole point of the boot capture: required there.
-    bootlibs = {'schema': 1, 'requires_release': False,
-                'files': {k: {**v, 'optional': False} for k, v in files.items() if k in BOOT_LIBS}}
+    bootlibs = bootlibs_reference(files)
     (evidence / 'bootlibs-reference.json').write_text(json.dumps(bootlibs, indent=2) + '\n')
     entries['bootlibs-reference.json'] = (json.dumps(bootlibs, indent=2) + '\n').encode()
     with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED) as z:

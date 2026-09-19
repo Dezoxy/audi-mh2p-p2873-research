@@ -336,10 +336,15 @@ class ProbeTests(unittest.TestCase):
         self.assertFalse((card2 / 'AudiP2873-bootlibs/COMPLETE').exists())  # the failed attempt is left as evidence
 
     def test_missing_boot_library_fails_the_boot_capture(self):
-        # Regression: the four libraries are optional in the update-stage reference but required here.
-        ref = json.loads((ROOT / 'evidence/build/bootlibs-reference.json').read_text())
-        self.assertEqual(len(ref['files']), 4)
+        # Regression: the libraries are optional in the update-stage reference but required in the
+        # boot-library reference. Built from synthetic input so CI (no firmware) can run it.
+        bsp = load('build_sd_preflight')
+        files = {k: {'sha256': '0' * 64, 'size': 1, 'optional': True} for k in bsp.BOOT_LIBS}
+        files['/mnt/app/img_ver.txt'] = {'sha256': '1' * 64, 'size': 1, 'optional': False}
+        ref = bsp.bootlibs_reference(files)
+        self.assertEqual(set(ref['files']), set(bsp.BOOT_LIBS))
         self.assertTrue(all(v['optional'] is False for v in ref['files'].values()), ref['files'])
+        self.assertFalse(ref['requires_release'])
         capture = self.root / 'bootlibs-empty'
         (capture / 'files').mkdir(parents=True)
         (capture / 'COMPLETE').write_text('capture-complete-v1\n')
