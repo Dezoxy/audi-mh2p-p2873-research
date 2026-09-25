@@ -151,3 +151,44 @@ Nothing at the linker or ABI-flags level blocks it.
 Conclusion for the mirror: statically, it is as clear as it can get without the
 car. The remaining gates are runtime display behaviour and the real-binary
 recheck, both of which need the vehicle.
+
+## Waze decision and the tiers revisited (2026-09-26)
+
+The user keeps Waze. External evidence changes two of the three tiers.
+
+**Tier 1 (guidance data) is closed for Waze.** luka-dev/mib2q-carplay-rgi, a
+working MHI2Q implementation of the same iAP2 route-guidance path, reports that
+Apple Maps, Google Maps and AMap emit route guidance and Waze does not. This is
+the app-side question raised above; it does not depend on the head unit, so the
+answer transfers. The `dio_manager_preload.c` experiment is no longer justified
+for the Waze goal. (Their README claim, not re-tested here.)
+
+**Tier 3 (independent map) is unblocked on the phone side.** Waze 5.4
+(February 2025) renders to the CarPlay instrument-cluster screen on cars that
+already offer it for Apple Maps (BMW iDrive 8, Ford SYNC 4, Polestar).
+
+**Tier 3 is blocked on the head-unit side, statically.** The firmware
+`libairplay.so` has a single screen pipeline (`_ScreenSetup`, `_ScreenThread`,
+one `CScreenRenderDM`/`CQNXScreenRenderDM`). The only alternate stream it names
+is audio (`kAudioStreamType_AltAudio`, logged as "101 - alternate"). No
+alternate-screen video handler or string is present, and unknown stream types
+hit `Unsupported stream type`. The `displays` dictionary keys exist (`uuid`,
+`widthPixels`, `heightPixels`, `maxFPS`, `features`, `primaryInputDevice`), but
+advertising a second display without a receiver for its stream would fail.
+String-level evidence only; the stream-type switch has not been disassembled.
+
+yuedizhibo/MHI2Q-CarPlay-AltScreen does deliver tier 3 on MHI2Q (China AUG22
+only). It publishes prebuilt packages without source or a list of modified
+files, under a noncommercial licence. It proves the feature is reachable on a
+sibling Harman platform, not how.
+
+## Where that leaves Waze in the cockpit
+
+| Path | Result | Cost / risk |
+|---|---|---|
+| Mirror (tier 2) | Waze in the cockpit, same view as the MMI | Statically validated above; needs vehicle test of surface 33 ownership |
+| Alt screen (tier 3) | Waze in the cockpit, MMI free | Native `libairplay.so` patch: advertise a second display, accept the second video stream, decode it to surface 33. The decode/render side has a precedent in the upstream Android Auto cluster path (NvMedia H.264, report 05 imports); the session side has none on MH2P |
+
+Recommended order: prove the mirror on the car first. It exercises surface 33,
+the part both paths share. Start tier 3 only after that, beginning with a
+disassembly of the `libairplay.so` stream-type switch.
